@@ -1,16 +1,16 @@
 export function Nav() {
     return (
-        <nav className="p-2.5 bg-[#333]">
+        <nav className="p-2.5 bg-[#333] sticky top-0 z-10">
             <div className="container mx-auto">
-                <div className="grid gap-2 grid-cols-12 items-center">
-                    <div className="col-span-4 italic uppercase text-[#a1e611] logo">
+                <div className="grid gap-2 md:grid-cols-12 items-center">
+                    <div className="col-span-4 text-center md:text-left italic uppercase text-[#a1e611] logo">
                         The world Ebike.com
                     </div>
                     <div className="col-span-4">
                         <div className="input-group flex bg-white">
-                            <input type="text" className="form-control block focus:outline-none" placeholder="Tìm kiếm" />
+                            <input type="text" className="form-control block focus:outline-none text-[#333]" placeholder="Tìm kiếm" />
                             <button className="btn" type="submit">
-                                <i className="fa-solid fa-magnifying-glass"></i>
+                                <i className="fa-solid fa-magnifying-glass hover:text-[#a1e611]"></i>
                             </button>
                         </div>
                     </div>
