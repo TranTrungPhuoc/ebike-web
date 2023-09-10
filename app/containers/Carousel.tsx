@@ -26,8 +26,8 @@ export function Carousel() {
         >
             <SwiperSlide>
                 <Image
-                    src="/1.png"
-                    alt="1.png"
+                    src="/2.jpeg"
+                    alt="2.jpeg"
                     width={500}
                     height={300}
                     layout="responsive"
@@ -37,7 +37,7 @@ export function Carousel() {
             <SwiperSlide>
                 <Image
                     src="/2.jpeg"
-                    alt="1.png"
+                    alt="2.jpeg"
                     width={500}
                     height={300}
                     layout="responsive"

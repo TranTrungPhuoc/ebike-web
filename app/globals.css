@@ -77,6 +77,82 @@ nav .input-group button {
   height: auto;
 }
 
+.swiper-button-prev, 
+.swiper-button-next{
+  color: #333 !important;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: #333 !important;
+}
+
+.service {
+  padding: 50px 0;
+}
+
+.service .icon{
+  margin-bottom: 20px;
+}
+
+.service .icon img{
+  width: auto !important;
+  display: initial !important;
+}
+
+.service h3{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service p{
+  font-size: 15px;
+}
+
+.service .col-span-2:hover{
+  transform: translate3d(0, -5px, 0);
+  transition: all .5s;
+}
+
+.service h3 span:first-child{
+  margin-right: 5px;
+}
+
+.bestSeller .products{
+  padding: 10px 10px 20px;
+}
+
+.bestSeller .products:hover{
+  transform: translate3d(0, -5px, 0);
+  transition: all .5s;
+}
+
+.bestSeller .products .image{
+  margin-bottom: 10px;
+}
+
+.bestSeller .products h2 {
+  font-size: 20px;
+}
+
+.bestSeller .products:hover h2{
+  color: #6fa400;
+}
+
+.bestSeller .title span:first-child{
+  padding: 10px 30px;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
+  font-style: italic;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.bestSeller .title span:last-child {
+  right: 20px;
+  top: -35px;
+  font-size: 25px;
+  font-style: italic;
+}
+
 @media (max-width: 767px) {
   header .textOne {
     font-size: 10px;
@@ -86,5 +162,17 @@ nav .input-group button {
   header .textThree {
     clip-path: none;
     font-size: 13px;
+  }
+
+  .service h3 span{
+    display: block;
+  }
+
+  .service .grid{
+    padding: 0 10px;
+  }
+
+  .bestSeller .title span{
+    transform: none !important;
   }
 }

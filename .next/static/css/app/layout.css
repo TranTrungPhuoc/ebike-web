@@ -8395,6 +8395,9 @@ video {
     max-width: 1536px;
   }
 }
+.relative {
+  position: relative;
+}
 .sticky {
   position: sticky;
 }
@@ -8420,6 +8423,15 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mt-16 {
+  margin-top: 4rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .block {
   display: block;
 }
@@ -8444,6 +8456,37 @@ video {
 .gap-2 {
   gap: 0.5rem;
 }
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.gap-y-8 {
+  row-gap: 2rem;
+}
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+.border-2 {
+  border-width: 2px;
+}
+.border-b {
+  border-bottom-width: 1px;
+}
+.border-r {
+  border-right-width: 1px;
+}
+.border-\[\#a1e611\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(161 230 17 / var(--tw-border-opacity));
+}
+.border-b-slate-300 {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(203 213 225 / var(--tw-border-opacity));
+}
+.border-r-slate-300 {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(203 213 225 / var(--tw-border-opacity));
+}
 .bg-\[\#333\] {
   --tw-bg-opacity: 1;
   background-color: rgb(51 51 51 / var(--tw-bg-opacity));
@@ -8462,11 +8505,24 @@ video {
 .p-2\.5 {
   padding: 0.625rem;
 }
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
+}
+.pt-16 {
+  padding-top: 4rem;
+}
 .text-center {
   text-align: center;
 }
 .font-bold {
   font-weight: 700;
+}
+.font-semibold {
+  font-weight: 600;
 }
 .uppercase {
   text-transform: uppercase;
@@ -8477,6 +8533,10 @@ video {
 .text-\[\#333\] {
   --tw-text-opacity: 1;
   color: rgb(51 51 51 / var(--tw-text-opacity));
+}
+.text-\[\#6fa400\] {
+  --tw-text-opacity: 1;
+  color: rgb(111 164 0 / var(--tw-text-opacity));
 }
 .text-\[\#a1e611\] {
   --tw-text-opacity: 1;
@@ -8562,6 +8622,82 @@ nav .input-group button {
   height: auto;
 }
 
+.swiper-button-prev, 
+.swiper-button-next{
+  color: #333 !important;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: #333 !important;
+}
+
+.service {
+  padding: 50px 0;
+}
+
+.service .icon{
+  margin-bottom: 20px;
+}
+
+.service .icon img{
+  width: auto !important;
+  display: initial !important;
+}
+
+.service h3{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service p{
+  font-size: 15px;
+}
+
+.service .col-span-2:hover{
+  transform: translate3d(0, -5px, 0);
+  transition: all .5s;
+}
+
+.service h3 span:first-child{
+  margin-right: 5px;
+}
+
+.bestSeller .products{
+  padding: 10px 10px 20px;
+}
+
+.bestSeller .products:hover{
+  transform: translate3d(0, -5px, 0);
+  transition: all .5s;
+}
+
+.bestSeller .products .image{
+  margin-bottom: 10px;
+}
+
+.bestSeller .products h2 {
+  font-size: 20px;
+}
+
+.bestSeller .products:hover h2{
+  color: #6fa400;
+}
+
+.bestSeller .title span:first-child{
+  padding: 10px 30px;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
+  font-style: italic;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.bestSeller .title span:last-child {
+  right: 20px;
+  top: -35px;
+  font-size: 25px;
+  font-style: italic;
+}
+
 @media (max-width: 767px) {
   header .textOne {
     font-size: 10px;
@@ -8572,6 +8708,18 @@ nav .input-group button {
     -webkit-clip-path: none;
             clip-path: none;
     font-size: 13px;
+  }
+
+  .service h3 span{
+    display: block;
+  }
+
+  .service .grid{
+    padding: 0 10px;
+  }
+
+  .bestSeller .title span{
+    transform: none !important;
   }
 }
 
@@ -8587,12 +8735,36 @@ nav .input-group button {
 
 @media (min-width: 768px) {
 
+  .md\:absolute {
+    position: absolute;
+  }
+
+  .md\:left-2\/4 {
+    left: 50%;
+  }
+
+  .md\:top-0 {
+    top: 0px;
+  }
+
+  .md\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
   }
 
   .md\:col-span-3 {
     grid-column: span 3 / span 3;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .md\:mt-16 {
+    margin-top: 4rem;
   }
 
   .md\:grid-cols-12 {
@@ -8605,6 +8777,14 @@ nav .input-group button {
 
   .md\:items-center {
     align-items: center;
+  }
+
+  .md\:gap-y-2 {
+    row-gap: 0.5rem;
+  }
+
+  .md\:rounded-3xl {
+    border-radius: 1.5rem;
   }
 
   .md\:text-left {
