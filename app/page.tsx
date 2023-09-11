@@ -4,6 +4,8 @@ import {BestSeller} from './containers/BestSeller';
 import {Main} from './containers/Main';
 import {Attribute} from './containers/Attribute';
 import {Tutorial} from './containers/Tutorial';
+import {Knowledge} from './containers/Knowledge';
+import {Store} from './containers/Store';
 export default function Home() {
   return (
     <main>
@@ -13,6 +15,8 @@ export default function Home() {
       <Main />
       <Attribute />
       <Tutorial />
+      <Knowledge />
+      <Store />
     </main>
   )
 }

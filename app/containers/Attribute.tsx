@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Navigation,
   Pagination,
   Scrollbar,
   A11y,
@@ -40,7 +39,7 @@ export function Attribute() {
                 src="/video.jpeg"
                 alt="video.jpeg"
                 width={500}
-                height={300}
+                height={500}
                 layout="responsive"
                 className="image rounded"
               />
@@ -51,7 +50,7 @@ export function Attribute() {
           </div>
           <div className="col-span-4 md:col-span-4">
             <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+              modules={[Pagination, Scrollbar, A11y, Autoplay]}
               spaceBetween={20}
               autoplay={{ delay: 3000 }}
               breakpoints={{
@@ -62,11 +61,10 @@ export function Attribute() {
                   slidesPerView: 2,
                 },
               }}
-              navigation
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log("slide change")}
             >
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
+              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#a1e611] px-5 py-14">
                 <div className="image mb-5">
                   <Image
                     src="/speed.png"
@@ -76,12 +74,12 @@ export function Attribute() {
                     className="m-auto"
                   />
                 </div>
-                <h4 className="text-xl uppercase font-semibold">
+                <h4 className="text-lg uppercase font-semibold">
                   Tốc độ vượt trội
                 </h4>
-                <div>Lên đến 50km/1h</div>
+                <div className="text-sm">Lên đến 50km/1h</div>
               </SwiperSlide>
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
+              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#a1e611] px-5 py-14">
                 <div className="image mb-5">
                   <Image
                     src="/bike.png"
@@ -91,12 +89,12 @@ export function Attribute() {
                     className="m-auto"
                   />
                 </div>
-                <h4 className="text-xl uppercase font-semibold">
+                <h4 className="text-lg uppercase font-semibold">
                   Khung nhôm đúc nguyên khối
                 </h4>
-                <div>Cho sự chắc chắn, an toàn</div>
+                <div className="text-sm">Cho sự chắc chắn, an toàn</div>
               </SwiperSlide>
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
+              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#a1e611] px-5 py-14">
                 <div className="image mb-5">
                   <Image
                     src="/speed.png"
@@ -106,12 +104,12 @@ export function Attribute() {
                     className="m-auto"
                   />
                 </div>
-                <h4 className="text-xl uppercase font-semibold">
+                <h4 className="text-lg uppercase font-semibold">
                   Tốc độ vượt trội
                 </h4>
-                <div>Lên đến 50km/1h</div>
+                <div className="text-sm">Lên đến 50km/1h</div>
               </SwiperSlide>
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
+              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#a1e611] px-5 py-14">
                 <div className="image mb-5">
                   <Image
                     src="/bike.png"
@@ -121,10 +119,10 @@ export function Attribute() {
                     className="m-auto"
                   />
                 </div>
-                <h4 className="text-xl uppercase font-semibold">
+                <h4 className="text-lg uppercase font-semibold">
                   Khung nhôm đúc nguyên khối
                 </h4>
-                <div>Cho sự chắc chắn, an toàn</div>
+                <div className="text-sm">Cho sự chắc chắn, an toàn</div>
               </SwiperSlide>
             </Swiper>
           </div>

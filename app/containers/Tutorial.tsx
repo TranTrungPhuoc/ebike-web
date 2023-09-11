@@ -1,36 +1,104 @@
+"use client";
+
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 import Image from "next/image";
+
 export function Tutorial() {
     return (
-        <div className="tutorial">
+        <div className="tutorial mt-12">
             <div className="container mx-auto">
-                <div className="grid gap-0 grid-cols-4 md:items-center">
-                    <div className="col-span-2 md:col-span-1">
-                        <div className="posts">
-                            <div className="image">
-                                <Image
-                                    src="/tutorial.jpg"
-                                    alt="tutorial.jpg"
-                                    width={500}
-                                    height={300}
-                                    layout="responsive"
-                                    className="image"
-                                />
-                            </div>
-                            <div className="uppercase text-sm bg-[#333] text-[#a1e611] p-2">
-                                Hướng dẫn sử dụng bộ truyền động xe địa hình
-                            </div>
+                <h2 className="mb-6 border-b border-[#a1e611]">
+                    <span className="bg-[#a1e611] color-[#333] uppercase p-4 rounded font-semibold">
+                        Hướng dẫn lắp ráp xe đạp
+                    </span>
+                </h2>
+                <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                spaceBetween={20}
+                autoplay={{ delay: 5000 }}
+                breakpoints={{
+                    768: {
+                    slidesPerView: 1,
+                    },
+                    992: {
+                    slidesPerView: 3,
+                    },
+                }}
+                navigation
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log("slide change")}
+                >
+                    <SwiperSlide>
+                        <div className="image">
+                            <Image
+                                src="/huong-dan.jpeg"
+                                alt="huong-dan.jpeg"
+                                width={300}
+                                height={300}
+                                className="rounded-t"
+                            />
                         </div>
-                    </div>
-                    <div className="col-span-2 md:col-span-1">
-                        Bảo hành: 028 6253 9118
-                    </div>
-                    <div className="col-span-2 md:col-span-1">
-                        The world Ebike.com
-                    </div>
-                    <div className="col-span-2 md:col-span-1">
-                        Bảo hành 2 năm
-                    </div>
-                </div>
+                        <div className="bg-[#333] text-[#e5e7eb] text-center p-2 uppercase rounded-b">
+                            Hướng dẫn sử dụng bộ truyền động xe địa hình
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="image">
+                            <Image
+                                src="/huong-dan.jpeg"
+                                alt="huong-dan.jpeg"
+                                width={300}
+                                height={300}
+                                className="rounded-t"
+                            />
+                        </div>
+                        <div className="bg-[#333] text-[#e5e7eb] text-center p-2 uppercase rounded-b">
+                            Hướng dẫn sử dụng bộ truyền động xe địa hình
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="image">
+                            <Image
+                                src="/huong-dan.jpeg"
+                                alt="huong-dan.jpeg"
+                                width={300}
+                                height={300}
+                                className="rounded-t"
+                            />
+                        </div>
+                        <div className="bg-[#333] text-[#e5e7eb] text-center p-2 uppercase rounded-b">
+                            Hướng dẫn sử dụng bộ truyền động xe địa hình
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="image">
+                            <Image
+                                src="/huong-dan.jpeg"
+                                alt="huong-dan.jpeg"
+                                width={300}
+                                height={300}
+                                className="rounded-t"
+                            />
+                        </div>
+                        <div className="bg-[#333] text-[#e5e7eb] text-center p-2 uppercase rounded-b">
+                            Hướng dẫn sử dụng bộ truyền động xe địa hình
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
             </div>
         </div>
     );

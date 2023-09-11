@@ -72,11 +72,11 @@ nav .input-group input {
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: #333 !important;
+  color: #a1e611 !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #333 !important;
+  background-color: #a1e611 !important;
 }
 
 .service .icon img {
@@ -102,9 +102,15 @@ nav .input-group input {
   color: #6fa400;
 }
 
-.bestSeller .title span:first-child {
+.bestSeller .title span:first-child
+{
   font-family: "Roboto Condensed", sans-serif;
   transform: translate(-50%, -50%);
+}
+
+.store .title span{
+  transform: translate(-50%, -50%);
+  top:0;
 }
 
 .bestSeller .title span:last-child {
@@ -135,11 +141,6 @@ nav .input-group input {
   top: -20px;
 }
 
-.attribute .relative:hover{
-  transform: translate3d(0, -5px, 0);
-  transition: all 0.5s;
-}
-
 .attribute .relative:hover span{
   background-color: #6fa400;
   border: 2px solid #6fa400;
@@ -155,7 +156,7 @@ nav .input-group input {
 }
 
 .attribute h4 {
-  min-height: 60px;
+  min-height: 70px;
 }
 
 @media (max-width: 767px) {

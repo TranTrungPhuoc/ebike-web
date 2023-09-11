@@ -366,7 +366,7 @@ export function Main() {
                     </div>
                 </div>
                 <div className="more text-center mt-7 py-2.5">
-                    <a href="" className="text-[#ccc] hover:text-[#333] hover:bg-[#efefef] delay-0 duration-300 border border-[#ccc] px-7 py-2.5 no-underline rounded-xl uppercase">
+                    <a href="" className="text-[#ccc] hover:text-[#333] hover:bg-[#efefef] delay-0 duration-300 border border-[#ccc] px-10 py-2.5 no-underline rounded-xl uppercase">
                         Xem thêm
                     </a>
                 </div>
