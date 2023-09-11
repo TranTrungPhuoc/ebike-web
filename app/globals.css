@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import '~@fortawesome/fontawesome-free/css/all.css';
+@import "~@fortawesome/fontawesome-free/css/all.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -23,15 +23,18 @@ body {
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
+  font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/robotocondensed/v25/ieVi2ZhZI2eCN5jzbjEETS9weq8-32meGCQYb9lecyU.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v25/ieVi2ZhZI2eCN5jzbjEETS9weq8-32meGCQYb9lecyU.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.input-group>.form-control {
+.input-group > .form-control {
   flex: 1 1 auto;
 }
 
@@ -40,23 +43,17 @@ body {
   padding: 0.375rem 0.75rem;
 }
 
-header .textOne {
-  font-size: 15px;
-}
-
 header .textTwo,
 header .textThree {
   clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
-  font-size: 20px;
 }
 
 header .textTwo {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 nav .logo {
-  font-size: 32px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 nav .input-group,
@@ -64,115 +61,129 @@ nav .input-group input {
   border-radius: 50px;
 }
 
-nav .input-group button {
-  padding: 8px 15px;
-}
-
-.swiper img{
+.swiper img {
   width: 100%;
 }
 
 .swiper-wrapper,
-.swiper-slide{
+.swiper-slide {
   height: auto;
 }
 
-.swiper-button-prev, 
-.swiper-button-next{
+.swiper-button-prev,
+.swiper-button-next {
   color: #333 !important;
 }
 
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
   background-color: #333 !important;
 }
 
-.service {
-  padding: 50px 0;
-}
-
-.service .icon{
-  margin-bottom: 20px;
-}
-
-.service .icon img{
+.service .icon img {
   width: auto !important;
   display: initial !important;
 }
 
-.service h3{
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.service p{
-  font-size: 15px;
-}
-
-.service .col-span-2:hover{
+.service .col-span-2:hover {
   transform: translate3d(0, -5px, 0);
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
-.service h3 span:first-child{
-  margin-right: 5px;
-}
-
-.bestSeller .products{
+.bestSeller .products {
   padding: 10px 10px 20px;
 }
 
-.bestSeller .products:hover{
+.bestSeller .products:hover {
   transform: translate3d(0, -5px, 0);
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
-.bestSeller .products .image{
-  margin-bottom: 10px;
-}
-
-.bestSeller .products h2 {
-  font-size: 20px;
-}
-
-.bestSeller .products:hover h2{
+.bestSeller .products:hover h2 {
   color: #6fa400;
 }
 
-.bestSeller .title span:first-child{
-  padding: 10px 30px;
-  font-size: 30px;
+.bestSeller .title span:first-child {
+  font-family: "Roboto Condensed", sans-serif;
   transform: translate(-50%, -50%);
-  font-style: italic;
-  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .bestSeller .title span:last-child {
-  right: 20px;
   top: -35px;
-  font-size: 25px;
-  font-style: italic;
+}
+
+.main .products:hover {
+  transform: translate3d(0, -5px, 0);
+  transition: all 0.5s;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translate3d(0, -5px, 0);
+}
+
+.main .products:hover .price {
+  color: red;
+  transition: 0.75s;
+}
+
+.main .products .selled span {
+  padding: 5px 20px 5px 40px;
+}
+
+.main .products .selled span img {
+  position: absolute;
+  left: -20px;
+  top: -20px;
+}
+
+.attribute .relative:hover{
+  transform: translate3d(0, -5px, 0);
+  transition: all 0.5s;
+}
+
+.attribute .relative:hover span{
+  background-color: #6fa400;
+  border: 2px solid #6fa400;
+}
+
+.attribute .video {
+  margin: -19px 0 0 -29px;
+  transition: all .5s;
+}
+
+.attribute .image img{
+  width: auto;
+}
+
+.attribute h4 {
+  min-height: 60px;
 }
 
 @media (max-width: 767px) {
-  header .textOne {
-    font-size: 10px;
-  }
-
   header .textTwo,
   header .textThree {
     clip-path: none;
     font-size: 13px;
   }
 
-  .service h3 span{
+  .service h3 span {
     display: block;
   }
 
-  .service .grid{
+  .service .grid {
     padding: 0 10px;
   }
 
-  .bestSeller .title span{
+  .bestSeller .title span {
     transform: none !important;
+  }
+
+  .main .products .selled span img {
+    left: -10px;
+  }
+
+  .main .products .selled span {
+    font-size: 16px;
+    padding: 5px 5px 5px 40px;
+    position: relative;
   }
 }
