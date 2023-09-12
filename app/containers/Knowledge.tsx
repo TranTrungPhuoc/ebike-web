@@ -43,60 +43,68 @@ export function Knowledge() {
                 onSlideChange={() => console.log("slide change")}
                 >
                     <SwiperSlide>
-                        <div className="image">
-                            <Image
-                                src="/cuahang.jpeg"
-                                alt="cuahang.jpeg"
-                                width={300}
-                                height={300}
-                                className="rounded-t"
-                            />
-                        </div>
-                        <div className="text-center p-2">
-                            Cửa hàng xe điện tại HCM uy tín, giá tốt
-                        </div>
+                        <a href="">
+                            <div className="image">
+                                <Image
+                                    src="/cuahang.jpeg"
+                                    alt="cuahang.jpeg"
+                                    width={300}
+                                    height={300}
+                                    className="rounded"
+                                />
+                            </div>
+                            <div className="text-center p-2">
+                                Cửa hàng xe điện tại HCM uy tín, giá tốt
+                            </div>
+                        </a>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="image">
-                            <Image
-                                src="/cuahang.jpeg"
-                                alt="cuahang.jpeg"
-                                width={300}
-                                height={300}
-                                className="rounded-t"
-                            />
-                        </div>
-                        <div className="text-center p-2">
-                            Cửa hàng xe điện tại HCM uy tín, giá tốt
-                        </div>
+                        <a href="">
+                            <div className="image">
+                                <Image
+                                    src="/cuahang.jpeg"
+                                    alt="cuahang.jpeg"
+                                    width={300}
+                                    height={300}
+                                    className="rounded"
+                                />
+                            </div>
+                            <div className="text-center p-2">
+                                Cửa hàng xe điện tại HCM uy tín, giá tốt
+                            </div>
+                        </a>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="image">
-                            <Image
-                                src="/cuahang.jpeg"
-                                alt="cuahang.jpeg"
-                                width={300}
-                                height={300}
-                                className="rounded-t"
-                            />
-                        </div>
-                        <div className="text-center p-2">
-                            Cửa hàng xe điện tại HCM uy tín, giá tốt
-                        </div>
+                        <a href="">
+                            <div className="image">
+                                <Image
+                                    src="/cuahang.jpeg"
+                                    alt="cuahang.jpeg"
+                                    width={300}
+                                    height={300}
+                                    className="rounded"
+                                />
+                            </div>
+                            <div className="text-center p-2">
+                                Cửa hàng xe điện tại HCM uy tín, giá tốt
+                            </div>
+                        </a>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="image">
-                            <Image
-                                src="/cuahang.jpeg"
-                                alt="cuahang.jpeg"
-                                width={300}
-                                height={300}
-                                className="rounded-t"
-                            />
-                        </div>
-                        <div className="text-center p-2">
-                            Cửa hàng xe điện tại HCM uy tín, giá tốt
-                        </div>
+                        <a href="">
+                            <div className="image">
+                                <Image
+                                    src="/cuahang.jpeg"
+                                    alt="cuahang.jpeg"
+                                    width={300}
+                                    height={300}
+                                    className="rounded"
+                                />
+                            </div>
+                            <div className="text-center p-2">
+                                Cửa hàng xe điện tại HCM uy tín, giá tốt
+                            </div>
+                        </a>
                     </SwiperSlide>
                 </Swiper>
             </div>
