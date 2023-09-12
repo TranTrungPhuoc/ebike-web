@@ -21,7 +21,7 @@ export function Knowledge() {
     return (
         <div className="knowledge mt-12">
             <div className="container mx-auto">
-                <h2 className="mb-6 border-b border-[#a1e611]">
+                <h2 className="mb-6 border-b border-[#333]">
                     <span className="bg-[#a1e611] color-[#333] uppercase p-4 rounded font-semibold">
                         Hướng dẫn lắp ráp xe đạp
                     </span>
@@ -42,7 +42,7 @@ export function Knowledge() {
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log("slide change")}
                 >
-                    <SwiperSlide>
+                    <SwiperSlide className="border border-[#6fa400] rounded p-2 bg-[#f7ffe8] hover:border-[#333] hover:bg-white">
                         <a href="">
                             <div className="image">
                                 <Image
@@ -53,12 +53,15 @@ export function Knowledge() {
                                     className="rounded"
                                 />
                             </div>
-                            <div className="text-center p-2">
-                                Cửa hàng xe điện tại HCM uy tín, giá tốt
+                            <div className="text-[#333] p-2 rounded-b">
+                                <h3 className="mb-2">Cửa hàng xe điện tại HCM uy tín, giá tốt</h3>
+                                <div className="text-xs">
+                                    <i className="fa fa-eye text-[#6fa400]"></i> 10 Tr lượt xem • 10 tháng trước
+                                </div>
                             </div>
                         </a>
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className="border border-[#6fa400] rounded p-2 bg-[#f7ffe8] hover:border-[#333] hover:bg-white">
                         <a href="">
                             <div className="image">
                                 <Image
@@ -69,12 +72,15 @@ export function Knowledge() {
                                     className="rounded"
                                 />
                             </div>
-                            <div className="text-center p-2">
-                                Cửa hàng xe điện tại HCM uy tín, giá tốt
+                            <div className="text-[#333] p-2 rounded-b">
+                                <h3 className="mb-2">Cửa hàng xe điện tại HCM uy tín, giá tốt</h3>
+                                <div className="text-xs">
+                                    <i className="fa fa-eye text-[#6fa400]"></i> 10 Tr lượt xem • 10 tháng trước
+                                </div>
                             </div>
                         </a>
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className="border border-[#6fa400] rounded p-2 bg-[#f7ffe8] hover:border-[#333] hover:bg-white">
                         <a href="">
                             <div className="image">
                                 <Image
@@ -85,12 +91,15 @@ export function Knowledge() {
                                     className="rounded"
                                 />
                             </div>
-                            <div className="text-center p-2">
-                                Cửa hàng xe điện tại HCM uy tín, giá tốt
+                            <div className="text-[#333] p-2 rounded-b">
+                                <h3 className="mb-2">Cửa hàng xe điện tại HCM uy tín, giá tốt</h3>
+                                <div className="text-xs">
+                                    <i className="fa fa-eye text-[#6fa400]"></i> 10 Tr lượt xem • 10 tháng trước
+                                </div>
                             </div>
                         </a>
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide className="border border-[#6fa400] rounded p-2 bg-[#f7ffe8] hover:border-[#333] hover:bg-white">
                         <a href="">
                             <div className="image">
                                 <Image
@@ -101,8 +110,11 @@ export function Knowledge() {
                                     className="rounded"
                                 />
                             </div>
-                            <div className="text-center p-2">
-                                Cửa hàng xe điện tại HCM uy tín, giá tốt
+                            <div className="text-[#333] p-2 rounded-b">
+                                <h3 className="mb-2">Cửa hàng xe điện tại HCM uy tín, giá tốt</h3>
+                                <div className="text-xs">
+                                    <i className="fa fa-eye text-[#6fa400]"></i> 10 Tr lượt xem • 10 tháng trước
+                                </div>
                             </div>
                         </a>
                     </SwiperSlide>

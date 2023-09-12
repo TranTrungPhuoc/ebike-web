@@ -4,7 +4,7 @@ export function Footer() {
         <footer className="mt-7">
             <div className="p-7 bg-[#e0e0e0]">
                 <div className="container mx-auto">
-                    <div className="grid gap-6 grid-cols-4">
+                    <div className="grid gap-6 grid-cols-4 text-sm">
                         <div className="col-span-4 md:col-span-1">
                             <h5 className="text-[#6fa400] uppercase font-bold text-lg">Thông tin</h5>
                             <hr className="my-2 border-[#6fa400]" />
@@ -81,6 +81,7 @@ export function Footer() {
                         <div className="col-span-4 md:col-span-1">
                             <h5 className="text-[#6fa400] uppercase font-bold text-lg">Kết nối</h5>
                             <hr className="my-2 border-[#6fa400]" />
+                            <p className="mb-2">Chia sẻ thông tin qua các kệnh mạng xã hội:</p>
                             <ul className="flex">
                                 <li className="mr-2">
                                     <a href="" className="hover:text-[#6fa400]">
@@ -114,7 +115,7 @@ export function Footer() {
             </div>
             <div className="p-7 bg-[#333] text-white">
                 <div className="container mx-auto">
-                    <div className="grid gap-6 grid-cols-5">
+                    <div className="grid gap-6 grid-cols-4">
                         <div className="col-span-5 md:col-span-1">
                             <ul className="leading-8 text-sm">
                                 <li>Hotline: <span className="text-[#a1e611] text-xl">1800 8973</span></li>
@@ -137,49 +138,53 @@ export function Footer() {
                                 <li>Trụ sở: 100 Hải Thượng Lãn Ông, P.10, Quận 5, TP.HCM</li>
                             </ul>
                         </div>
-                        <div className="col-span-5 md:col-span-2">
-                            <ul className="flex justify-evenly payment bg-white p-2 rounded-sm">
-                                <li className="mr-2">
+                        <div className="col-span-5 md:col-span-1">
+                            <div className="grid gap-2 grid-cols-4 payment">
+                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded-sm">
                                     <a href="">
                                         <Image
                                             src="/visa.png"
                                             alt="visa.png"
                                             width={80}
                                             height={50}
+                                            className="hover:opacity-70"
                                         />
                                     </a>
-                                </li>
-                                <li className="mr-2">
+                                </div>
+                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded-sm">
                                     <a href="">
                                         <Image
                                             src="/mastercard.png"
                                             alt="mastercard.png"
                                             width={80}
                                             height={50}
+                                            className="hover:opacity-70"
                                         />
                                     </a>
-                                </li>
-                                <li className="mr-2">
+                                </div>
+                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded-sm">
                                     <a href="">
                                         <Image
                                             src="/discover.png"
                                             alt="discover.png"
                                             width={80}
                                             height={50}
+                                            className="hover:opacity-70"
                                         />
                                     </a>
-                                </li>
-                                <li>
+                                </div>
+                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded-sm">
                                     <a href="">
                                         <Image
                                             src="/american.png"
                                             alt="american.png"
                                             width={80}
                                             height={50}
+                                            className="hover:opacity-70"
                                         />
                                     </a>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

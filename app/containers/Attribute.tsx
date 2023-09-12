@@ -64,7 +64,7 @@ export function Attribute() {
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log("slide change")}
             >
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#a1e611] px-5 py-14">
+              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
                 <div className="image mb-5">
                   <Image
                     src="/speed.png"
@@ -79,7 +79,7 @@ export function Attribute() {
                 </h4>
                 <div className="text-sm">Lên đến 50km/1h</div>
               </SwiperSlide>
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#a1e611] px-5 py-14">
+              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
                 <div className="image mb-5">
                   <Image
                     src="/bike.png"
@@ -94,7 +94,7 @@ export function Attribute() {
                 </h4>
                 <div className="text-sm">Cho sự chắc chắn, an toàn</div>
               </SwiperSlide>
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#a1e611] px-5 py-14">
+              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
                 <div className="image mb-5">
                   <Image
                     src="/speed.png"
@@ -109,7 +109,7 @@ export function Attribute() {
                 </h4>
                 <div className="text-sm">Lên đến 50km/1h</div>
               </SwiperSlide>
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#a1e611] px-5 py-14">
+              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
                 <div className="image mb-5">
                   <Image
                     src="/bike.png"
