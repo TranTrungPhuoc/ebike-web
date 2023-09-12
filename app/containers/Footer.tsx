@@ -6,7 +6,7 @@ export function Footer() {
                 <div className="container mx-auto">
                     <div className="grid gap-6 grid-cols-4 text-sm">
                         <div className="col-span-4 md:col-span-1">
-                            <h5 className="text-[#6fa400] uppercase font-bold text-lg">Thông tin</h5>
+                            <h5 className="text-[#6fa400] uppercase font-semibold text-lg">Thông tin</h5>
                             <hr className="my-2 border-[#6fa400]" />
                             <ul className="leading-8">
                                 <li>
@@ -32,7 +32,7 @@ export function Footer() {
                             </ul>
                         </div>
                         <div className="col-span-4 md:col-span-1">
-                            <h5 className="text-[#6fa400] uppercase font-bold text-lg">Chính sách</h5>
+                            <h5 className="text-[#6fa400] uppercase font-semibold text-lg">Chính sách</h5>
                             <hr className="my-2 border-[#6fa400]" />
                             <ul className="leading-8">
                                 <li>
@@ -58,7 +58,7 @@ export function Footer() {
                             </ul>
                         </div>
                         <div className="col-span-4 md:col-span-1">
-                            <h5 className="text-[#6fa400] uppercase font-bold text-lg">Công ty</h5>
+                            <h5 className="text-[#6fa400] uppercase font-semibold text-lg">Công ty</h5>
                             <hr className="my-2 border-[#6fa400]" />
                             <ul className="leading-8">
                                 <li>
@@ -79,7 +79,7 @@ export function Footer() {
                             </ul>
                         </div>
                         <div className="col-span-4 md:col-span-1">
-                            <h5 className="text-[#6fa400] uppercase font-bold text-lg">Kết nối</h5>
+                            <h5 className="text-[#6fa400] uppercase font-semibold text-lg">Kết nối</h5>
                             <hr className="my-2 border-[#6fa400]" />
                             <p className="mb-2">Chia sẻ thông tin qua các kệnh mạng xã hội:</p>
                             <ul className="flex">

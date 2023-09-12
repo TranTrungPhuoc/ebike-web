@@ -1,4 +1,4 @@
-export function Nav() {
+export function Nav() {    
     return (
         <nav className="p-2.5 bg-[#333] sticky top-0 z-10">
             <div className="container mx-auto">
