@@ -32,7 +32,7 @@ export function Attribute() {
   return (
     <div className="attribute">
       <div className="container mx-auto">
-        <div className="grid gap-6 grid-cols-4 md:grid-cols-8 md:items-center">
+        <div className="grid gap-6 grid-cols-4 mx-4 md:mx-0 md:grid-cols-8 md:items-center">
           <div className="col-span-4 md:col-span-4">
             <div className="relative cursor-pointer" onClick={openPopup}>
               <Image

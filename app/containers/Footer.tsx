@@ -8,7 +8,7 @@ export function Footer() {
                         <div className="col-span-4 md:col-span-1">
                             <h5 className="text-[#6fa400] uppercase font-semibold text-lg">Thông tin</h5>
                             <hr className="my-2 border-[#6fa400]" />
-                            <ul className="leading-8">
+                            <ul className="leading-6">
                                 <li>
                                     <a href="" className="hover:text-[#6fa400]">
                                         <i className="fa fa-caret-right text-xs text-[#6fa400]"></i> Tin Tức
@@ -34,7 +34,7 @@ export function Footer() {
                         <div className="col-span-4 md:col-span-1">
                             <h5 className="text-[#6fa400] uppercase font-semibold text-lg">Chính sách</h5>
                             <hr className="my-2 border-[#6fa400]" />
-                            <ul className="leading-8">
+                            <ul className="leading-6">
                                 <li>
                                     <a href="" className="hover:text-[#6fa400]">
                                         <i className="fa fa-caret-right text-xs text-[#6fa400]"></i> Hướng dẫn trả góp
@@ -60,7 +60,7 @@ export function Footer() {
                         <div className="col-span-4 md:col-span-1">
                             <h5 className="text-[#6fa400] uppercase font-semibold text-lg">Công ty</h5>
                             <hr className="my-2 border-[#6fa400]" />
-                            <ul className="leading-8">
+                            <ul className="leading-6">
                                 <li>
                                     <a href="" className="hover:text-[#6fa400]">
                                         <i className="fa fa-caret-right text-xs text-[#6fa400]"></i> Giới thiệu
@@ -84,28 +84,28 @@ export function Footer() {
                             <p className="mb-2">Chia sẻ thông tin qua các kệnh mạng xã hội:</p>
                             <ul className="flex">
                                 <li className="mr-2">
-                                    <a href="" className="hover:text-[#6fa400]">
-                                        <i className="fa-brands fa-square-facebook"></i>
+                                    <a href="" className="hover:text-[#3b5998]">
+                                        <i className="fa-brands fa-square-facebook text-base"></i>
                                     </a>
                                 </li>
                                 <li className="mr-2">
-                                    <a href="" className="hover:text-[#6fa400]">
-                                        <i className="fa-brands fa-square-pinterest"></i>
+                                    <a href="" className="hover:text-[#E60023]">
+                                        <i className="fa-brands fa-square-pinterest text-base"></i>
                                     </a>
                                 </li>
                                 <li className="mr-2">
-                                    <a href="" className="hover:text-[#6fa400]">
-                                        <i className="fa-brands fa-square-twitter"></i>
+                                    <a href="" className="hover:text-[#1DA1F2]">
+                                        <i className="fa-brands fa-square-twitter text-base"></i>
                                     </a>
                                 </li>
                                 <li className="mr-2">
-                                    <a href="" className="hover:text-[#6fa400]">
-                                        <i className="fa-brands fa-linkedin"></i>
+                                    <a href="" className="hover:text-[#0077B5]">
+                                        <i className="fa-brands fa-linkedin text-base"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" className="hover:text-[#6fa400]">
-                                        <i className="fa-brands fa-square-instagram"></i>
+                                    <a href="" className="hover:text-[#E4405F]">
+                                        <i className="fa-brands fa-square-instagram text-base"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -117,7 +117,7 @@ export function Footer() {
                 <div className="container mx-auto">
                     <div className="grid gap-6 grid-cols-4">
                         <div className="col-span-5 md:col-span-1">
-                            <ul className="leading-8 text-sm">
+                            <ul className="text-xs md:text-sm">
                                 <li>Hotline: <span className="text-[#a1e611] text-xl">1800 8973</span></li>
                                 <li>CSKH: 1800 9063 (9:00 - 17:00)</li>
                                 <li>Email: info@ebike.com</li>
@@ -132,15 +132,15 @@ export function Footer() {
                             </div>
                         </div>
                         <div className="col-span-5 md:col-span-2">
-                            <h1 className="uppercase text-[#a1e611] text-2xl mb-3 font-semibold">Công ty cổ phần Ebike</h1>
-                            <ul className="leading-8 text-sm">
+                            <h1 className="uppercase text-[#a1e611] text-xl md:text-2xl mb-3 font-semibold">Công ty cổ phần Ebike</h1>
+                            <ul className="text-xs md:text-sm">
                                 <li>ĐKKD/MST: 0313891315 do sở KHDT TP.HCM cấp 04/07/2016</li>
                                 <li>Trụ sở: 100 Hải Thượng Lãn Ông, P.10, Quận 5, TP.HCM</li>
                             </ul>
                         </div>
                         <div className="col-span-5 md:col-span-1">
                             <div className="grid gap-2 grid-cols-4 payment">
-                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded-sm">
+                                <div className="col-span-1 md:col-span-2 bg-white p-2">
                                     <a href="">
                                         <Image
                                             src="/visa.png"
@@ -151,7 +151,7 @@ export function Footer() {
                                         />
                                     </a>
                                 </div>
-                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded-sm">
+                                <div className="col-span-1 md:col-span-2 bg-white p-2">
                                     <a href="">
                                         <Image
                                             src="/mastercard.png"
@@ -162,7 +162,7 @@ export function Footer() {
                                         />
                                     </a>
                                 </div>
-                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded-sm">
+                                <div className="col-span-1 md:col-span-2 bg-white p-2">
                                     <a href="">
                                         <Image
                                             src="/discover.png"
@@ -173,7 +173,7 @@ export function Footer() {
                                         />
                                     </a>
                                 </div>
-                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded-sm">
+                                <div className="col-span-1 md:col-span-2 bg-white p-2">
                                     <a href="">
                                         <Image
                                             src="/american.png"

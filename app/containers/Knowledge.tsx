@@ -19,11 +19,11 @@ import Image from "next/image";
 
 export function Knowledge() {
     return (
-        <div className="knowledge mt-12">
+        <div className="knowledge mt-12 mx-4 md:mx-0">
             <div className="container mx-auto">
                 <h2 className="mb-6 border-b border-[#333]">
                     <span className="bg-[#a1e611] color-[#333] uppercase p-4 rounded font-semibold">
-                        Hướng dẫn lắp ráp xe đạp
+                        <a href="" className="hover:text-[#6fa400]">Kiến thức kinh nghiệm</a>
                     </span>
                 </h2>
                 <Swiper
