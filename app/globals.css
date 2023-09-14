@@ -27,14 +27,13 @@ body {
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/robotocondensed/v25/ieVi2ZhZI2eCN5jzbjEETS9weq8-32meGCQYb9lecyU.woff2)
-    format("woff2");
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v25/ieVi2ZhZI2eCN5jzbjEETS9weq8-32meGCQYb9lecyU.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
     U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.input-group > .form-control {
+.input-group>.form-control {
   flex: 1 1 auto;
 }
 
@@ -102,22 +101,21 @@ nav .input-group input {
   color: #6fa400;
 }
 
-.bestSeller .title span:first-child
-{
+.bestSeller .title span:first-child {
   font-family: "Roboto Condensed", sans-serif;
   transform: translate(-50%, -50%);
 }
 
-.store .title span{
+.store .title span {
   transform: translate(-50%, -50%);
-  top:0;
+  top: 0;
 }
 
 .bestSeller .title span:last-child {
   top: -35px;
 }
 
-.main .products:hover {
+main .products:hover {
   transform: translate3d(0, -5px, 0);
   transition: all 0.5s;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -126,22 +124,22 @@ nav .input-group input {
   -webkit-transform: translate3d(0, -5px, 0);
 }
 
-.main .products:hover .price {
+main .products:hover .price {
   color: red;
   transition: 0.75s;
 }
 
-.main .products .selled span {
+.selled span {
   padding: 5px 20px 5px 40px;
 }
 
-.main .products .selled span img {
+.selled span img {
   position: absolute;
   left: -20px;
   top: -20px;
 }
 
-.attribute .relative:hover span{
+.attribute .relative:hover span {
   background-color: #6fa400;
   border: 2px solid #6fa400;
 }
@@ -151,7 +149,7 @@ nav .input-group input {
   transition: all .5s;
 }
 
-.attribute .image img{
+.attribute .image img {
   width: auto;
 }
 
@@ -159,11 +157,49 @@ nav .input-group input {
   min-height: 70px;
 }
 
-.payment img{
+.payment img {
   height: 35px;
 }
 
+.breadcrumbs ul li:first-child:before {
+  content: none;
+}
+
+.breadcrumbs ul li::before {
+  margin: 0 5px;
+  content: "/";
+}
+
+.breadcrumbs ul li a:hover {
+  color: #6fa400;
+}
+
+main .content h2{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 2.25rem;
+}
+
+main .content h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.75rem;
+}
+
+main .content p {
+  margin-bottom: 20px;
+}
+
+main .content img {
+  width: 100%;
+  border-radius: 5px;
+}
+
 @media (max-width: 767px) {
+
   header .textTwo,
   header .textThree {
     clip-path: none;
@@ -182,22 +218,22 @@ nav .input-group input {
     transform: none !important;
   }
 
-  .main .products .selled span img {
+  .selled span img {
     left: -10px;
   }
 
-  .main .products .selled span {
+  .selled span {
     font-size: 16px;
     padding: 5px 5px 5px 40px;
     position: relative;
   }
 
-  .store .title span{
+  .store .title span {
     transform: none;
   }
 }
 
-@media (min-width: 1280px){
+@media (min-width: 1280px) {
   .container {
     max-width: 1170px;
   }

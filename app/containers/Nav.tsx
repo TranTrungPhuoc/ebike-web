@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Link from 'next/link'
 export function Nav() {
     const [fix, setFix] = useState(false);
     const setFixed = () => {
@@ -17,7 +18,7 @@ export function Nav() {
             <div className="container mx-auto">
                 <div className="grid gap-2 md:grid-cols-12 items-center">
                     <div className="col-span-4 text-center md:text-left italic uppercase text-[#a1e611] text-2xl md:text-3xl logo">
-                        <a href="">The world Ebike.com</a>
+                        <Link href="/">The world Ebike.com</Link>
                     </div>
                     <div className="col-span-4">
                         <div className="input-group flex bg-white">
@@ -29,9 +30,9 @@ export function Nav() {
                     </div>
                     <div className="col-span-3 menu">
                         <ul className="flex justify-evenly">
-                            <li><a href="" className="text-white hover:text-[#a1e611] uppercase">Sản phẩm</a></li>
-                            <li><a href="" className="text-white hover:text-[#a1e611] uppercase">Dịch vụ</a></li>
-                            <li><a href="" className="text-white hover:text-[#a1e611] uppercase">Tin tức</a></li>
+                            <li><Link className="text-white hover:text-[#a1e611] uppercase" href="/category">Sản phẩm</Link></li>
+                            <li><Link className="text-white hover:text-[#a1e611] uppercase" href="/category">Dịch vụ</Link></li>
+                            <li><Link className="text-white hover:text-[#a1e611] uppercase" href="/category">Tin tức</Link></li>
                         </ul>
                     </div>
                     <div className="col-span-1 cart">
