@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
-import React, { useState } from 'react';
 import { Category } from "./category";
+import Link from 'next/link'
 function Page() {
     const params = useParams();
     let isPage = 'category';
@@ -13,9 +13,9 @@ function Page() {
             <div className="breadcrumbs">
                 <div className="container mx-auto">
                     <ul className="flex flex-wrap px-2 md:px-0 py-4 text-xs md:text-sm text-[#333] border-b border-r-slate-300">
-                        <li><a href=""><i className="fa fa-home text-[#6fa400]"></i> Trang chủ</a></li>
-                        <li><a href="">Shop</a></li>
-                        <li><a href="" >Xe đạp</a></li>
+                        <li><Link href="/"><i className="fa fa-home text-[#6fa400]"></i> Trang chủ</Link></li>
+                        <li><Link href="/">Shop</Link></li>
+                        <li><Link href="/">Xe đạp</Link></li>
                         <li className="text-[#6fa400]">Xe thể thao đường phố</li>
                     </ul>
                 </div>

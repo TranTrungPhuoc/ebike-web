@@ -1,4 +1,4 @@
-// File: /Users/trantrungphuoc/Desktop/ebike/ebike-web/app/page.tsx
+// File: C:\Users\Admin\Desktop\ebike-web\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

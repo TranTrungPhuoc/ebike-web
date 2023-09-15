@@ -97,6 +97,11 @@ nav .input-group input {
   transition: all 0.5s;
 }
 
+.bestSeller .grid div:nth-child(4),
+.bestSeller .grid div:nth-child(8){
+  border-right-color: white;
+}
+
 .bestSeller .products:hover h2 {
   color: #6fa400;
 }
@@ -230,6 +235,11 @@ main .content img {
 
   .store .title span {
     transform: none;
+  }
+
+  .bestSeller .grid div:nth-child(5),
+  .bestSeller .grid div:nth-child(6){
+    border-bottom-color: rgb(203 213 225 / var(--tw-border-opacity));
   }
 }
 
