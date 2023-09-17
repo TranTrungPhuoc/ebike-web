@@ -71,7 +71,7 @@ nav .input-group input {
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: #333 !important;
+  color: #6fa400 !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -98,7 +98,7 @@ nav .input-group input {
 }
 
 .bestSeller .grid div:nth-child(4),
-.bestSeller .grid div:nth-child(8){
+.bestSeller .grid div:nth-child(8) {
   border-right-color: white;
 }
 
@@ -111,13 +111,13 @@ nav .input-group input {
   transform: translate(-50%, -50%);
 }
 
+.bestSeller .title span:last-child {
+  top: -35px;
+}
+
 .store .title span {
   transform: translate(-50%, -50%);
   top: 0;
-}
-
-.bestSeller .title span:last-child {
-  top: -35px;
 }
 
 main .products:hover {
@@ -129,9 +129,28 @@ main .products:hover {
   -webkit-transform: translate3d(0, -5px, 0);
 }
 
-main .products:hover .price {
+main .products:hover .price,
+.relative__product:hover .price {
   color: red;
   transition: 0.75s;
+}
+
+.relative__product:hover h3{
+  color: #6fa400;
+  transition: 0.75s;
+}
+
+.relative__product img{
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+main .relative__product{
+  padding-bottom: 20px;
+}
+
+main .relative__product img{
+  width: inherit;
 }
 
 .selled span {
@@ -179,7 +198,7 @@ main .products:hover .price {
   color: #6fa400;
 }
 
-main .content h2{
+main .content h2 {
   text-align: center;
   font-size: 30px;
   margin-bottom: 20px;
@@ -194,13 +213,125 @@ main .content h3 {
   line-height: 1.75rem;
 }
 
+main .content h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.5rem;
+}
+
 main .content p {
   margin-bottom: 20px;
+  font-size: 15px;
 }
 
 main .content img {
   width: 100%;
   border-radius: 5px;
+}
+
+main .content figure {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+main .content figure figcaption {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+}
+
+main .content a {
+  color: #6fa400;
+  font-weight: 700;
+}
+
+main .content a:hover {
+  opacity: 0.7;
+}
+
+.tutorial .image span,
+.video .post .image span {
+  transform: translate(-50%, -50%);
+}
+
+.tutorial .swiper-slide:hover .image span .fa-brands,
+.video .post:hover .image span .fa-brands {
+  color: #a1e611;
+}
+
+.tutorial .swiper-slide:hover .image span,
+.post:hover .image span {
+  background-color: #333;
+}
+
+.knowledge .swiper-slide:hover,
+.tutorial .swiper-slide:hover,
+.post:hover {
+  border-color: #6fa400;
+}
+
+.knowledge .swiper-slide:hover span {
+  color: white;
+}
+
+.post:hover span {
+  color: white;
+}
+
+.knowledge .swiper-slide:hover h3,
+.tutorial .swiper-slide:hover h3,
+.post:hover h2,
+.post:hover h3 {
+  font-weight: 700;
+  transition-duration: 300ms;
+  color: #6fa400;
+}
+
+.postSidebar h2::after {
+  border-bottom: 2px solid #000;
+  content: '';
+  display: block;
+  margin: 5px auto 15px 0;
+  width: 50px;
+}
+
+.contact h2::after {
+  border-bottom: 3px solid #e5e7eb;
+  content: '';
+  display: block;
+  margin: 5px auto -2px 0;
+  width: 80px;
+}
+
+main .index h4::after {
+  border-bottom: 2px solid #333;
+  content: '';
+  display: block;
+  margin: auto;
+  width: 80px;
+}
+
+.product-library div:hover img{
+  transform: translate3d(0, -5px, 0);
+  transition: all 0.5s;
+}
+
+.promotion span{
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+}
+
+.promotion ul{
+  list-style: inherit;
+  padding-left: 20px;
+}
+.specifications{
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
 }
 
 @media (max-width: 767px) {
@@ -238,7 +369,7 @@ main .content img {
   }
 
   .bestSeller .grid div:nth-child(5),
-  .bestSeller .grid div:nth-child(6){
+  .bestSeller .grid div:nth-child(6) {
     border-bottom-color: rgb(203 213 225 / var(--tw-border-opacity));
   }
 }

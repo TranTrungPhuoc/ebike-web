@@ -29,16 +29,16 @@ export function Nav() {
                         </div>
                     </div>
                     <div className="col-span-3 menu">
-                        <ul className="flex justify-evenly">
-                            <li><Link className="text-white hover:text-[#a1e611] uppercase" href="/category">Sản phẩm</Link></li>
-                            <li><Link className="text-white hover:text-[#a1e611] uppercase" href="/category">Dịch vụ</Link></li>
-                            <li><Link className="text-white hover:text-[#a1e611] uppercase" href="/category">Tin tức</Link></li>
+                        <ul className="flex justify-evenly text-sm">
+                            <li><Link className="text-white hover:text-[#a1e611] hover:duration-300 uppercase" href="/category">Sản phẩm</Link></li>
+                            <li><Link className="text-white hover:text-[#a1e611] hover:duration-300 uppercase" href="/video/category">Dịch vụ</Link></li>
+                            <li><Link className="text-white hover:text-[#a1e611] hover:duration-300 uppercase" href="/blog/category">Tin tức</Link></li>
                         </ul>
                     </div>
                     <div className="col-span-1 cart">
                         <ul className="flex justify-evenly">
-                            <li><a href="" className="text-[#a1e611] hover:text-white uppercase"><i className="fa-solid fa-user"></i></a></li>
-                            <li><a href="" className="text-[#a1e611] hover:text-white uppercase"><i className="fa-solid fa-cart-shopping"></i></a></li>
+                            <li><a href="" className="text-[#a1e611] hover:text-white hover:duration-300 uppercase"><i className="fa-solid fa-user"></i></a></li>
+                            <li><a href="" className="text-[#a1e611] hover:text-white hover:duration-300 uppercase"><i className="fa-solid fa-cart-shopping"></i></a></li>
                         </ul>
                     </div>
                 </div>

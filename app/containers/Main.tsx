@@ -24,13 +24,12 @@ export function Main() {
     return (
         <div className="main mt-7 mb-7">
             <div className="container mx-auto">
-                <hr />
                 <div className="grid gap-0 grid-cols-4 md:items-center">
                     {
                         productList.map((e, i)=>(
                             <div key={i} className={i==3 || i==7 || i==11 ? "col-span-2 md:col-span-1 text-center border-b border-b-slate-300 border-r border-r-white": "col-span-2 md:col-span-1 text-center border-b border-b-slate-300 border-r border-r-slate-300"}>
                                 <div className="products p-4">
-                                    <Link href="/" className="text-[#333]">
+                                    <Link href="/product.html" className="text-[#333]">
                                         <div className="image">
                                             <Image
                                                 src={'/' + e.image}

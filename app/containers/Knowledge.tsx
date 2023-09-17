@@ -45,6 +45,18 @@ export function Knowledge() {
       view: 548,
       date: "10",
     },
+    {
+      title: "Cửa hàng xe điện tại HCM uy tín, giá tốt",
+      image: "cuahang.jpeg",
+      view: 548,
+      date: "10",
+    },
+    {
+      title: "Cửa hàng xe điện tại HCM uy tín, giá tốt",
+      image: "cuahang.jpeg",
+      view: 548,
+      date: "10",
+    },
   ];
   const formattedNumber = (numberToFormat: number) => {
     return new Intl.NumberFormat("en-US", {
@@ -57,7 +69,7 @@ export function Knowledge() {
       <div className="container mx-auto">
         <h2 className="mb-6 border-b border-[#333]">
           <span className="bg-[#a1e611] color-[#333] uppercase p-4 rounded font-semibold">
-            <Link href="/" className="hover:text-[#6fa400]">
+            <Link href="/blog/category" className="hover:text-[#6fa400] hover:duration-300">
               Kiến thức kinh nghiệm
             </Link>
           </span>
@@ -71,7 +83,7 @@ export function Knowledge() {
               slidesPerView: 1,
             },
             992: {
-              slidesPerView: 3,
+              slidesPerView: 4,
             },
           }}
           navigation
@@ -79,21 +91,25 @@ export function Knowledge() {
           {postList.map((e, i) => (
             <SwiperSlide
               key={i}
-              className="border border-[#6fa400] rounded p-2 bg-[#f7ffe8] hover:border-[#333] hover:bg-white"
+              className="rounded border border-[#333] bg-[#f5f5f5] hover:duration-300"
             >
-              <Link href="/">
-                <div className="image">
+              <Link href="/blog/post.html">
+                <div className="image relative">
                   <Image
                     src={"/" + e.image}
                     alt={e.title}
                     width={300}
                     height={300}
-                    className="rounded"
+                    className="rounded-t"
                   />
+                  <span className="bg-[#333] font-semibold p-2 absolute left-0.5 top-0.5 text-[#a1e611] rounded text-xs text-center opacity-90">
+                    19<br />Aug
+                  </span>
                 </div>
-                <div className="text-[#333] p-2 rounded-b">
-                  <h3 className="mb-2">{e.title}</h3>
-                  <div className="text-xs">
+                <div className="text-[#333] p-4 rounded-b">
+                  <h3 className="mb-2 font-semibold">{e.title}</h3>
+                  <p className="mb-2 text-xs text-[#333]">Thoát vị đĩa đệm là một căn bệnh khá nghiêm trọng, có thể để lại nhiều biến chứng nguy hiểm…</p>
+                  <div className="text-xs text-[#919191]">
                     <i className="fa fa-eye text-[#6fa400]"></i>{" "}
                     {formattedNumber(e.view)} lượt xem • 10 tháng trước
                   </div>

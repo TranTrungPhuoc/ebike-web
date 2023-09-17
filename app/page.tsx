@@ -1,6 +1,6 @@
 import {Carousel} from './containers/Carousel';
 import {Service} from './containers/Service';
-import {BestSeller} from './containers/BestSeller';
+import {BestSeller} from './containers/Category';
 import {Main} from './containers/Main';
 import {Attribute} from './containers/Attribute';
 import {Tutorial} from './containers/Tutorial';

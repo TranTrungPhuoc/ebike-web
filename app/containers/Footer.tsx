@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from "next/link";
 export function Footer() {
     return (
         <footer className="mt-7">
@@ -67,14 +68,14 @@ export function Footer() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" className="hover:text-[#6fa400]">
+                                    <Link href="/store" className="hover:text-[#6fa400]">
                                         <i className="fa fa-caret-right text-xs text-[#6fa400]"></i> Hệ thống cửa hàng
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="" className="hover:text-[#6fa400]">
+                                    <Link href="/contact" className="hover:text-[#6fa400]">
                                         <i className="fa fa-caret-right text-xs text-[#6fa400]"></i> Liên hệ
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -140,7 +141,7 @@ export function Footer() {
                         </div>
                         <div className="col-span-5 md:col-span-1">
                             <div className="grid gap-2 grid-cols-4 payment">
-                                <div className="col-span-1 md:col-span-2 bg-white p-2">
+                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded">
                                     <a href="">
                                         <Image
                                             src="/visa.png"
@@ -151,7 +152,7 @@ export function Footer() {
                                         />
                                     </a>
                                 </div>
-                                <div className="col-span-1 md:col-span-2 bg-white p-2">
+                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded">
                                     <a href="">
                                         <Image
                                             src="/mastercard.png"
@@ -162,7 +163,7 @@ export function Footer() {
                                         />
                                     </a>
                                 </div>
-                                <div className="col-span-1 md:col-span-2 bg-white p-2">
+                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded">
                                     <a href="">
                                         <Image
                                             src="/discover.png"
@@ -173,7 +174,7 @@ export function Footer() {
                                         />
                                     </a>
                                 </div>
-                                <div className="col-span-1 md:col-span-2 bg-white p-2">
+                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded">
                                     <a href="">
                                         <Image
                                             src="/american.png"

@@ -58,7 +58,7 @@ export function BestSeller() {
           {bestSellerList.map((e, i) => (
             <div className={i<4?"col-span-2 md:col-span-1 text-center border-b border-b-slate-300 border-r border-r-slate-300": "col-span-2 md:col-span-1 text-center border-b border-b-white border-r border-r-slate-300"}>
               <div className="products">
-                <Link href="/">
+                <Link href="/category">
                   <div className="image mb-2.5">
                     <Image
                       src={"/" + e.image}
@@ -68,7 +68,7 @@ export function BestSeller() {
                       layout="responsive"
                     />
                   </div>
-                  <h2 className="font-semibold text-xl">{e.title}</h2>
+                  <h2 className="font-semibold text-lg">{e.title}</h2>
                 </Link>
               </div>
             </div>
