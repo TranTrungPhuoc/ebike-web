@@ -1,6 +1,6 @@
 import {Carousel} from './containers/Carousel';
 import {Service} from './containers/Service';
-import {BestSeller} from './containers/Category';
+import {Category} from './containers/Category';
 import {Main} from './containers/Main';
 import {Attribute} from './containers/Attribute';
 import {Tutorial} from './containers/Tutorial';
@@ -11,7 +11,7 @@ export default function Home() {
     <main>
       <Carousel />
       <Service />
-      <BestSeller />
+      <Category />
       <Main />
       <Attribute />
       <Tutorial />

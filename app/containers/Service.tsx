@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 export function Service() {
   const serviceList = [
@@ -31,13 +31,14 @@ export function Service() {
           {serviceList.map((e, i) => (
             <div key={i} className="col-span-2 md:col-span-1 text-center">
               <div className="icon mb-5">
-                <Image
+                <img src={"/" + e.image} alt="" />
+                {/* <Image
                   src={"/" + e.image}
                   alt={e.title}
                   width={100}
                   height={100}
                   layout="responsive"
-                />
+                /> */}
               </div>
               <h3 className="uppercase text-[#333] font-bold text-lg mb-2.5">
                 <span className="md:mr-1">{e.title.split("/")[0]}</span>

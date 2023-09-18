@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link'
 export function Category() {
     const [value, setValue] = useState(2000000);
@@ -57,13 +57,14 @@ export function Category() {
                         <div className="post rounded border border-[#333] bg-[#f5f5f5] hover:duration-300">
                             <Link href="/blog/post.html">
                                 <div className="image relative">
-                                    <Image
+                                    <img src="/blog.jpeg" alt="" width={700} className="rounded-t" />
+                                    {/* <Image
                                         src="/blog.jpeg"
                                         alt="blog.jpeg"
                                         width={700}
                                         height={700}
                                         className="rounded-t"
-                                    />
+                                    /> */}
                                     <span className="bg-[#333] font-semibold p-2 absolute left-0.5 top-0.5 text-[#a1e611] rounded text-xs text-center opacity-90">
                                         19<br />Aug
                                     </span>
@@ -83,13 +84,14 @@ export function Category() {
                         <div className="post rounded border border-[#333] bg-[#f5f5f5] hover:duration-300">
                             <Link href="/blog/post.html">
                                 <div className="image relative">
-                                    <Image
+                                    <img src="/blog.jpeg" alt="" width={700} className="rounded-t" />
+                                    {/* <Image
                                         src="/blog.jpeg"
                                         alt="blog.jpeg"
                                         width={700}
                                         height={700}
                                         className="rounded-t"
-                                    />
+                                    /> */}
                                     <span className="bg-[#333] font-semibold p-2 absolute left-0.5 top-0.5 text-[#a1e611] rounded text-xs text-center opacity-90">
                                         19<br />Aug
                                     </span>
@@ -115,13 +117,14 @@ export function Category() {
                                         <div className="post rounded border border-[#333] bg-[#f5f5f5] hover:duration-300">
                                             <Link href="/blog/post.html">
                                                 <div className="image relative">
-                                                    <Image
+                                                    <img src="/blog.jpeg" alt="" width={700} className="rounded-t" />
+                                                    {/* <Image
                                                         src="/blog.jpeg"
                                                         alt="blog.jpeg"
                                                         width={700}
                                                         height={700}
                                                         className="rounded-t"
-                                                    />
+                                                    /> */}
                                                     <span className="bg-[#333] font-semibold p-2 absolute left-0.5 top-0.5 text-[#a1e611] rounded text-xs text-center opacity-90">
                                                         19<br />Aug
                                                     </span>
@@ -182,13 +185,14 @@ export function Category() {
                         <div className="content mt-10 text-[#666] px-4 leading-6 text-justify" dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
                         <div className="border-y py-4 my-5 flex gap-2">
                             <div className="basis-2/12 md:basis-1/12">
-                                <Image
+                                <img src="/user.webp" alt="" width={100} className="rounded-full" />
+                                {/* <Image
                                     src="/user.webp"
                                     alt="user.webp"
                                     width={100}
                                     height={100}
                                     layout="rounded-full"
-                                />
+                                /> */}
                             </div>
                             <div className="basis-10/12 md:basis-11/12 text-[#666]">
                                 <div className="font-semibold">admin@gmail.com</div>
@@ -205,13 +209,14 @@ export function Category() {
                                         <Link href='/'>
                                             <div className="flex flex-row">
                                                 <div className="basis-1/3">
-                                                        <Image
-                                                            src="/blog.jpeg"
-                                                            alt="blog.jpeg"
-                                                            width={200}
-                                                            height={200}
-                                                            className="rounded"
-                                                        />
+                                                    <img src="/blog.jpeg" alt="" width={200} className="rounded" />
+                                                    {/* <Image
+                                                        src="/blog.jpeg"
+                                                        alt="blog.jpeg"
+                                                        width={700}
+                                                        height={700}
+                                                        className="rounded-t"
+                                                    /> */}
                                                 </div>
                                                 <div className="basis-2/3 ml-2">
                                                     <h3 className="text-[12.5px] font-semibold hover:text-[#6fa400]">

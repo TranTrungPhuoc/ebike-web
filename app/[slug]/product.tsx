@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import TabProducts from '../components/TabProducts';
 import TabContents from '../components/TabContents';
@@ -233,24 +233,26 @@ export function Product() {
                             <div className="text-3xl font-bold text-[#6fa400]">028 6253 9118</div>
                         </div>
                         <div className="mb-2">
-                            <Image
+                            <img src="/quangcao.jpeg" alt="" width={300} className="rounded" />
+                            {/* <Image
                                 src="/quangcao.jpeg"
                                 alt="quangcao.jpeg"
                                 width={300}
                                 height={300}
                                 layout="responsive"
                                 className="rounded"
-                            />
+                            /> */}
                         </div>
                         <div>
-                            <Image
+                            <img src="/abc.jpeg" alt="" width={300} className="rounded" />
+                            {/* <Image
                                 src="/abc.jpeg"
                                 alt="abc.jpeg"
                                 width={300}
                                 height={300}
                                 layout="responsive"
                                 className="rounded"
-                            />
+                            /> */}
                         </div>
                     </div>
                 </div>
@@ -259,13 +261,14 @@ export function Product() {
                         <TabContents tabs={tabsDataContent} />
                         <div className="border-y py-4 my-5 flex gap-2">
                             <div className="basis-2/12 md:basis-1/12">
-                                <Image
+                                <img src="/user.webp" alt="" width={100} className="rounded-full" />
+                                {/* <Image
                                     src="/user.webp"
                                     alt="user.webp"
                                     width={100}
                                     height={100}
                                     layout="rounded-full"
-                                />
+                                /> */}
                             </div>
                             <div className="basis-10/12 md:basis-11/12 text-[#666]">
                                 <div className="font-semibold">admin@gmail.com</div>
@@ -324,7 +327,7 @@ export function Product() {
                         </div>
                     </div>
                 </div>
-                <div className="mt-8">
+                <div className="mt-8 px-4 md:px-4">
                     <h4 className="uppercase font-semibold mb-4">Sản phẩm liên quan</h4>
                     <Swiper
                         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -347,25 +350,27 @@ export function Product() {
                             >
                                 <Link href="/product.html" className="text-[#333]">
                                     <div className="image">
-                                        <Image
+                                        <img src="/p1.jpeg" alt="" width={100} />
+                                        {/* <Image
                                             src="/p1.jpeg"
                                             alt={e.title}
                                             width={100}
                                             height={100}
                                             layout="responsive"
-                                        />
+                                        /> */}
                                     </div>
                                     <h3 className="text-lg mb-2 font-semibold text-[#626262] mt-2">Xe đạp thể thao C24</h3>
                                     <p className="text-xs mb-4">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.</p>
                                     <div className="price font-bold mb-7 text-xl">21,000,000<sup>đ</sup></div>
                                     <div className="selled">
                                         <span className="bg-[#333] text-[#a1e611] rounded text-base relative">
-                                            <Image
+                                            <img src="/fire.webp" alt="" width={45} height={45} />
+                                            {/* <Image
                                                 src="/fire.webp"
                                                 alt="fire.webp"
                                                 width={45}
                                                 height={45}
-                                            />
+                                            /> */}
                                             Đã bán 21/30
                                         </span>
                                     </div>
@@ -374,7 +379,7 @@ export function Product() {
                         ))}
                     </Swiper>
                 </div>
-                <div className="mt-8">
+                <div className="mt-8 px-4 md:px-4">
                     <h4 className="uppercase font-semibold mb-4">Sản phẩm bạn đã xem</h4>
                     <Swiper
                         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -397,25 +402,27 @@ export function Product() {
                         >
                             <Link href="/product.html" className="text-[#333]">
                                 <div className="image">
-                                    <Image
+                                    <img src="/p1.jpeg" alt="" width={100} />
+                                    {/* <Image
                                         src="/p1.jpeg"
                                         alt={e.title}
                                         width={100}
                                         height={100}
                                         layout="responsive"
-                                    />
+                                    /> */}
                                 </div>
                                 <h3 className="text-lg mb-2 font-semibold text-[#626262] mt-2">Xe đạp thể thao C24</h3>
                                 <p className="text-xs mb-4">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.</p>
                                 <div className="price font-bold mb-7 text-xl">21,000,000<sup>đ</sup></div>
                                 <div className="selled">
                                     <span className="bg-[#333] text-[#a1e611] rounded text-base relative">
-                                        <Image
+                                        <img src="/fire.webp" alt="" width={45} height={45} />
+                                        {/* <Image
                                             src="/fire.webp"
                                             alt="fire.webp"
                                             width={45}
                                             height={45}
-                                        />
+                                        /> */}
                                         Đã bán 21/30
                                     </span>
                                 </div>

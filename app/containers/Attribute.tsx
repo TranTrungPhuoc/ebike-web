@@ -29,6 +29,10 @@ export function Attribute() {
     setIsPopupOpen(false);
   };
   const videoSrc = 'https://www.youtube.com/embed/6dtUbKZVj5c';
+  const slides = [
+    {title: 'Tốc độ vượt trội', image: 'speed.png', slogan: 'Lên đến 50km/1h'},
+    {title: 'Khung nhôm đúc nguyên khối', image: 'bike.png', slogan: 'Cho sự chắc chắn, an toàn'}
+  ]
   return (
     <div className="attribute">
       <div className="container mx-auto">
@@ -64,66 +68,24 @@ export function Attribute() {
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log("slide change")}
             >
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
-                <div className="image mb-5">
-                  <Image
-                    src="/speed.png"
-                    alt="speed.png"
-                    width={200}
-                    height={200}
-                    className="m-auto"
-                  />
-                </div>
-                <h4 className="text-lg uppercase font-semibold">
-                  Tốc độ vượt trội
-                </h4>
-                <div className="text-sm">Lên đến 50km/1h</div>
-              </SwiperSlide>
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
-                <div className="image mb-5">
-                  <Image
-                    src="/bike.png"
-                    alt="bike.png"
-                    width={200}
-                    height={200}
-                    className="m-auto"
-                  />
-                </div>
-                <h4 className="text-lg uppercase font-semibold">
-                  Khung nhôm đúc nguyên khối
-                </h4>
-                <div className="text-sm">Cho sự chắc chắn, an toàn</div>
-              </SwiperSlide>
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
-                <div className="image mb-5">
-                  <Image
-                    src="/speed.png"
-                    alt="speed.png"
-                    width={200}
-                    height={200}
-                    className="m-auto"
-                  />
-                </div>
-                <h4 className="text-lg uppercase font-semibold">
-                  Tốc độ vượt trội
-                </h4>
-                <div className="text-sm">Lên đến 50km/1h</div>
-              </SwiperSlide>
-              <SwiperSlide className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
-                <div className="image mb-5">
-                  <Image
-                    src="/bike.png"
-                    alt="bike.png"
-                    width={200}
-                    height={200}
-                    className="m-auto"
-                  />
-                </div>
-                <h4 className="text-lg uppercase font-semibold">
-                  Khung nhôm đúc nguyên khối
-                </h4>
-                <div className="text-sm">Cho sự chắc chắn, an toàn</div>
-              </SwiperSlide>
+              {
+                slides.map((e,i)=>(
+                  <SwiperSlide key={i} className="text-center h-full rounded-3xl border border-2 border-[#333] px-5 py-14">
+                    <div className="image mb-5">
+                      <img src={"/" + e.image} alt="" width={200} height={200} className="m-auto" />
+                      {/* <Image
+                        src={e.image}
+                        alt="speed.png"
+                        width={200}
+                        height={200}
+                        className="m-auto"
+                      /> */}
+                    </div>
+                    <h4 className="text-lg uppercase font-semibold">{e.title}</h4>
+                    <div className="text-sm">{e.slogan}</div>
+                  </SwiperSlide>
+                ))
+              }
             </Swiper>
           </div>
         </div>

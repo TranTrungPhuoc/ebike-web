@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import {ViewMore} from './viewMore';
 import { Relative } from './relative';
@@ -59,13 +59,14 @@ export function Post() {
                         <div className="content md:mt-10 text-[#666] md:px-4 leading-6 text-justify" dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
                         <div className="border-y py-4 my-5 flex gap-2">
                             <div className="basis-2/12 md:basis-1/12">
-                                <Image
+                                <img src="/user.webp" alt="" width={100} className="rounded-full" />
+                                {/* <Image
                                     src="/user.webp"
                                     alt="user.webp"
                                     width={100}
                                     height={100}
                                     layout="rounded-full"
-                                />
+                                /> */}
                             </div>
                             <div className="basis-10/12 md:basis-11/12 text-[#666]">
                                 <div className="font-semibold">admin@gmail.com</div>

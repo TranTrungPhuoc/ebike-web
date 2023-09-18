@@ -1,6 +1,7 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from "next/link";
 export function Footer() {
+    const payments = ['visa.png','mastercard.png','discover.png','american.png']
     return (
         <footer className="mt-7">
             <div className="p-7 bg-[#e0e0e0]">
@@ -124,12 +125,13 @@ export function Footer() {
                                 <li>Email: info@ebike.com</li>
                             </ul>
                             <div className="mt-2">
-                                <Image
+                                <img src="/dathongbao.png" alt="" width={150} height={50} />
+                                {/* <Image
                                     src="/dathongbao.png"
                                     alt="dathongbao.png"
                                     width={150}
                                     height={50}
-                                />
+                                /> */}
                             </div>
                         </div>
                         <div className="col-span-5 md:col-span-2">
@@ -141,50 +143,22 @@ export function Footer() {
                         </div>
                         <div className="col-span-5 md:col-span-1">
                             <div className="grid gap-2 grid-cols-4 payment">
-                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded">
-                                    <a href="">
-                                        <Image
-                                            src="/visa.png"
-                                            alt="visa.png"
-                                            width={80}
-                                            height={50}
-                                            className="hover:opacity-70"
-                                        />
-                                    </a>
-                                </div>
-                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded">
-                                    <a href="">
-                                        <Image
-                                            src="/mastercard.png"
-                                            alt="mastercard.png"
-                                            width={80}
-                                            height={50}
-                                            className="hover:opacity-70"
-                                        />
-                                    </a>
-                                </div>
-                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded">
-                                    <a href="">
-                                        <Image
-                                            src="/discover.png"
-                                            alt="discover.png"
-                                            width={80}
-                                            height={50}
-                                            className="hover:opacity-70"
-                                        />
-                                    </a>
-                                </div>
-                                <div className="col-span-1 md:col-span-2 bg-white p-2 rounded">
-                                    <a href="">
-                                        <Image
-                                            src="/american.png"
-                                            alt="american.png"
-                                            width={80}
-                                            height={50}
-                                            className="hover:opacity-70"
-                                        />
-                                    </a>
-                                </div>
+                                {
+                                    payments.map((e,i)=>(
+                                        <div key={i} className="col-span-1 md:col-span-2 bg-white p-2 rounded">
+                                            <a href="">
+                                                <img src={'/' + e} alt="" width={80} height={50} className="hover:opacity-70" />
+                                                {/* <Image
+                                                    src="/visa.png"
+                                                    alt="visa.png"
+                                                    width={80}
+                                                    height={50}
+                                                    className="hover:opacity-70"
+                                                /> */}
+                                            </a>
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from 'next/link'
 export default function Page() {
     const storeList = [
@@ -67,13 +67,14 @@ export default function Page() {
                             <div key={i} className="col-span-3 md:col-span-2 text-center">
                                 <div className="rounded hover:bg-[#f5f5f5] shadow-md shadow-[#ccc] hover:duration-300">
                                     <div className="image">
-                                        <Image
+                                        <img src="/xe-dap-tphcm.jpeg" alt="" width={500} className="w-full rounded-t" />
+                                        {/* <Image
                                             src="/xe-dap-tphcm.jpeg"
                                             alt="xe-dap-tphcm.jpeg"
                                             width={500}
                                             height={500}
                                             className="w-full rounded-t"
-                                        />
+                                        /> */}
                                     </div>
                                     <h5 className="text-xl font-semibold mt-2">Quận 7</h5>
                                     <div className="contact p-2">

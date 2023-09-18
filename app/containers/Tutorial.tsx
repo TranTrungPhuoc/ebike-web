@@ -96,13 +96,14 @@ export function Tutorial() {
                         >
                             <Link href="/video/post.html">
                                 <div className="image relative">
-                                    <Image
+                                    <img src={"/" + e.image} alt="" className="rounded-t" />
+                                    {/* <Image
                                         src={"/" + e.image}
                                         alt={e.title}
                                         width={300}
                                         height={300}
                                         className="rounded"
-                                    />
+                                    /> */}
                                     <span className="bg-white border border-[#333] px-2.5 py-1 rounded-lg absolute text-[#c50000] text-center opacity-90 top-1/2 left-1/2">
                                         <i className="fa-brands fa-youtube fa-2x"></i>
                                     </span>

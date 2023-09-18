@@ -4,7 +4,7 @@ const TabContents = (props: any) => {
     const [activeTab, setActiveTab] = useState(0);
     return (
         <div className="content">
-            <div className="grid grid-cols-3 product-library relative" style={{top: '-2px;'}}>
+            <div className="grid grid-cols-3 product-library relative product-content">
                 {props.tabs.map((tab: any, index: any) => (
                     <div 
                         key={index}

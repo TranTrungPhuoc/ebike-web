@@ -149,8 +149,12 @@ main .relative__product{
   padding-bottom: 20px;
 }
 
-main .relative__product img{
+/* main .relative__product img{
   width: inherit;
+} */
+
+main .relative__product .selled img{
+  width: 45px;
 }
 
 .selled span {
@@ -332,6 +336,9 @@ main .index h4::after {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
+}
+.product-content{
+  top: -2px;
 }
 
 @media (max-width: 767px) {

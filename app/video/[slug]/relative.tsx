@@ -66,13 +66,7 @@ export function Relative() {
     return (
         <div className="tutorial md:mt-12 mx-4 md:mx-0">
             <div className="container mx-auto">
-                <h2 className="mb-6 border-b border-[#333]">
-                    <span className="bg-[#a1e611] color-[#333] uppercase p-4 rounded font-semibold">
-                        <Link href="/video/category" className="hover:text-[#6fa400] hover:duration-300">
-                            Bài viết liên quan
-                        </Link>
-                    </span>
-                </h2>
+                <h4 className="uppercase font-semibold mb-4">Bài viết liên quan</h4>
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                     spaceBetween={20}

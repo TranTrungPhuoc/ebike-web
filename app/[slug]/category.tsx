@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link'
 export function Category() {
     const [value, setValue] = useState(2000000);
@@ -29,6 +29,7 @@ export function Category() {
         {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'}
     ]
     const htmlContent = detail.content;
+    const brands = ['dk-bike-200-2.png','Hitasa-200-2.png','jvc-eco-2.png','LOGO-XE-DIEN-06.png','nijia-logo-200.png']
     return (
         <div className="category mt-4">
             <div className="container mx-auto">
@@ -61,61 +62,22 @@ export function Category() {
                             </h3>
                             <div className="mt-6">
                                 <ul>
-                                    <li className="flex border-b border-b-slate-300 pb-4 mb-4">
-                                        <input type="checkbox" id="th1" />
-                                        <label htmlFor="th1" className="uppercase cursor-pointer ml-4 hover:text-[#6fa400]">
-                                            <Image
-                                                src="/dk-bike-200-2.png"
-                                                alt="dk-bike-200-2.png"
-                                                width={100}
-                                                height={100}
-                                            />
-                                        </label>
-                                    </li>
-                                    <li className="flex border-b border-b-slate-300 pb-4 mb-4">
-                                        <input type="checkbox" id="th2" />
-                                        <label htmlFor="th2" className="uppercase cursor-pointer ml-4 hover:text-[#6fa400]">
-                                            <Image
-                                                src="/Hitasa-200-2.png"
-                                                alt="Hitasa-200-2.png"
-                                                width={100}
-                                                height={100}
-                                            />
-                                        </label>
-                                    </li>
-                                    <li className="flex border-b border-b-slate-300 pb-4 mb-4">
-                                        <input type="checkbox" id="th3" />
-                                        <label htmlFor="th3" className="uppercase cursor-pointer ml-4 hover:text-[#6fa400]">
-                                            <Image
-                                                src="/jvc-eco-2.png"
-                                                alt="jvc-eco-2.png"
-                                                width={100}
-                                                height={100}
-                                            />
-                                        </label>
-                                    </li>
-                                    <li className="flex border-b border-b-slate-300 pb-4 mb-4">
-                                        <input type="checkbox" id="th4" />
-                                        <label htmlFor="th4" className="uppercase cursor-pointer ml-4 hover:text-[#6fa400]">
-                                            <Image
-                                                src="/LOGO-XE-DIEN-06.png"
-                                                alt="LOGO-XE-DIEN-06.png"
-                                                width={100}
-                                                height={100}
-                                            />
-                                        </label>
-                                    </li>
-                                    <li className="flex">
-                                        <input type="checkbox" id="th5" />
-                                        <label htmlFor="th5" className="uppercase cursor-pointer ml-4 hover:text-[#6fa400]">
-                                            <Image
-                                                src="/nijia-logo-200.png"
-                                                alt="nijia-logo-200.png"
-                                                width={100}
-                                                height={100}
-                                            />
-                                        </label>
-                                    </li>
+                                    {
+                                        brands.map((e,i)=>(
+                                            <li key={i} className="flex border-b border-b-slate-300 pb-4 mb-4">
+                                                <input type="checkbox" id="th1" />
+                                                <label htmlFor="th1" className="uppercase cursor-pointer ml-4 hover:text-[#6fa400]">
+                                                    <img src={'/' + e} alt="" width={100} />
+                                                    {/* <Image
+                                                        src="/dk-bike-200-2.png"
+                                                        alt="dk-bike-200-2.png"
+                                                        width={100}
+                                                        height={100}
+                                                    /> */}
+                                                </label>
+                                            </li>
+                                        ))
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -222,25 +184,27 @@ export function Category() {
                                         <div className="products p-4">
                                             <Link href="/product.html" className="text-[#333]">
                                                 <div className="image">
-                                                    <Image
+                                                    <img src={'/' + e.image} alt="" width={500} />
+                                                    {/* <Image
                                                         src={'/' + e.image}
                                                         alt={e.title}
                                                         width={100}
                                                         height={100}
                                                         layout="responsive"
-                                                    />
+                                                    /> */}
                                                 </div>
                                                 <h3 className="text-sm mb-2 font-semibold text-[#626262]">{e.title}</h3>
                                                 <p className="text-xs mb-4">{e.description}</p>
                                                 <div className="price font-bold mb-7 text-xl">{formattedNumber(e.price)}</div>
                                                 <div className="selled">
                                                     <span className="bg-[#333] text-[#a1e611] rounded text-base relative">
-                                                        <Image
+                                                        <img src="/fire.webp" alt="" width={45} />
+                                                        {/* <Image
                                                             src="/fire.webp"
                                                             alt="fire.webp"
                                                             width={45}
                                                             height={45}
-                                                        />
+                                                        /> */}
                                                         Đã bán {e.selled + '/' + e.inventory}
                                                     </span>
                                                 </div>
@@ -292,13 +256,14 @@ export function Category() {
                         <div className="content mt-10 text-[#666] px-4 leading-6 text-justify" dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
                         <div className="border-y py-4 my-5 flex gap-2">
                             <div className="basis-2/12 md:basis-1/12">
-                                <Image
+                                <img src="/user.webp" alt="" width={100} className="rounded-full" />
+                                {/* <Image
                                     src="/user.webp"
                                     alt="user.webp"
                                     width={100}
                                     height={100}
                                     layout="rounded-full"
-                                />
+                                /> */}
                             </div>
                             <div className="basis-10/12 md:basis-11/12 text-[#666]">
                                 <div className="font-semibold">admin@gmail.com</div>

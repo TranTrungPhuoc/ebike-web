@@ -95,13 +95,14 @@ export function Knowledge() {
             >
               <Link href="/blog/post.html">
                 <div className="image relative">
-                  <Image
+                  <img src={"/" + e.image} alt="" className="rounded-t" />
+                  {/* <Image
                     src={"/" + e.image}
                     alt={e.title}
                     width={300}
                     height={300}
                     className="rounded-t"
-                  />
+                  /> */}
                   <span className="bg-[#333] font-semibold p-2 absolute left-0.5 top-0.5 text-[#a1e611] rounded text-xs text-center opacity-90">
                     19<br />Aug
                   </span>

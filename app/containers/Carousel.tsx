@@ -9,9 +9,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import Image from 'next/image';
+// import Image from 'next/image';
 
 export function Carousel() {
+    const array = ['2.jpeg','2.jpeg','2.jpeg']
     return (
         <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -23,36 +24,21 @@ export function Carousel() {
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
         >
-            <SwiperSlide>
-                <Image
-                    src="/2.jpeg"
-                    alt="2.jpeg"
-                    width={500}
-                    height={300}
-                    layout="responsive"
-                    className="image"
-                />
-            </SwiperSlide>
-            <SwiperSlide>
-                <Image
-                    src="/2.jpeg"
-                    alt="2.jpeg"
-                    width={500}
-                    height={300}
-                    layout="responsive"
-                    className="image"
-                />
-            </SwiperSlide>
-            <SwiperSlide>
-                <Image
-                    src="/2.jpeg"
-                    alt="2.jpeg"
-                    width={500}
-                    height={300}
-                    layout="responsive"
-                    className="image"
-                />
-            </SwiperSlide>
+            {
+                array.map((e, i)=>(
+                    <SwiperSlide key={i}>
+                        <img src="/2.jpeg" alt="" />
+                        {/* <Image
+                            src="/2.jpeg"
+                            alt="2.jpeg"
+                            width={500}
+                            height={300}
+                            layout="responsive"
+                            className="image"
+                        /> */}
+                    </SwiperSlide>
+                ))
+            }
         </Swiper>
     );
 }

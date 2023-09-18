@@ -15,7 +15,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 export function Relative() {
@@ -66,13 +66,7 @@ export function Relative() {
     return (
         <div className="knowledge md:mt-12 mx-4 md:mx-0">
             <div className="container mx-auto">
-                <h2 className="mb-6 border-b border-[#333]">
-                    <span className="bg-[#a1e611] color-[#333] uppercase p-4 rounded font-semibold">
-                        <Link href="/blog/category" className="hover:text-[#6fa400] hover:duration-300">
-                            Bài viết liên quan
-                        </Link>
-                    </span>
-                </h2>
+                <h4 className="uppercase font-semibold mb-4">Bài viết liên quan</h4>
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                     spaceBetween={20}
@@ -94,13 +88,14 @@ export function Relative() {
                         >
                             <Link href="/blog/post.html">
                                 <div className="image relative">
-                                    <Image
+                                    <img src={"/" + e.image} alt="" width={300} className="rounded-t" />
+                                    {/* <Image
                                         src={"/" + e.image}
                                         alt={e.title}
                                         width={300}
                                         height={300}
                                         className="rounded-t"
-                                    />
+                                    /> */}
                                     <span className="bg-[#333] font-semibold p-2 absolute left-0.5 top-0.5 text-[#a1e611] rounded text-xs text-center opacity-90">
                                         19<br />Aug
                                     </span>
