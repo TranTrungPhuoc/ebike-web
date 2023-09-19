@@ -14,7 +14,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import Image from "next/image";
+// import Image from "next/image";
 import Iframe from '../components/Iframe';
 
 import React, { useState } from "react";
@@ -39,14 +39,15 @@ export function Attribute() {
         <div className="grid gap-6 grid-cols-4 mx-4 md:mx-0 md:grid-cols-8 md:items-center">
           <div className="col-span-4 md:col-span-4">
             <div className="relative cursor-pointer" onClick={openPopup}>
-              <Image
+              <img src="/video.jpeg" alt="" width={500} className="image rounded" />
+              {/* <Image
                 src="/video.jpeg"
                 alt="video.jpeg"
                 width={500}
                 height={500}
                 layout="responsive"
                 className="image rounded"
-              />
+              /> */}
               <span className="video inline-block top-1/2 left-1/2 leading-8 w-14 h-9 border absolute border-2 border-white text-center text-white bg-[#333] rounded-md">
                 <i className="fa fa-play"></i>
               </span>
@@ -65,8 +66,8 @@ export function Attribute() {
                   slidesPerView: 2,
                 },
               }}
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
+              // onSwiper={(swiper) => console.log(swiper)}
+              // onSlideChange={() => console.log("slide change")}
             >
               {
                 slides.map((e,i)=>(

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 const TabContents = (props: any) => {
     const [activeTab, setActiveTab] = useState(0);
     return (

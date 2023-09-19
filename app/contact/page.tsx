@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from 'next/link'
 export default function Page() {
     const storeList = [
@@ -58,13 +58,14 @@ export default function Page() {
                         </div>
                         <div className="col-span-4 md:col-span-1 text-sm">
                             <div className="mb-4">
-                                <Image
+                                <img src="/xe-dap-tphcm.jpeg" alt="" width={500} className="w-full rounded-t" />
+                                {/* <Image
                                     src="/xe-dap-tphcm.jpeg"
                                     alt="xe-dap-tphcm.jpeg"
                                     width={500}
                                     height={500}
                                     className="w-full rounded-t"
-                                />
+                                /> */}
                             </div>
                             <h2 className="text-xl font-semibold text-[#333]">Trụ sở chính: 458 Nguyễn Thị Thập, Phường Tân Quy, Quận 7, TP. Hồ Chí Mình.</h2>
                             <h3 className="mt-4 text-slate-500">Điện Thoại: <b className="text-[red]">028.3535.2458</b></h3>
@@ -82,13 +83,14 @@ export default function Page() {
                                 storeList.map((e, i) => (
                                     <div key={i} className="grid gap-4 grid-cols-3 mb-4 p-2 hover:bg-[#f5f5f5] shadow-md shadow-[#ccc] hover:duration-300">
                                         <div className="col-span-1">
-                                            <Image
+                                            <img src="/xe-dap-tphcm.jpeg" alt="" width={500} className="w-full rounded-t" />
+                                            {/* <Image
                                                 src="/xe-dap-tphcm.jpeg"
                                                 alt="xe-dap-tphcm.jpeg"
-                                                width={200}
-                                                height={200}
+                                                width={500}
+                                                height={500}
                                                 className="w-full rounded-t"
-                                            />
+                                            /> */}
                                         </div>
                                         <div className="col-span-2 text-sm">
                                             <h3 className="font-semibold text-[#333] mb-2">

@@ -1,8 +1,8 @@
-// File: C:\Users\Admin\Desktop\ebike-web\app\page.tsx
-import * as entry from '../../../app/page.js'
+// File: C:\Users\Admin\Desktop\ebike-web\app\store\page.tsx
+import * as entry from '../../../../app/store/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../app/page.js')
+type TEntry = typeof import('../../../../app/store/page.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{

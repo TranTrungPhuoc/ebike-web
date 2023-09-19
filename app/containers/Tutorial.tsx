@@ -15,7 +15,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 export function Tutorial() {
