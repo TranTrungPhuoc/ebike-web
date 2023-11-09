@@ -386,3 +386,127 @@ main .index h4::after {
     max-width: 1100px;
   }
 }
+
+.network-nav{
+  background: white;
+  width: 100%;
+  border-radius: 0;
+  color: #fff;
+  height: 60px;
+  line-height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  padding: 5px;
+  margin: 0;
+  box-shadow: 0 4px 10px 0 #000;
+  right: 13px;
+  border: 1px solid #f2f2f2;
+}
+
+.network-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.network-nav li {
+  float: left;
+  width: 20%;
+  height: 50px;
+}
+
+.network-nav ul>li a {
+  border: none;
+  padding: 0;
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 15px;
+  color: #515151;
+  font-weight: 700;
+  max-width: 72.19px;
+  max-height: 54px;
+  text-decoration: none;
+}
+
+.network-nav .map {
+  background: url('https://thore.vn/ap-content/uploads/2023/09/icon-map.webp') no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: auto;
+}
+
+.network-nav .zalo {
+  background: url('https://thore.vn/ap-content/uploads/2023/09/zalo_icon.png') no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: auto;
+}
+
+.phone_animation {
+  box-shadow: none;
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: #6cb917;
+  line-height: 15px;
+  border: 2px solid white;
+}
+
+.network-nav .phone {
+  background: url('https://thore.vn/ap-content/uploads/2023/09/icon-phone-w.webp') no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 33px;
+  width: 27px;
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+.btn_phone_txt {
+  position: relative;
+  top: 35px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.network-nav .messenger {
+  background: url('https://thore.vn/ap-content/uploads/2023/09/messenger.png') no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: auto;
+}
+
+.network-nav .sms {
+  background: url('https://thore.vn/ap-content/uploads/2023/09/sms.png') no-repeat;
+  background-size: contain;
+  width: 38px;
+  height: 36px;
+  display: block;
+  margin: auto;
+}
+
+.mobile{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #f0f0f0;
+  overflow-y: auto;
+  height: 100vh;
+}

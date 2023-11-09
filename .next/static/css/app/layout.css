@@ -8594,6 +8594,9 @@ video {
 .basis-1\/4 {
   flex-basis: 25%;
 }
+.basis-1\/5 {
+  flex-basis: 20%;
+}
 .basis-10\/12 {
   flex-basis: 83.333333%;
 }
@@ -8605,6 +8608,9 @@ video {
 }
 .basis-3\/4 {
   flex-basis: 75%;
+}
+.basis-4\/5 {
+  flex-basis: 80%;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -8941,6 +8947,9 @@ video {
 .pb-2 {
   padding-bottom: 0.5rem;
 }
+.pb-24 {
+  padding-bottom: 6rem;
+}
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -8952,6 +8961,9 @@ video {
 }
 .pt-4 {
   padding-top: 1rem;
+}
+.pt-7 {
+  padding-top: 1.75rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -9055,6 +9067,10 @@ video {
 .text-\[\#ccc\] {
   --tw-text-opacity: 1;
   color: rgb(204 204 204 / var(--tw-text-opacity));
+}
+.text-\[\#fff\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .text-\[red\] {
   --tw-text-opacity: 1;
@@ -9494,6 +9510,130 @@ main .index h4::after {
   }
 }
 
+.network-nav{
+  background: white;
+  width: 100%;
+  border-radius: 0;
+  color: #fff;
+  height: 60px;
+  line-height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  padding: 5px;
+  margin: 0;
+  box-shadow: 0 4px 10px 0 #000;
+  right: 13px;
+  border: 1px solid #f2f2f2;
+}
+
+.network-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.network-nav li {
+  float: left;
+  width: 20%;
+  height: 50px;
+}
+
+.network-nav ul>li a {
+  border: none;
+  padding: 0;
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 15px;
+  color: #515151;
+  font-weight: 700;
+  max-width: 72.19px;
+  max-height: 54px;
+  text-decoration: none;
+}
+
+.network-nav .map {
+  background: url('https://thore.vn/ap-content/uploads/2023/09/icon-map.webp') no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: auto;
+}
+
+.network-nav .zalo {
+  background: url('https://thore.vn/ap-content/uploads/2023/09/zalo_icon.png') no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: auto;
+}
+
+.phone_animation {
+  box-shadow: none;
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: #6cb917;
+  line-height: 15px;
+  border: 2px solid white;
+}
+
+.network-nav .phone {
+  background: url('https://thore.vn/ap-content/uploads/2023/09/icon-phone-w.webp') no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 33px;
+  width: 27px;
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+.btn_phone_txt {
+  position: relative;
+  top: 35px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.network-nav .messenger {
+  background: url('https://thore.vn/ap-content/uploads/2023/09/messenger.png') no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: auto;
+}
+
+.network-nav .sms {
+  background: url('https://thore.vn/ap-content/uploads/2023/09/sms.png') no-repeat;
+  background-size: contain;
+  width: 38px;
+  height: 36px;
+  display: block;
+  margin: auto;
+}
+
+.mobile{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #f0f0f0;
+  overflow-y: auto;
+  height: 100vh;
+}
+
 .hover\:border-\[\#6fa400\]:hover {
   --tw-border-opacity: 1;
   border-color: rgb(111 164 0 / var(--tw-border-opacity));
@@ -9708,6 +9848,10 @@ main .index h4::after {
     display: flex;
   }
 
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:basis-1\/12 {
     flex-basis: 8.333333%;
   }
@@ -9759,6 +9903,10 @@ main .index h4::after {
 
   .md\:p-0 {
     padding: 0px;
+  }
+
+  .md\:p-7 {
+    padding: 1.75rem;
   }
 
   .md\:px-0 {

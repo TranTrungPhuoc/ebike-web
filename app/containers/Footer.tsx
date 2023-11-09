@@ -115,7 +115,7 @@ export function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="p-7 bg-[#333] text-white">
+            <div className="px-7 pt-7 pb-24 md:p-7 bg-[#333] text-white">
                 <div className="container mx-auto">
                     <div className="grid gap-6 grid-cols-4">
                         <div className="col-span-5 md:col-span-1">

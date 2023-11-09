@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { Header } from './containers/Header'
 import { Nav } from './containers/Nav'
 import { Footer } from './containers/Footer'
+import { Network } from './containers/Network'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
+        <Network />
       </body>
     </html>
   )

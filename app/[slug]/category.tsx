@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import Link from 'next/link'
 export function Category() {
     const [value, setValue] = useState(2000000);
-    const handleChange = (e: any) => {
-        setValue(e.target.value);
-    };
+    const handleChange = (e: any) => { setValue(e.target.value); };
+    const [status, setStatus] = useState(false);
+    const handleTabClick = () => { setStatus(!status); };
     const formattedNumber = (numberToFormat: number) => {
         return new Intl.NumberFormat('en-US', {
             style: 'decimal',
@@ -34,7 +34,7 @@ export function Category() {
         <div className="category mt-4">
             <div className="container mx-auto">
                 <div className="grid gap-2 md:grid-cols-12">
-                    <div className="hidden md:block md:col-span-3">
+                    <div className={(!status ? "hidden" : "mobile") + " md:block md:col-span-3"}>
                         <div className="border border-r-slate-300 rounded-md p-4">
                             <h3 className="uppercase text-[#333] font-semibold border-b border-r-slate-300 pb-2">
                                 Danh Mục Sản Phẩm
@@ -167,13 +167,16 @@ export function Category() {
                     <div className="md:col-span-9">
                         <div className="md:flex flex-row">
                             <h1 className="basis-3/4 text-2xl pl-4 pt-0 pb-4 font-semibold text-[#333]">{detail.title}</h1>
-                            <div className="basis-1/4 mx-4 md:mx-0">
-                                <form action="">
+                            <div className="basis-1/4 mx-4 md:mx-0 flex flex-row">
+                                <form action="" className="basis-4/5">
                                     <select name="sort" id="sort" className="bg-[#e0e0e0] p-2 rounded">
                                         <option value="0">Theo thứ tự phổ biến</option>
                                         <option value="1">Giá: Từ A - Z</option>
                                     </select>
                                 </form>
+                                <div className={(!status ? "bg-[#a1e611] text-[#333]" : "bg-[#333] text-[#fff]") + " md:hidden p-2 basis-1/5 text-center rounded"} onClick={() => handleTabClick()}>
+                                    <i className={!status ? "fa-solid fa-bars": "fa fa-close"}></i>
+                                </div>
                             </div>
                         </div>
                         <hr className="mt-4 md:mt-0"/>
