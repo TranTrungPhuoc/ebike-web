@@ -188,26 +188,13 @@ export function Category() {
                                             <Link href="/product.html" className="text-[#333]">
                                                 <div className="image">
                                                     <img src={'/' + e.image} alt="" width={500} />
-                                                    {/* <Image
-                                                        src={'/' + e.image}
-                                                        alt={e.title}
-                                                        width={100}
-                                                        height={100}
-                                                        layout="responsive"
-                                                    /> */}
                                                 </div>
                                                 <h3 className="text-sm mb-2 font-semibold text-[#626262]">{e.title}</h3>
                                                 <p className="text-xs mb-4">{e.description}</p>
                                                 <div className="price font-bold mb-7 text-xl">{formattedNumber(e.price)}</div>
                                                 <div className="selled">
-                                                    <span className="bg-[#333] text-[#a1e611] rounded text-base relative">
+                                                    <span className="bg-[#333] text-[#a1e611] rounded text-sm relative">
                                                         <img src="/fire.webp" alt="" width={45} />
-                                                        {/* <Image
-                                                            src="/fire.webp"
-                                                            alt="fire.webp"
-                                                            width={45}
-                                                            height={45}
-                                                        /> */}
                                                         Đã bán {e.selled + '/' + e.inventory}
                                                     </span>
                                                 </div>

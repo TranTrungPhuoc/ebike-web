@@ -6,6 +6,7 @@ import {Attribute} from './containers/Attribute';
 import {Tutorial} from './containers/Tutorial';
 import {Knowledge} from './containers/Knowledge';
 import {Store} from './containers/Store';
+import { Ads } from './containers/Ads';
 export default function Home() {
   return (
     <main>
@@ -17,6 +18,7 @@ export default function Home() {
       <Tutorial />
       <Knowledge />
       <Store />
+      <Ads />
     </main>
   )
 }

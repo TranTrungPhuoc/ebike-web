@@ -60,13 +60,6 @@ export function Post() {
                         <div className="border-y py-4 my-5 flex gap-2">
                             <div className="basis-2/12 md:basis-1/12">
                                 <img src="/user.webp" alt="" width={100} className="rounded-full" />
-                                {/* <Image
-                                    src="/user.webp"
-                                    alt="user.webp"
-                                    width={100}
-                                    height={100}
-                                    layout="rounded-full"
-                                /> */}
                             </div>
                             <div className="basis-10/12 md:basis-11/12 text-[#666]">
                                 <div className="font-semibold">admin@gmail.com</div>

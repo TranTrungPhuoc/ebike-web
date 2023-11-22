@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from 'react';
-// import Image from 'next/image';
 import Link from 'next/link';
 import TabProducts from '../components/TabProducts';
 import TabContents from '../components/TabContents';
@@ -155,75 +154,75 @@ export function Product() {
                         <div className="mt-4 text-sm">
                             <div className="flex mb-4 gap-2 items-center">
                                 <span className="text-[#919191]">Màu sắc:</span>
-                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer">
+                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer text-xs">
                                     Vàng
                                 </span>
-                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer">
+                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer text-xs">
                                     Trắng
                                 </span>
-                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer">
+                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer text-xs">
                                     Đỏ
                                 </span>
-                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer">
+                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer text-xs">
                                     Xanh
                                 </span>
                             </div>
                             <div className="flex gap-2 items-center">
                                 <span className="text-[#919191]">Pin:</span>
-                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer">
+                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer text-xs">
                                     10 mAh
                                 </span>
-                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer">
+                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer text-xs">
                                     20 mAh
                                 </span>
-                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer">
+                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer text-xs">
                                     30 mAh
                                 </span>
-                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer">
+                                <span className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer text-xs">
                                     40 mAh
                                 </span>
                             </div>
                         </div>
-                        <div className="mt-4 text-[#6fa400] text-sm">
+                        <div className="mt-4 text-[#6fa400] text-xs">
                             <i>(Nơi bán xe Uy Tín tại Việt Nam)</i>
                         </div>
                         <div className="addToCart flex mt-4 items-center">
                             <span>
-                                <input type="number" min="1" max="100" defaultValue={1} className="mr-2 p-2 border border-gray-300 bg-gray-100 hover:bg-white text-center rounded focus:ring focus:ring-blue-200 focus:border-blue-500 w-24" />
+                                <input type="number" min="1" max="100" defaultValue={1} className="mr-2 md:p-2 border border-gray-300 bg-gray-100 hover:bg-white text-center rounded focus:ring focus:ring-blue-200 focus:border-blue-500 w-24" />
                             </span>
                             <span>
-                                <button type="button" className="bg-[#6fa400] hover:bg-[#5a8600] px-6 py-2 text-white rounded">
+                                <button type="button" className="bg-[#6fa400] hover:bg-[#5a8600] px-6 py-2 text-white rounded text-xs md:text-base">
                                     THÊM VÀO GIỎ <i className="fa fa-shopping-cart"></i>
                                 </button>
                             </span>
                         </div>
                         <div className="promotion rounded-lg relative mt-8 border-2 border-[#333] pt-8 p-4">
-                            <span className="absolute text-white px-4 py-2 bg-[#333] top-0 text-center rounded-full uppercase text-sm">Khuyến mãi khi mua sản phẩm</span>
-                            <ul className="text-[#333] text-sm">
+                            <span className="absolute text-white px-4 py-2 bg-[#333] top-0 text-center rounded-full uppercase  text-[10px] text-[10px] md:text-xs">Khuyến mãi khi mua sản phẩm</span>
+                            <ul className="text-[#333] text-xs">
                                 <li>Miễn phí giao hàng khu vực HCM.</li>
                             </ul>
                         </div>
                         <div className="buyNow mt-4 text-center">
-                            <button className="w-full bg-[#6fa400] hover:bg-[#5a8600] p-2 font-semibold text-xl text-white rounded">
+                            <button className="w-full bg-[#6fa400] hover:bg-[#5a8600] p-2 font-semibold text-xl text-white rounded text-xs md:text-lg">
                                 MUA NGAY
                             </button>
                         </div>
                         <div className="grid gap-4 grid-cols-2 mt-4">
                             <div className="col-span-1 border-2 border-[#6fa400] text-[#6fa400] opacity-70 hover:opacity-100 p-2 rounded text-center">
-                                <div className="text-base uppercase font-semibold">Trả góp 0%</div>
-                                <div className="text-sm">Tại cửa hàng</div>
+                                <div className="text-[10px] md:text-base uppercase font-semibold">Trả góp 0%</div>
+                                <div className="text-[10px] md:text-sm">Tại cửa hàng</div>
                             </div>
                             <div className="col-span-1 border-2 border-[#6fa400] text-[#6fa400] opacity-70 hover:opacity-100 p-2 rounded text-center">
-                                <div className="text-base uppercase font-semibold">Trả góp qua thẻ</div>
-                                <div className="text-sm">Visa, Master</div>
+                                <div className="text-[10px] md:text-base uppercase font-semibold">Trả góp qua thẻ</div>
+                                <div className="text-[10px] md:text-sm">Visa, Master</div>
                             </div>
                             <div className="col-span-1 border-2 border-[#333] bg-gray-100 text-[#333] opacity-70 hover:opacity-100 p-2 rounded text-center">
-                                <div className="text-base uppercase font-semibold">0946721565</div>
-                                <div className="text-sm">Hotline mua hàng</div>
+                                <div className="text-[10px] md:text-base uppercase font-semibold">0946721565</div>
+                                <div className="text-[10px] md:text-sm">Hotline mua hàng</div>
                             </div>
                             <div className="col-span-1 border-2 border-[#333] bg-gray-100 text-[#333] opacity-70 hover:opacity-100 p-2 rounded text-center">
-                                <div className="text-base uppercase font-semibold">Chat Trực Tiếp</div>
-                                <div className="text-sm">Zalo</div>
+                                <div className="text-[10px] md:text-base uppercase font-semibold">Chat Trực Tiếp</div>
+                                <div className="text-[10px] md:text-sm">Zalo</div>
                             </div>
                         </div>
                     </div>
@@ -233,42 +232,23 @@ export function Product() {
                             <div className="text-3xl font-bold text-[#6fa400]">028 6253 9118</div>
                         </div>
                         <div className="mb-2">
-                            <img src="/quangcao.jpeg" alt="" width={300} className="rounded" />
-                            {/* <Image
-                                src="/quangcao.jpeg"
-                                alt="quangcao.jpeg"
-                                width={300}
-                                height={300}
-                                layout="responsive"
-                                className="rounded"
-                            /> */}
+                            <Link href={'/blog/post.html'}>
+                                <img src="/quangcao.jpeg" alt="" width={300} className="rounded w-full" />
+                            </Link>
                         </div>
                         <div>
-                            <img src="/abc.jpeg" alt="" width={300} className="rounded" />
-                            {/* <Image
-                                src="/abc.jpeg"
-                                alt="abc.jpeg"
-                                width={300}
-                                height={300}
-                                layout="responsive"
-                                className="rounded"
-                            /> */}
+                            <Link href={'/blog/post.html'}>
+                                <img src="/abc.jpeg" alt="" width={300} className="rounded w-full" />
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="p-2 md:p-0 border-t-2 border-gray-300 grid gap-4 grid-cols-12 mb-4 mx-4 md:mx-0">
-                    <div className="col-span-12 md:col-span-8">
+                    <div className="col-span-12 order-2 lg:order-1 md:col-span-8">
                         <TabContents tabs={tabsDataContent} />
                         <div className="border-y py-4 my-5 flex gap-2">
                             <div className="basis-2/12 md:basis-1/12">
                                 <img src="/user.webp" alt="" width={100} className="rounded-full" />
-                                {/* <Image
-                                    src="/user.webp"
-                                    alt="user.webp"
-                                    width={100}
-                                    height={100}
-                                    layout="rounded-full"
-                                /> */}
                             </div>
                             <div className="basis-10/12 md:basis-11/12 text-[#666]">
                                 <div className="font-semibold">admin@gmail.com</div>
@@ -276,8 +256,8 @@ export function Product() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-span-12 md:col-span-4">
-                        <div className="border-2 border-[#6fa400] rounded-3xl py-8 px-4 mt-12 relative sticky top-20">
+                    <div className="col-span-12 order-1 lg:order-2 md:col-span-4">
+                        <div className="border-2 border-[#6fa400] rounded-3xl py-8 px-4 mt-8 mb-2 md:mb-0 md:mt-12 relative sticky top-20">
                             <h3 className="bg-[#333] text-[#a1e611] absolute rounded-lg px-4 py-2 uppercase specifications text-center font-semibold">
                                 Thông số kỹ thuật
                             </h3>
@@ -334,8 +314,11 @@ export function Product() {
                         spaceBetween={20}
                         autoplay={{ delay: 7000 }}
                         breakpoints={{
+                            0:{
+                                slidesPerView: 2,
+                            },
                             768: {
-                                slidesPerView: 1,
+                                slidesPerView: 2,
                             },
                             992: {
                                 slidesPerView: 4,
@@ -351,26 +334,13 @@ export function Product() {
                                 <Link href="/product.html" className="text-[#333]">
                                     <div className="image">
                                         <img src="/p1.jpeg" alt="" width={100} />
-                                        {/* <Image
-                                            src="/p1.jpeg"
-                                            alt={e.title}
-                                            width={100}
-                                            height={100}
-                                            layout="responsive"
-                                        /> */}
                                     </div>
                                     <h3 className="text-lg mb-2 font-semibold text-[#626262] mt-2">Xe đạp thể thao C24</h3>
                                     <p className="text-xs mb-4">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.</p>
                                     <div className="price font-bold mb-7 text-xl">21,000,000<sup>đ</sup></div>
                                     <div className="selled">
-                                        <span className="bg-[#333] text-[#a1e611] rounded text-base relative">
+                                        <span className="bg-[#333] text-[#a1e611] rounded text-sm relative">
                                             <img src="/fire.webp" alt="" width={45} height={45} />
-                                            {/* <Image
-                                                src="/fire.webp"
-                                                alt="fire.webp"
-                                                width={45}
-                                                height={45}
-                                            /> */}
                                             Đã bán 21/30
                                         </span>
                                     </div>
@@ -386,8 +356,11 @@ export function Product() {
                         spaceBetween={20}
                         autoplay={{ delay: 7000 }}
                         breakpoints={{
+                            0:{
+                                slidesPerView: 2,
+                            },
                             768: {
-                                slidesPerView: 1,
+                                slidesPerView: 2,
                             },
                             992: {
                                 slidesPerView: 4,
@@ -403,26 +376,13 @@ export function Product() {
                             <Link href="/product.html" className="text-[#333]">
                                 <div className="image">
                                     <img src="/p1.jpeg" alt="" width={100} />
-                                    {/* <Image
-                                        src="/p1.jpeg"
-                                        alt={e.title}
-                                        width={100}
-                                        height={100}
-                                        layout="responsive"
-                                    /> */}
                                 </div>
                                 <h3 className="text-lg mb-2 font-semibold text-[#626262] mt-2">Xe đạp thể thao C24</h3>
                                 <p className="text-xs mb-4">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.</p>
                                 <div className="price font-bold mb-7 text-xl">21,000,000<sup>đ</sup></div>
                                 <div className="selled">
-                                    <span className="bg-[#333] text-[#a1e611] rounded text-base relative">
+                                    <span className="bg-[#333] text-[#a1e611] rounded text-sm relative">
                                         <img src="/fire.webp" alt="" width={45} height={45} />
-                                        {/* <Image
-                                            src="/fire.webp"
-                                            alt="fire.webp"
-                                            width={45}
-                                            height={45}
-                                        /> */}
                                         Đã bán 21/30
                                     </span>
                                 </div>

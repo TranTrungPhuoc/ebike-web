@@ -11,7 +11,7 @@ const TabContents = (props: any) => {
                         className={`${activeTab === index
                             ? 'border-t-2 border-[#6fa400] opacity-100'
                             : 'border-t-2 border-white opacity-50'
-                        } p-2 col-span-1 cursor-pointer uppercase text-[#6fa400] text-center font-semibold`}
+                        } py-2 col-span-1 cursor-pointer uppercase text-[#6fa400] text-xs md:text-base text-center font-semibold`}
                         onClick={() => setActiveTab(index)}
                     >
                         {tab.label}

@@ -40,14 +40,14 @@ export function Network() {
             str += '</a></li>';
         }
         else{
-            str += '<li><a href="'+element['link']+'">';
+            str += '<li class="call"><a href="'+element['link']+'">';
             str += '<span class="phone_animation animation-shadow"><i class="'+element['icon']+'"></i></span>';
             str += '<span class="btn_phone_txt">'+element['title']+'</span>';
             str += '</a></li>';
         }
     }
     return (
-        <div className="network-nav block md:hidden">
+        <div className="network-nav block">
             <ul dangerouslySetInnerHTML={{ __html: str }}></ul>
         </div>
     )

@@ -78,8 +78,11 @@ export function Tutorial() {
                     spaceBetween={20}
                     autoplay={{ delay: 5000 }}
                     breakpoints={{
+                        0: {
+                            slidesPerView: 2,
+                        },
                         768: {
-                            slidesPerView: 1,
+                            slidesPerView: 2,
                         },
                         992: {
                             slidesPerView: 4,
