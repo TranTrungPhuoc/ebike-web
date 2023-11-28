@@ -1,8 +1,8 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
-  "/complete/page": "app/complete/page.js",
+  "/forgotPassword/page": "app/forgotPassword/page.js",
+  "/register/page": "app/register/page.js",
   "/payment/page": "app/payment/page.js",
-  "/cart/page": "app/cart/page.js",
-  "/blog/[slug]/page": "app/blog/[slug]/page.js"
+  "/complete/page": "app/complete/page.js",
+  "/cart/page": "app/cart/page.js"
 }

@@ -50,12 +50,12 @@ export default function Page() {
                             <div className="text-center mt-4">
                                 <h4 className="text-sm italic">or:</h4>
                                 <div className="mt-4">
-                                    <button type="button" className="w-3/5 bg-[#3b5998] hover:opacity-90 p-2 text-white text-base rounded-3xl">
+                                    <button type="button" className="w-full md:w-3/5 bg-[#3b5998] hover:opacity-90 p-2 text-white text-base rounded-3xl">
                                         <span className="mr-4"><i className="fab fa-facebook"></i></span> Facebook
                                     </button>
                                 </div>
                                 <div className="mt-4">
-                                    <button type="button" className="w-3/5 bg-[#ea4336] hover:opacity-90 p-2 text-white text-base rounded-3xl">
+                                    <button type="button" className="w-full md:w-3/5 bg-[#ea4336] hover:opacity-90 p-2 text-white text-base rounded-3xl">
                                         <span className="mr-4"><i className="fab fa-google"></i></span> Google
                                     </button>
                                 </div>

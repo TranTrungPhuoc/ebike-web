@@ -18,7 +18,7 @@ export default function Page() {
                             Thanh toán
                         </span>
                     </h1>
-                    <div className="grid gap-4 grid-cols-2 mx-4 md:mx-0 md:items-center md:border-t md:border-[#333] md:pt-12">
+                    <div className="md:grid gap-4 grid-cols-2 mx-4 md:mx-0 md:items-center md:border-t md:border-[#333] md:pt-12">
                         <div className="col-span-1 text-sm">
                             <h2 className="text-xl uppercase">Địa chỉ nhận hàng</h2>
                             <hr className="mt-4" />
@@ -69,7 +69,7 @@ export default function Page() {
                             </div>
                         </div>
                         <div className="col-span-1">
-                            <div className="border border-2 border-slate-700 rounded p-8">
+                            <div className="mt-8 md:mt-0 border border-2 border-slate-700 rounded p-8">
                                 <h2 className="text-xl uppercase">Đơn hàng của bạn</h2>
                                 <table className="min-w-full bg-white border border-gray-300 mt-4 text-sm">
                                     <thead>
@@ -85,7 +85,7 @@ export default function Page() {
                                                     Xe Đạp Đường Phố Touring GIANT Fastroad 1 - Phanh Đĩa, Bánh 700C - 2024
                                                 </Link>
                                             </td>
-                                            <td className="py-2 px-4 border-b hidden md:table-cell">
+                                            <td className="py-2 px-4 border-b">
                                                 <span className="text-[#6fa400] text-base">
                                                     26.990.000</span> <br /><span className="text-xs">(VNĐ)
                                                 </span>
@@ -97,7 +97,7 @@ export default function Page() {
                                                     Xe Đạp Đường Phố Touring GIANT Fastroad 1 - Phanh Đĩa, Bánh 700C - 2024
                                                 </Link>
                                             </td>
-                                            <td className="py-2 px-4 border-b hidden md:table-cell">
+                                            <td className="py-2 px-4 border-b">
                                                 <span className="text-[#6fa400] text-base">
                                                     26.990.000</span> <br /><span className="text-xs">(VNĐ)
                                                 </span>
@@ -107,7 +107,7 @@ export default function Page() {
                                             <td className="py-2 px-4 border-b text-xs md:text-sm">
                                                 Tổng thu (VNĐ)
                                             </td>
-                                            <td className="py-2 px-4 border-b hidden md:table-cell">
+                                            <td className="py-2 px-4 border-b">
                                                 <span className="text-[#333] text-lg">
                                                     <b>53.980.000</b>
                                                 </span>
@@ -115,7 +115,7 @@ export default function Page() {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <h2 className="text-xl uppercase mt-4">Phương thức giao hàng</h2>
+                                <h2 className="md:text-xl uppercase mt-4">Phương thức giao hàng</h2>
                                 <div className="mt-4">
                                     <ul className="text-sm px-4">
                                         <li className="mb-4"><input type="radio" name="ptgh" id="ptgh1" checked /> <label htmlFor="ptgh1">Giao hàng miễn phí (Bán kính dưới 15km)</label></li>
@@ -129,7 +129,7 @@ export default function Page() {
                                     </div>
                                 </div>
                                 <hr className="mt-4" />
-                                <h2 className="text-xl uppercase mt-4">Phương thức thanh toán</h2>
+                                <h2 className="md:text-xl uppercase mt-4">Phương thức thanh toán</h2>
                                 <div className="mt-4">
                                     <ul className="text-sm px-4">
                                         <li className="mb-4"><input type="radio" name="pttt" id="pttt1" checked /> <label htmlFor="pttt1">Thanh toán tại cửa hàng</label></li>
@@ -137,7 +137,7 @@ export default function Page() {
                                     </ul>
                                 </div>
                                 <hr className="mt-4" />
-                                <div className="grid gap-4 grid-cols-2">
+                                <div className="md:grid gap-4 grid-cols-2">
                                     <Link href={'/complete'} className="text-white text-center uppercase py-4 px-8 block mt-8 bg-[#6fa400] hover:opacity-90 rounded">
                                         Thanh Toán
                                     </Link>

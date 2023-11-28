@@ -40,12 +40,13 @@ export default function Page() {
                                                 <td className="py-2 px-4 border-b">
                                                     Ngày: <b>29/11/2023</b>
                                                 </td>
-                                                <td className="py-2 px-4 border-b">
-                                                    Tổng: <b>9.890.000VND</b>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
-                                                <td colSpan={3} className="py-2 px-4 border-b">
+                                            <td className="py-2 px-4 border-b">
+                                                    Tổng: <b>9.890.000VND</b>
+                                                </td>
+                                                <td className="py-2 px-4 border-b">
                                                     Phương thức thanh toán: <b>Thanh toán tại cửa hàng</b>
                                                 </td>
                                             </tr>
