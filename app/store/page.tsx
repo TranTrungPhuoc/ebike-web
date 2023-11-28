@@ -68,19 +68,12 @@ export default function Page() {
                                 <div className="rounded hover:bg-[#f5f5f5] shadow-md shadow-[#ccc] hover:duration-300">
                                     <div className="image">
                                         <img src="/xe-dap-tphcm.jpeg" alt="" width={500} className="w-full rounded-t" />
-                                        {/* <Image
-                                            src="/xe-dap-tphcm.jpeg"
-                                            alt="xe-dap-tphcm.jpeg"
-                                            width={500}
-                                            height={500}
-                                            className="w-full rounded-t"
-                                        /> */}
                                     </div>
                                     <h5 className="text-xl font-semibold mt-2">Quận 7</h5>
                                     <div className="contact p-2">
                                         <ul className="text-sm">
                                             <li className="text-center"><b>Tel: <span className="text-[red]">028.3535.2458</span></b></li>
-                                            <li>458 Nguyễn Thị Thập, Phường Tân Quy, Quận 7, TP. Hồ Chí Mình.</li>
+                                            <li className='text-xs'>458 Nguyễn Thị Thập, Phường Tân Quy, Quận 7, TP. HCM</li>
                                             <li>Thứ 2 - Chủ Nhật: 9hAM - 9hPM</li>
                                         </ul>
                                     </div>

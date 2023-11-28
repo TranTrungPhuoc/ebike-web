@@ -67,8 +67,8 @@ export function Knowledge() {
   return (
     <div className="knowledge mt-12 mx-4 md:mx-0">
       <div className="container mx-auto">
-        <h2 className="mb-6 border-b border-[#333]">
-          <span className="bg-[#a1e611] color-[#333] uppercase p-4 rounded font-semibold">
+        <h2 className="mb-6 border-b border-[#333] text-sm">
+          <span className="bg-[#a1e611] color-[#333] uppercase py-2 px-4 rounded font-semibold">
             <Link href="/blog/category" className="hover:text-[#6fa400] hover:duration-300">
               Kiến thức kinh nghiệm
             </Link>
@@ -76,11 +76,11 @@ export function Knowledge() {
         </h2>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          spaceBetween={20}
+          spaceBetween={15}
           autoplay={{ delay: 7000 }}
           breakpoints={{
             0: {
-              slidesPerView: 2,
+              slidesPerView: 1,
             },
             768: {
               slidesPerView: 2,
@@ -94,29 +94,19 @@ export function Knowledge() {
           {postList.map((e, i) => (
             <SwiperSlide
               key={i}
-              className="rounded border border-[#333] bg-[#f5f5f5] hover:duration-300"
+              className="rounded hover:bg-[#f5f5f5] shadow-md shadow-[#ccc] hover:duration-300" 
             >
               <Link href="/blog/post.html">
                 <div className="image relative">
                   <img src={"/" + e.image} alt="" className="rounded-t" />
-                  {/* <Image
-                    src={"/" + e.image}
-                    alt={e.title}
-                    width={300}
-                    height={300}
-                    className="rounded-t"
-                  /> */}
                   <span className="bg-[#333] font-semibold p-2 absolute left-0.5 top-0.5 text-[#a1e611] rounded text-xs text-center opacity-90">
                     19<br />Aug
                   </span>
                 </div>
                 <div className="text-[#333] p-4 rounded-b">
-                  <h3 className="mb-2 font-semibold">{e.title}</h3>
-                  <p className="mb-2 text-xs text-[#333]">Thoát vị đĩa đệm là một căn bệnh khá nghiêm trọng, có thể để lại nhiều biến chứng nguy hiểm…</p>
-                  <div className="text-xs text-[#919191]">
-                    <i className="fa fa-eye text-[#6fa400]"></i>{" "}
-                    {formattedNumber(e.view)} lượt xem • 10 tháng trước
-                  </div>
+                  <h3 className="mb-2 font-semibold text-sm">{e.title}</h3>
+                  <div className="mb-2 text-xs text-[#919191]"><i className="fa fa-calendar"></i> 26/09/2023 09:53</div>
+                  <p className="text-xs text-[#333]">Thoát vị đĩa đệm là một căn bệnh khá nghiêm trọng, có thể để lại nhiều biến chứng nguy hiểm…</p>
                 </div>
               </Link>
             </SwiperSlide>

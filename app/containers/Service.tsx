@@ -41,7 +41,7 @@ export function Service() {
                   <span className="md:mr-1">{e.title.split("/")[0]}</span>
                   <span>{e.title.split("/")[1]}</span>
                 </h3>
-                <p className="text-[8px] md:text-xs">{e.description}</p>
+                <p className="text-[7px] md:text-xs">{e.description}</p>
               </Link>
             </div>
           ))}

@@ -5,6 +5,7 @@ import { Header } from './containers/Header'
 import { Nav } from './containers/Nav'
 import { Footer } from './containers/Footer'
 import { Network } from './containers/Network'
+import { Ads } from './containers/Ads'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Network />
+        <Ads />
       </body>
     </html>
   )

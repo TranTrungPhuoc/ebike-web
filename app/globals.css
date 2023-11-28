@@ -60,6 +60,10 @@ nav .input-group input {
   border-radius: 50px;
 }
 
+.tutorial .swiper,.knowledge .swiper{
+  padding: 10px !important;
+}
+
 .swiper img {
   width: 100%;
 }
@@ -344,6 +348,9 @@ main .index h4::after {
 .sub-menu{
   left: 50%;
   transform: translate(-50%, 0);
+  z-index: 155;
+  height: 400px;
+  overflow: auto;
 }
 
 .bg-ads{
@@ -372,14 +379,13 @@ main .index h4::after {
   border-bottom-right-radius: 3px;
   padding: 5px 15px;
   background-color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .img-ads button:hover{
   background-color: wheat;
-}
-
-.menu ul li:hover ul{
-  display: grid;
 }
 
 .network-nav{
@@ -388,7 +394,7 @@ main .index h4::after {
   background: #fff;
   border-radius: 5px;
   width: auto;
-  z-index: 150;
+  z-index: 1;
   bottom: 100px;
   padding-bottom: 10px;
   border: 1px solid #f2f2f2;
@@ -433,8 +439,27 @@ li.active a{
   color: #333;
 }
 
-@media (max-width: 767px) {
+.menu button{
+  z-index: 999;
+}
 
+.hiddenMenu{
+  z-index: 9;
+}
+
+.network-nav{
+  border: 2px solid #a0e611;
+  background: #effad8;
+}
+
+@media (max-width: 767px) {
+  .bestSeller .products{
+    padding: 5px;
+  }
+  .sub-menu{
+    transform: none;
+    height: 300px;
+  }
   .post p{
     display: -webkit-box;
   	-webkit-line-clamp: 3;
@@ -475,7 +500,7 @@ li.active a{
 
   .selled span {
     font-size: 16px;
-    padding: 5px 5px 5px 40px;
+    padding: 5px 10px 5px 40px;
     position: relative;
   }
 
@@ -485,7 +510,7 @@ li.active a{
 
   .bestSeller .grid div:nth-child(5),
   .bestSeller .grid div:nth-child(6) {
-    border-bottom-color: rgb(203 213 225 / var(--tw-border-opacity));
+    /* border-bottom-color: rgb(203 213 225 / var(--tw-border-opacity)); */
   }
 
   .network-nav{

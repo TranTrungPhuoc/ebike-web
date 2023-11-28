@@ -34,16 +34,16 @@ export function Attribute() {
     {title: 'Khung nhôm đúc nguyên khối', image: 'bike.png', slogan: 'Cho sự chắc chắn, an toàn'}
   ]
   return (
-    <div className="attribute">
+    <div className="attribute mt-12 mx-4 md:mx-0">
       <div className="container mx-auto">
-        <h2 className="mb-6 border-b border-[#333]">
-          <span className="bg-[#a1e611] color-[#333] uppercase p-4 rounded font-semibold">
+        <h2 className="mb-6 border-b border-[#333] text-sm">
+          <span className="bg-[#a1e611] color-[#333] uppercase px-4 py-2 rounded font-semibold">
             <a className="hover:text-[#6fa400] hover:duration-300" href="/video/category">
               Sản phẩm mới
             </a>
           </span>
         </h2>
-        <div className="grid gap-6 grid-cols-4 mx-4 md:mx-0 md:grid-cols-8 md:items-center">
+        <div className="grid gap-6 grid-cols-4 md:grid-cols-8 md:items-center">
           <div className="col-span-4 md:col-span-4">
             <div className="relative cursor-pointer" onClick={openPopup}>
               <img src="/video.jpeg" alt="" className="image rounded-xl" />

@@ -52,63 +52,7 @@ export function Category() {
                         {detail.title}
                     </span>
                 </h1>
-                <div className="p-2 md:p-0 grid gap-4 grid-cols-2 mb-4 mx-4 md:mx-0 md:items-center md:border-t md:border-[#333] md:pt-12">
-                    <div className="col-span-2 md:col-span-1">
-                        <div className="post rounded border border-[#333] bg-[#f5f5f5] hover:duration-300">
-                            <Link href="/video/post.html">
-                                <div className="image relative">
-                                    <img src="/blog.jpeg" alt="" width={700} className="rounded-t" />
-                                    {/* <Image
-                                        src="/blog.jpeg"
-                                        alt="blog.jpeg"
-                                        width={700}
-                                        height={700}
-                                        className="rounded-t"
-                                    /> */}
-                                    <span className="bg-white border border-[#333] px-2.5 py-1 rounded-lg absolute text-[#c50000] text-center opacity-90 top-1/2 left-1/2">
-                                        <i className="fa-brands fa-youtube fa-2x"></i>
-                                    </span>
-                                </div>
-                                <div className="text-[#333] p-4 rounded-b">
-                                    <h2 className="mb-2 font-semibold">Cửa hàng xe đạp thể thao tại Hội An uy tín, giá tốt</h2>
-                                    <p className="mb-2 text-xs text-[#333]">Thoát vị đĩa đệm là một căn bệnh khá nghiêm trọng, có thể để lại nhiều biến chứng nguy hiểm…</p>
-                                    <div className="text-xs text-[#919191]">
-                                        <i className="fa fa-eye text-[#6fa400]"></i>{" "}
-                                        {formattedNumber(439)} lượt xem • 10 tháng trước
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-span-2 md:col-span-1">
-                        <div className="post rounded border border-[#333] bg-[#f5f5f5] hover:duration-300">
-                            <Link href="/video/post.html">
-                                <div className="image relative">
-                                    <img src="/blog.jpeg" alt="" width={700} className="rounded-t" />
-                                    {/* <Image
-                                        src="/blog.jpeg"
-                                        alt="blog.jpeg"
-                                        width={700}
-                                        height={700}
-                                        className="rounded-t"
-                                    /> */}
-                                    <span className="bg-white border border-[#333] px-2.5 py-1 rounded-lg absolute text-[#c50000] text-center opacity-90 top-1/2 left-1/2">
-                                        <i className="fa-brands fa-youtube fa-2x"></i>
-                                    </span>
-                                </div>
-                                <div className="text-[#333] p-4 rounded-b">
-                                    <h2 className="mb-2 font-semibold">Cửa hàng xe đạp thể thao tại Hội An uy tín, giá tốt</h2>
-                                    <p className="mb-2 text-xs text-[#333]">Thoát vị đĩa đệm là một căn bệnh khá nghiêm trọng, có thể để lại nhiều biến chứng nguy hiểm…</p>
-                                    <div className="text-xs text-[#919191]">
-                                        <i className="fa fa-eye text-[#6fa400]"></i>{" "}
-                                        {formattedNumber(439)} lượt xem • 10 tháng trước
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-                <div className="p-2 md:p-0 grid gap-4 md:grid-cols-4">
+                <div className="p-2 md:p-0 grid gap-4 md:grid-cols-4 md:border-t md:border-[#333] md:pt-12">
                     <div className="md:col-span-3">
                         <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
                             {
@@ -118,24 +62,14 @@ export function Category() {
                                             <Link href="/video/post.html">
                                                 <div className="image relative">
                                                     <img src="/blog.jpeg" alt="" width={700} className="rounded-t" />
-                                                    {/* <Image
-                                                        src="/blog.jpeg"
-                                                        alt="blog.jpeg"
-                                                        width={700}
-                                                        height={700}
-                                                        className="rounded-t"
-                                                    /> */}
                                                     <span className="bg-white border border-[#333] px-2.5 py-1 rounded-lg absolute text-[#c50000] text-center opacity-90 top-1/2 left-1/2">
                                                         <i className="fa-brands fa-youtube fa-2x"></i>
                                                     </span>
                                                 </div>
                                                 <div className="text-[#333] p-4 rounded-b">
                                                     <h3 className="mb-2 font-semibold">Cửa hàng xe đạp thể thao tại Hội An uy tín, giá tốt</h3>
-                                                    <p className="mb-2 text-xs text-[#333]">Thoát vị đĩa đệm là một căn bệnh khá nghiêm trọng, có thể để lại nhiều biến chứng nguy hiểm…</p>
-                                                    <div className="text-xs text-[#919191]">
-                                                        <i className="fa fa-eye text-[#6fa400]"></i>{" "}
-                                                        {formattedNumber(439)} lượt xem • 10 tháng trước
-                                                    </div>
+                                                    <div className="mb-2 text-xs text-[#919191]"><i className="fa fa-calendar"></i> 26/09/2023 09:53</div>
+                                                    <p className="text-xs text-[#333] text-justify">Thoát vị đĩa đệm là một căn bệnh khá nghiêm trọng, có thể để lại nhiều biến chứng nguy hiểm…</p>
                                                 </div>
                                             </Link>
                                         </div>
@@ -150,7 +84,7 @@ export function Category() {
                                         <i className="fa fa-light fa-angle-left"></i>
                                     </a>
                                 </li>
-                                <li>
+                                <li className='active'>
                                     <a className="w-9 h-9 p-2 block bg-[#333] rounded-[50%] flex items-center justify-center border border-black cursor-pointer hover:bg-[#a1e611] hover:text-[#333] text-center text-white" href="#">
                                         1
                                     </a>
@@ -175,7 +109,7 @@ export function Category() {
                         <div className="mt-12 md:relative text-center md:text-left">
                             <h2 className="mb-6 border-b border-[#333]">
                                 <span className="bg-[#333] text-[#a1e611] italic font-semibold text-xl uppercase p-4 rounded font-semibold">
-                                    The world ebike.com
+                                    Xedienvui.vn
                                 </span>
                             </h2>
                             <span className="md:absolute right-0 top-0 font-semibold italic">
@@ -186,13 +120,6 @@ export function Category() {
                         <div className="border-y py-4 my-5 flex gap-2">
                             <div className="basis-2/12 md:basis-1/12">
                                 <img src="/user.webp" alt="" width={100} className="rounded-full" />
-                                {/* <Image
-                                    src="/user.webp"
-                                    alt="user.webp"
-                                    width={100}
-                                    height={100}
-                                    layout="rounded-full"
-                                /> */}
                             </div>
                             <div className="basis-10/12 md:basis-11/12 text-[#666]">
                                 <div className="font-semibold">admin@gmail.com</div>
@@ -210,13 +137,6 @@ export function Category() {
                                             <div key={i} className="flex flex-row">
                                                 <div className="basis-1/3">
                                                     <img src="/blog.jpeg" alt="" width={200} className="rounded" />
-                                                    {/* <Image
-                                                        src="/blog.jpeg"
-                                                        alt="blog.jpeg"
-                                                        width={200}
-                                                        height={200}
-                                                        className="rounded"
-                                                    /> */}
                                                 </div>
                                                 <div className="basis-2/3 ml-2">
                                                     <h3 className="text-[12.5px] font-semibold hover:text-[#6fa400]">

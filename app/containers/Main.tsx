@@ -37,8 +37,8 @@ export function Main() {
                                         <p className="text-xs mb-4">{e.description}</p>
                                         <div className="price font-bold mb-7 text-xl">{formattedNumber(e.price)}</div>
                                         <div className="selled">
-                                            <span className="bg-[#333] text-[#a1e611] rounded text-sm relative">
-                                                <img src="/fire.webp" alt="" width={45} height={45} />
+                                            <span className="bg-[#333] text-[#a1e611] rounded text-[10px] md:text-sm relative">
+                                                <img src="/fire.webp" alt="" width={40} height={40} />
                                                 Đã bán {e.selled + '/' + e.inventory}
                                             </span>
                                         </div>

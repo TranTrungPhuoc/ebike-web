@@ -62,9 +62,9 @@ export function Store() {
                                 </div>
                                 <h5 className="text-xl font-semibold mt-2">Quận 7</h5>
                                 <div className="contact p-2">
-                                    <ul className="text-sm">
+                                    <ul className="text-xs">
                                         <li className="text-center"><b>Tel: <span className="text-[red]">028.3535.2458</span></b></li>
-                                        <li>458 Nguyễn Thị Thập, Phường Tân Quy, Quận 7, TP. Hồ Chí Mình.</li>
+                                        <li>458 Nguyễn Thị Thập, Phường Tân Quy, Quận 7, TP.HCM</li>
                                         <li>Thứ 2 - Chủ Nhật: 9hAM - 9hPM</li>
                                     </ul>
                                 </div>

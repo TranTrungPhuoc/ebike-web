@@ -193,8 +193,8 @@ export function Category() {
                                                 <p className="text-xs mb-4">{e.description}</p>
                                                 <div className="price font-bold mb-7 text-xl">{formattedNumber(e.price)}</div>
                                                 <div className="selled">
-                                                    <span className="bg-[#333] text-[#a1e611] rounded text-sm relative">
-                                                        <img src="/fire.webp" alt="" width={45} />
+                                                    <span className="bg-[#333] text-[#a1e611] rounded text-xs relative">
+                                                        <img src="/fire.webp" alt="" width={40} />
                                                         Đã bán {e.selled + '/' + e.inventory}
                                                     </span>
                                                 </div>
@@ -211,7 +211,7 @@ export function Category() {
                                         <i className="fa fa-light fa-angle-left"></i>
                                     </a>
                                 </li>
-                                <li>
+                                <li className='active'>
                                     <a className="w-9 h-9 p-2 block bg-[#333] rounded-[50%] flex items-center justify-center border border-black cursor-pointer hover:bg-[#a1e611] hover:text-[#333] text-center text-white" href="#">
                                         1
                                     </a>
@@ -236,7 +236,7 @@ export function Category() {
                         <div className="mt-12 md:relative text-center md:text-left">
                             <h2 className="mb-6 border-b border-[#333]">
                                 <span className="bg-[#333] text-[#a1e611] italic font-semibold text-xl uppercase p-4 rounded font-semibold">
-                                    The world ebike.com
+                                    Xedienvui.vn
                                 </span>
                             </h2>
                             <span className="md:absolute right-0 top-0 font-semibold italic">
@@ -247,13 +247,6 @@ export function Category() {
                         <div className="border-y py-4 my-5 flex gap-2">
                             <div className="basis-2/12 md:basis-1/12">
                                 <img src="/user.webp" alt="" width={100} className="rounded-full" />
-                                {/* <Image
-                                    src="/user.webp"
-                                    alt="user.webp"
-                                    width={100}
-                                    height={100}
-                                    layout="rounded-full"
-                                /> */}
                             </div>
                             <div className="basis-10/12 md:basis-11/12 text-[#666]">
                                 <div className="font-semibold">admin@gmail.com</div>
