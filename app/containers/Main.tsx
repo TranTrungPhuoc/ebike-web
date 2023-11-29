@@ -49,7 +49,7 @@ export function Main() {
                     }
                 </div>
                 <div className="more text-center mt-7 py-2.5">
-                    <Link href="/category" className="text-[#ccc] hover:text-[#333] hover:bg-[#efefef] delay-0 duration-300 border border-[#ccc] px-10 py-2.5 no-underline rounded-xl uppercase">
+                    <Link href="/category" className="hover:text-white hover:bg-[#6fa400] delay-0 duration-300 border border-[#ccc] hover:border-[#6fa400] px-10 py-2.5 no-underline rounded-xl uppercase">
                         Xem thêm
                     </Link>
                 </div>

@@ -3,10 +3,14 @@ import React, { useState } from 'react';
 // import Image from 'next/image';
 import Link from 'next/link'
 export function Category() {
+    const [showContent, setShowContent] = useState(false);
     const [value, setValue] = useState(2000000);
     const handleChange = (e: any) => {
         setValue(e.target.value);
     };
+    const handeShowClick = () => {
+        setShowContent(!showContent)
+    }
     const formattedNumber = (numberToFormat: number) => {
         return new Intl.NumberFormat('en-US', {
             style: 'decimal',
@@ -116,7 +120,12 @@ export function Category() {
                                 Luôn làm hài lòng khách hàng
                             </span>
                         </div>
-                        <div className="content mt-10 text-[#666] px-4 leading-6 text-justify" dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
+                        <div className={"content mt-10 text-[#666] px-4 leading-6 text-justify" + (!showContent?' h-[500px] overflow-hidden': '')} dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
+                        <div className={"text-center relative" + (!showContent?' readmore': '')}>
+                            <button type='button' className='border py-2 px-8 rounded hover:bg-[#6fa400] hover:text-white' onClick={() => handeShowClick()}>
+                                { (!showContent?'Xem Thêm': 'Rút Gọn') }
+                            </button>
+                        </div>
                         <div className="border-y py-4 my-5 flex gap-2">
                             <div className="basis-2/12 md:basis-1/12">
                                 <img src="/user.webp" alt="" width={100} className="rounded-full" />

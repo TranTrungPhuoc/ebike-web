@@ -60,7 +60,7 @@ export function Product() {
         { title: 'Cửa hàng xe đạp thể thao tại Hội An uy tín, giá tốt', link: '', image: 'blog.jpeg' },
         { title: 'Cửa hàng xe đạp thể thao tại Hội An uy tín, giá tốt', link: '', image: 'blog.jpeg' },
     ]
-    const htmlContent = detail.content;
+    // const htmlContent = detail.content;
     const tabsData = [
         {
             label: 'p1.jpeg',

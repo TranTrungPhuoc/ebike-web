@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 // import Image from 'next/image';
 import Link from 'next/link'
 export function Category() {
+    const [showContent, setShowContent] = useState(false);
     const [value, setValue] = useState(2000000);
     const handleChange = (e: any) => { setValue(e.target.value); };
     const [status, setStatus] = useState(false);
@@ -30,6 +31,9 @@ export function Category() {
     ]
     const htmlContent = detail.content;
     const brands = ['dk-bike-200-2.png','Hitasa-200-2.png','jvc-eco-2.png','LOGO-XE-DIEN-06.png','nijia-logo-200.png']
+    const handeShowClick = () => {
+        setShowContent(!showContent)
+    }
     return (
         <div className="category mt-4">
             <div className="container mx-auto">
@@ -193,7 +197,7 @@ export function Category() {
                                                 <p className="text-xs mb-4">{e.description}</p>
                                                 <div className="price font-bold mb-7 text-xl">{formattedNumber(e.price)}</div>
                                                 <div className="selled">
-                                                    <span className="bg-[#333] text-[#a1e611] rounded text-xs relative">
+                                                    <span className="bg-[#333] text-[#a1e611] rounded text-sm relative">
                                                         <img src="/fire.webp" alt="" width={40} />
                                                         Đã bán {e.selled + '/' + e.inventory}
                                                     </span>
@@ -243,7 +247,12 @@ export function Category() {
                                 Luôn làm hài lòng khách hàng
                             </span>
                         </div>
-                        <div className="content mt-10 text-[#666] px-4 leading-6 text-justify" dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
+                        <div className={"content mt-10 text-[#666] px-4 leading-6 text-justify" + (!showContent?' h-[500px] overflow-hidden': '')} dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
+                        <div className={"text-center relative" + (!showContent?' readmore': '')}>
+                            <button type='button' className='border py-2 px-8 rounded hover:bg-[#6fa400] hover:text-white' onClick={() => handeShowClick()}>
+                                { (!showContent?'Xem Thêm': 'Rút Gọn') }
+                            </button>
+                        </div>
                         <div className="border-y py-4 my-5 flex gap-2">
                             <div className="basis-2/12 md:basis-1/12">
                                 <img src="/user.webp" alt="" width={100} className="rounded-full" />
