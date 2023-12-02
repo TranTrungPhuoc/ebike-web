@@ -69,46 +69,37 @@ export function Relative() {
                 <h4 className="uppercase font-semibold mb-4">Bài viết liên quan</h4>
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-                    spaceBetween={20}
+                    spaceBetween={15}
                     autoplay={{ delay: 5000 }}
                     breakpoints={{
-                        768: {
+                        0: {
                             slidesPerView: 1,
+                        },
+                        768: {
+                            slidesPerView: 2,
                         },
                         992: {
                             slidesPerView: 4,
                         },
                     }}
                     navigation
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log("slide change")}
                 >
                     {postList.map((e, i) => (
                         <SwiperSlide
                             key={i}
-                            className="rounded border border-[#333] bg-[#f5f5f5] hover:duration-300"
+                            className="rounded hover:bg-[#f5f5f5] shadow-md shadow-[#ccc] hover:duration-300"
                         >
                             <Link href="/video/post.html">
                                 <div className="image relative">
-                                    <img src={"/" + e.image} alt="" width={300} className="rounded-t" />
-                                    {/* <Image
-                                        src={"/" + e.image}
-                                        alt={e.title}
-                                        width={300}
-                                        height={300}
-                                        className="rounded"
-                                    /> */}
+                                    <img src={"/" + e.image} alt="" className="rounded-t" />
                                     <span className="bg-white border border-[#333] px-2.5 py-1 rounded-lg absolute text-[#c50000] text-center opacity-90 top-1/2 left-1/2">
                                         <i className="fa-brands fa-youtube fa-2x"></i>
                                     </span>
                                 </div>
                                 <div className="text-[#333] p-4 rounded-b">
-                                    <h3 className="mb-2 font-semibold">{e.title}</h3>
-                                    <p className="mb-2 text-xs text-[#333]">Thoát vị đĩa đệm là một căn bệnh khá nghiêm trọng, có thể để lại nhiều biến chứng nguy hiểm…</p>
-                                    <div className="text-xs text-[#919191]">
-                                        <i className="fa fa-eye text-[#6fa400]"></i>{" "}
-                                        {formattedNumber(e.view)} lượt xem • 10 tháng trước
-                                    </div>
+                                    <h3 className="mb-2 font-semibold text-sm">{e.title}</h3>
+                                    <div className="mb-2 text-xs text-[#919191]"><i className="fa fa-calendar"></i> 26/09/2023 09:53</div>
+                                    <p className="text-xs text-[#333]">Thoát vị đĩa đệm là một căn bệnh khá nghiêm trọng, có thể để lại nhiều biến chứng nguy hiểm…</p>
                                 </div>
                             </Link>
                         </SwiperSlide>

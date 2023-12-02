@@ -36,11 +36,15 @@ export function Main() {
                                         <h3 className="text-sm mb-2 font-semibold text-[#626262]">{e.title}</h3>
                                         <p className="text-xs mb-4">{e.description}</p>
                                         <div className="price font-bold mb-7 text-xl">{formattedNumber(e.price)}</div>
-                                        <div className="selled">
-                                            <span className="bg-[#333] text-[#a1e611] rounded text-[10px] md:text-sm relative">
-                                                <img src="/fire.webp" alt="" width={40} height={40} />
-                                                Đã bán {e.selled + '/' + e.inventory}
-                                            </span>
+                                        <div className="mt-2 grid gap-2 grid-cols-2 text-[10px] md:text-xs">
+                                            <div className="col-span-1 text-[#d28800]">
+                                                <span>4.3</span>
+                                                <span className="ml-[5px]"><i className='fa fa-star'></i></span>
+                                                <span className="ml-[5px] text-[#999]">(316)</span>
+                                            </div>
+                                            <div className="col-span-1 text-[#999] text-right">
+                                                21 đã bán
+                                            </div>
                                         </div>
                                     </Link>
                                 </div>

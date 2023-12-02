@@ -103,37 +103,37 @@ export function Product() {
     ];
     const relativeList = [
         {
-            title: "Cửa hàng xe điện tại HCM uy tín, giá tốt",
+            title: "Xe đạp thể thao C24",
             image: "cuahang.jpeg",
             view: 548,
             date: "10",
         },
         {
-            title: "Cửa hàng xe điện tại HCM uy tín, giá tốt",
+            title: "Xe đạp thể thao C24",
             image: "cuahang.jpeg",
             view: 548,
             date: "10",
         },
         {
-            title: "Cửa hàng xe điện tại HCM uy tín, giá tốt",
+            title: "Xe đạp thể thao C24",
             image: "cuahang.jpeg",
             view: 548,
             date: "10",
         },
         {
-            title: "Cửa hàng xe điện tại HCM uy tín, giá tốt",
+            title: "Xe đạp thể thao C24",
             image: "cuahang.jpeg",
             view: 548,
             date: "10",
         },
         {
-            title: "Cửa hàng xe điện tại HCM uy tín, giá tốt",
+            title: "Xe đạp thể thao C24",
             image: "cuahang.jpeg",
             view: 548,
             date: "10",
         },
         {
-            title: "Cửa hàng xe điện tại HCM uy tín, giá tốt",
+            title: "Xe đạp thể thao C24",
             image: "cuahang.jpeg",
             view: 548,
             date: "10",
@@ -183,9 +183,6 @@ export function Product() {
                                 </span>
                             </div>
                         </div>
-                        <div className="mt-4 text-[#6fa400] text-xs">
-                            <i>(Nơi bán xe Uy Tín tại Việt Nam)</i>
-                        </div>
                         <div className="addToCart flex mt-4 items-center">
                             <span>
                                 <input type="number" min="1" max="100" defaultValue={1} className="mr-2 md:p-2 border border-gray-300 bg-gray-100 hover:bg-white text-center rounded focus:ring focus:ring-blue-200 focus:border-blue-500 w-24" />
@@ -200,6 +197,11 @@ export function Product() {
                             <span className="absolute text-white px-4 py-2 bg-[#333] top-0 text-center rounded-full uppercase  text-[10px] text-[10px] md:text-xs">Khuyến mãi khi mua sản phẩm</span>
                             <ul className="text-[#333] text-xs">
                                 <li>Miễn phí giao hàng khu vực HCM.</li>
+                                <li>
+                                    Mã khuyến mãi:
+                                    <span className="text-[#cecece] ml-[5px]">XDV30</span>
+                                    <span className="cursor-pointer ml-2"><i className="fa-solid fa-copy"></i></span>
+                                </li>
                             </ul>
                         </div>
                         <div className="buyNow mt-4 text-center">
@@ -208,21 +210,21 @@ export function Product() {
                             </button>
                         </div>
                         <div className="grid gap-4 grid-cols-2 mt-4">
-                            <div className="col-span-1 border-2 border-[#6fa400] text-[#6fa400] opacity-70 hover:opacity-100 p-2 rounded text-center">
-                                <div className="text-[10px] md:text-base uppercase font-semibold">Trả góp 0%</div>
-                                <div className="text-[10px] md:text-sm">Tại cửa hàng</div>
+                            <div className="col-span-1 bg-[#666] shadow-md shadow-[#ccc] md:text-[12px] text-white p-2 rounded text-center">
+                                <div className="text-[10px] uppercase font-semibold">Trả góp 0%</div>
+                                <div className="text-[10px] text-[#a1e611] italic">Tại cửa hàng</div>
                             </div>
-                            <div className="col-span-1 border-2 border-[#6fa400] text-[#6fa400] opacity-70 hover:opacity-100 p-2 rounded text-center">
-                                <div className="text-[10px] md:text-base uppercase font-semibold">Trả góp qua thẻ</div>
-                                <div className="text-[10px] md:text-sm">Visa, Master</div>
+                            <div className="col-span-1 bg-[#666] shadow-md shadow-[#ccc] md:text-[12px] text-white p-2 rounded text-center">
+                                <div className="text-[10px] uppercase font-semibold">Trả góp qua thẻ</div>
+                                <div className="text-[10px] text-[#a1e611] italic">Visa, Master</div>
                             </div>
-                            <div className="col-span-1 border-2 border-[#333] bg-gray-100 text-[#333] opacity-70 hover:opacity-100 p-2 rounded text-center">
-                                <div className="text-[10px] md:text-base uppercase font-semibold">0946721565</div>
-                                <div className="text-[10px] md:text-sm">Hotline mua hàng</div>
+                            <div className="col-span-1 bg-[#666] shadow-md shadow-[#ccc] md:text-[12px] text-white p-2 rounded text-center">
+                                <div className="text-[10px] uppercase font-semibold">0946721565</div>
+                                <div className="text-[10px] text-[#a1e611] italic">Hotline mua hàng</div>
                             </div>
-                            <div className="col-span-1 border-2 border-[#333] bg-gray-100 text-[#333] opacity-70 hover:opacity-100 p-2 rounded text-center">
-                                <div className="text-[10px] md:text-base uppercase font-semibold">Chat Trực Tiếp</div>
-                                <div className="text-[10px] md:text-sm">Zalo</div>
+                            <div className="col-span-1 bg-[#666] shadow-md shadow-[#ccc] md:text-[12px] text-white p-2 rounded text-center">
+                                <div className="text-[10px] uppercase font-semibold">Chat Trực Tiếp</div>
+                                <div className="text-[10px] text-[#a1e611] italic">Zalo</div>
                             </div>
                         </div>
                     </div>
@@ -309,87 +311,104 @@ export function Product() {
                 </div>
                 <div className="mt-8 px-4 md:px-4">
                     <h4 className="uppercase font-semibold mb-4">Sản phẩm liên quan</h4>
-                    <Swiper
-                        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-                        spaceBetween={20}
-                        autoplay={{ delay: 7000 }}
-                        breakpoints={{
-                            0:{
-                                slidesPerView: 2,
-                            },
-                            768: {
-                                slidesPerView: 2,
-                            },
-                            992: {
-                                slidesPerView: 4,
-                            },
-                        }}
-                        navigation
-                    >
-                        {relativeList.map((e, i) => (
-                            <SwiperSlide
-                                key={i}
-                                className="relative__product rounded text-center border border-[#333] bg-[#f5f5f5] hover:duration-300"
-                            >
-                                <Link href="/product.html" className="text-[#333]">
-                                    <div className="image">
-                                        <img src="/p1.jpeg" alt="" width={100} />
-                                    </div>
-                                    <h3 className="text-lg mb-2 font-semibold text-[#626262] mt-2">Xe đạp thể thao C24</h3>
-                                    <p className="text-xs mb-4">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.</p>
-                                    <div className="price font-bold mb-7 text-xl">21,000,000<sup>đ</sup></div>
-                                    <div className="selled">
-                                        <span className="bg-[#333] text-[#a1e611] rounded text-sm relative">
-                                            <img src="/fire.webp" alt="" width={45} height={45} />
-                                            Đã bán 21/30
-                                        </span>
-                                    </div>
-                                </Link>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                    <div className="relative">
+                        <Swiper
+                            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                            spaceBetween={15}
+                            autoplay={{ delay: 7000 }}
+                            breakpoints={{
+                                0: {
+                                    slidesPerView: 1,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                },
+                                992: {
+                                    slidesPerView: 4,
+                                },
+                            }}
+                            navigation
+                        >
+                            {relativeList.map((e, i) => (
+                                <SwiperSlide
+                                    key={i}
+                                    className="rounded hover:bg-[#f5f5f5] shadow-md shadow-[#ccc] hover:duration-300"
+                                >
+                                    <Link href="/product.html">
+                                        <div className="image">
+                                            <img src={"/p5.jpeg"} alt="" className="rounded-t" />
+                                        </div>
+                                        <div className="text-[#333] p-4 rounded-b">
+                                            <h3 className="mb-2 font-semibold text-sm">{e.title}</h3>
+                                            <p className="text-xs text-[#333]">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc…</p>
+                                            <div className="font-bold text-base mt-2 price">21,000,000<sup>đ</sup></div>
+                                            <div className="mt-2 grid gap-2 grid-cols-2 text-xs">
+                                                <div className="col-span-1 text-[#d28800]">
+                                                    <span>4.3</span>
+                                                    <span className="ml-2"><i className='fa fa-star'></i></span>
+                                                    <span className="ml-2 text-[#999]">(316)</span>
+                                                </div>
+                                                <div className="col-span-1 text-[#999] text-right">
+                                                    21 đã bán
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+
                 </div>
                 <div className="mt-8 px-4 md:px-4">
                     <h4 className="uppercase font-semibold mb-4">Sản phẩm bạn đã xem</h4>
-                    <Swiper
-                        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-                        spaceBetween={20}
-                        autoplay={{ delay: 7000 }}
-                        breakpoints={{
-                            0:{
-                                slidesPerView: 2,
-                            },
-                            768: {
-                                slidesPerView: 2,
-                            },
-                            992: {
-                                slidesPerView: 4,
-                            },
-                        }}
-                        navigation
-                    >
-                        {relativeList.map((e, i) => (
-                            <SwiperSlide
-                            key={i}
-                            className="relative__product rounded text-center border border-[#333] bg-[#f5f5f5] hover:duration-300"
+                    <div className="relative">
+                        <Swiper
+                            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                            spaceBetween={15}
+                            autoplay={{ delay: 7000 }}
+                            breakpoints={{
+                                0: {
+                                    slidesPerView: 1,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                },
+                                992: {
+                                    slidesPerView: 4,
+                                },
+                            }}
+                            navigation
                         >
-                            <Link href="/product.html" className="text-[#333]">
-                                <div className="image">
-                                    <img src="/p1.jpeg" alt="" width={100} />
-                                </div>
-                                <h3 className="text-lg mb-2 font-semibold text-[#626262] mt-2">Xe đạp thể thao C24</h3>
-                                <p className="text-xs mb-4">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.</p>
-                                <div className="price font-bold mb-7 text-xl">21,000,000<sup>đ</sup></div>
-                                <div className="selled">
-                                    <span className="bg-[#333] text-[#a1e611] rounded text-sm relative">
-                                        <img src="/fire.webp" alt="" width={45} height={45} />
-                                        Đã bán 21/30
-                                    </span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        ))}
-                    </Swiper>
+                            {relativeList.map((e, i) => (
+                                <SwiperSlide
+                                    key={i}
+                                    className="rounded hover:bg-[#f5f5f5] shadow-md shadow-[#ccc] hover:duration-300"
+                                >
+                                    <Link href="/product.html">
+                                        <div className="image">
+                                            <img src={"/p5.jpeg"} alt="" className="rounded-t" />
+                                        </div>
+                                        <div className="text-[#333] p-4 rounded-b">
+                                            <h3 className="mb-2 font-semibold text-sm">{e.title}</h3>
+                                            <p className="text-xs text-[#333]">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc…</p>
+                                            <div className="font-bold text-base mt-2 price">21,000,000<sup>đ</sup></div>
+                                            <div className="mt-2 grid gap-2 grid-cols-2 text-xs">
+                                                <div className="col-span-1 text-[#d28800]">
+                                                    <span>4.3</span>
+                                                    <span className="ml-2"><i className='fa fa-star'></i></span>
+                                                    <span className="ml-2 text-[#999]">(316)</span>
+                                                </div>
+                                                <div className="col-span-1 text-[#999] text-right">
+                                                    21 đã bán
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
                 </div>
             </div>
         </div>

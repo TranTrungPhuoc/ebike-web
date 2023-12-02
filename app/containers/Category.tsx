@@ -46,8 +46,8 @@ export function Category() {
     <div className="bestSeller md:mt-16">
       <div className="container mx-auto">
         <div className="title relative">
-          <span className="md:absolute block bg-[#333] text-[#a1e611] text-3xl px-7 py-2.5 text-center uppercase md:top-0 md:left-2/4 mb-2 md:mb-0 md:rounded-3xl italic">
-            Xedienvui.vn
+          <span className="md:absolute block bg-[#333] text-[#a1e611] text-2xl px-7 py-2.5 text-center uppercase md:top-0 md:left-2/4 mb-2 md:mb-0 md:rounded-3xl italic">
+            Mua xe là phải vui
           </span>
           <span className="md:absolute block uppercase text-center md:text-left mb-2 md:mb-0 italic font-bold right-5 text-base">
             (Bảo hành 2 năm)

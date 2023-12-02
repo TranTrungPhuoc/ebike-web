@@ -79,7 +79,7 @@ export function Category() {
                                 ))
                             }
                         </div>
-                        <div className="mt-4">
+                        {/* <div className="mt-4">
                             <ul className="flex flex-row space-x-1 justify-center">
                                 <li>
                                     <a className="w-9 h-9 p-2 block bg-[#333] rounded-[50%] flex items-center justify-center border border-black cursor-pointer hover:bg-[#a1e611] hover:text-[#333] text-center text-white" href="#">
@@ -107,6 +107,9 @@ export function Category() {
                                     </a>
                                 </li>
                             </ul>
+                        </div> */}
+                        <div className="text-center mt-4">
+                            <button type="button" className="border py-2 px-8 rounded hover:bg-[#6fa400] hover:text-white">Xem Thêm</button>
                         </div>
                     </div>
                     <div className="md:col-span-1 postSidebar">

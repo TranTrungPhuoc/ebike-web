@@ -20,11 +20,11 @@ export function Header() {
                             <i className="fa fa-phone text-[white] md:text-[#6fa400]"></i> Bảo hành: 028 6253 9118
                         </a>
                     </div>
-                    <div className="col-span-3 hidden md:block md:col-span-2 uppercase text-center text-[#333] font-bold italic bg-[#a1e611] text-xl textTwo">
-                        XeDienVui.VN
+                    <div className="col-span-3 hidden md:block md:col-span-2 uppercase text-center text-[#333] font-bold italic bg-[#a1e611] text-lg textTwo">
+                        <i className="fa-solid fa-car-side"></i> Freeship toàn quốc
                     </div>
-                    <div className="col-span-3 hidden md:block md:col-span-2 uppercase text-center text-[#333] font-bold bg-[#a1e611] text-xl textThree">
-                        Bảo hành 2 năm
+                    <div className="col-span-3 hidden md:block md:col-span-2 uppercase text-center text-[#333] font-bold italic bg-[#a1e611] text-lg textThree">
+                        <i className="fa-solid fa-award"></i> Bảo hành 2 năm
                     </div>
                 </div>
             </div>
