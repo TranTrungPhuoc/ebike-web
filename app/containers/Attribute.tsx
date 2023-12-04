@@ -20,6 +20,8 @@ import Iframe from '../components/Iframe';
 import React, { useState } from "react";
 import Popup from '../components/Popup';
 
+import YouTubePlayer from '../components/YouTubePlayer';
+
 export function Attribute() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const openPopup = () => {
@@ -45,11 +47,12 @@ export function Attribute() {
         </h2>
         <div className="grid gap-6 grid-cols-4 md:grid-cols-8 md:items-center">
           <div className="col-span-4 md:col-span-4">
-            <div className="relative cursor-pointer" onClick={openPopup}>
-              <img src="/video.jpeg" alt="" className="image rounded-xl" />
-              <span className="video inline-block top-1/2 left-1/2 leading-8 w-14 h-9 border absolute border-2 border-white text-center text-white bg-[#333] rounded-md">
-                <i className="fa fa-play"></i>
-              </span>
+            <div className="relative cursor-pointer"> {/** onClick={openPopup} */}
+            <YouTubePlayer />
+              {/* <img src="/video.jpeg" alt="" className="image rounded-xl" /> */}
+              {/* <span className="video inline-block top-1/2 left-1/2 leading-8 w-14 h-9 border absolute border-2 border-white text-center text-white bg-[#333] rounded-md"> */}
+                {/* <i className="fa fa-play"></i> */}
+              {/* </span> */}
             </div>
           </div>
           <div className="col-span-4 md:col-span-4">

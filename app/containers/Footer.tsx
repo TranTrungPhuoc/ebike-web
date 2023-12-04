@@ -145,7 +145,7 @@ export function Footer() {
                             <div className="grid gap-2 grid-cols-4 payment">
                                 {
                                     payments.map((e,i)=>(
-                                        <div key={i} className="col-span-1 md:col-span-2 bg-white p-2 rounded">
+                                        <div key={i} className="col-span-1 bg-white p-2 rounded">
                                             <a href="">
                                                 <img src={'/' + e} alt="" width={80} height={50} className="hover:opacity-70" />
                                                 {/* <Image

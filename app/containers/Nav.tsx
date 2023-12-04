@@ -196,7 +196,7 @@ export function Nav() {
     return (
         <>
             <div className={"fixed hiddenMenu h-full bg-[#333333a8] w-full top-0 left-0 bottom-0 right-0" + (!show ? ' hidden' : '')} onMouseOver={handleHiddenMenu}></div>
-            <nav className="p-2.5 bg-[#333] md:sticky top-0 z-10 relative">
+            <nav className="p-2.5 bg-[#333] sticky top-0 z-10 relative">
                 <div className="container mx-auto">
                     <div className="grid gap-2 grid-cols-12 items-center">
                         <div className="col-span-2 md:hidden text-white text-center">
@@ -205,7 +205,9 @@ export function Nav() {
                             </button>
                         </div>
                         <div className="col-span-7 text-center text-xl md:col-span-2 text-center md:text-left uppercase text-[#a1e611] md:text-3xl logo">
-                            <Link href="/">XeDienVui.Vn</Link>
+                            <Link href="/">
+                                <img src="/logo.png" alt="" />
+                            </Link>
                         </div>
                         <div className="col-span-12 order-2 lg:order-1 md:col-span-5 align-center md:pl-8">
                             <div className="input-group flex bg-white">

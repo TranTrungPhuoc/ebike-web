@@ -149,7 +149,7 @@ export function Product() {
                     <div className="col-span-12 md:col-span-4">
                         <h1 className="text-3xl font-semibold text-[#6fa400] mb-4">Xe đạp thể thao C24</h1>
                         <div className="price text-2xl font-semibold">
-                            23.990.000<sup>đ</sup> <span className="text-xs font-normal text-[#919191]">(Đã bao gồm phí ship)</span>
+                            23.990.000<sup>đ</sup> <span className="text-xs font-normal">(Đã bao gồm phí ship)</span>
                         </div>
                         <div className="mt-4 text-sm">
                             <div className="flex mb-4 gap-2 items-center">
@@ -200,7 +200,7 @@ export function Product() {
                                 <li>
                                     Mã khuyến mãi:
                                     <span className="text-[#cecece] ml-[5px]">XDV30</span>
-                                    <span className="cursor-pointer ml-2"><i className="fa-solid fa-copy"></i></span>
+                                    <span className="cursor-pointer ml-2 hover:text-[#6fa400]"><i className="fa-solid fa-copy"></i> COPY</span>
                                 </li>
                             </ul>
                         </div>
@@ -211,28 +211,28 @@ export function Product() {
                         </div>
                         <div className="grid gap-4 grid-cols-2 mt-4">
                             <div className="col-span-1 bg-[#666] shadow-md shadow-[#ccc] md:text-[12px] text-white p-2 rounded text-center">
-                                <div className="text-[10px] uppercase font-semibold">Trả góp 0%</div>
-                                <div className="text-[10px] text-[#a1e611] italic">Tại cửa hàng</div>
+                                <div className="text-xs uppercase font-semibold">Trả góp 0%</div>
+                                <div className="text-xs text-[#a1e611] italic">Tại cửa hàng</div>
                             </div>
                             <div className="col-span-1 bg-[#666] shadow-md shadow-[#ccc] md:text-[12px] text-white p-2 rounded text-center">
-                                <div className="text-[10px] uppercase font-semibold">Trả góp qua thẻ</div>
-                                <div className="text-[10px] text-[#a1e611] italic">Visa, Master</div>
+                                <div className="text-xs uppercase font-semibold">Trả góp qua thẻ</div>
+                                <div className="text-xs text-[#a1e611] italic">Visa, Master</div>
                             </div>
                             <div className="col-span-1 bg-[#666] shadow-md shadow-[#ccc] md:text-[12px] text-white p-2 rounded text-center">
-                                <div className="text-[10px] uppercase font-semibold">0946721565</div>
-                                <div className="text-[10px] text-[#a1e611] italic">Hotline mua hàng</div>
+                                <div className="text-xs uppercase font-semibold">0946721565</div>
+                                <div className="text-xs text-[#a1e611] italic">Hotline mua hàng</div>
                             </div>
                             <div className="col-span-1 bg-[#666] shadow-md shadow-[#ccc] md:text-[12px] text-white p-2 rounded text-center">
-                                <div className="text-[10px] uppercase font-semibold">Chat Trực Tiếp</div>
-                                <div className="text-[10px] text-[#a1e611] italic">Zalo</div>
+                                <div className="text-xs uppercase font-semibold">Chat Trực Tiếp</div>
+                                <div className="text-xs text-[#a1e611] italic">Zalo</div>
                             </div>
                         </div>
                     </div>
                     <div className="col-span-12 md:col-span-3">
-                        <div className="border border-gray-300 bg-gray-100 p-2 mb-2 text-center rounded">
+                        {/* <div className="border border-gray-300 bg-gray-100 p-2 mb-2 text-center rounded">
                             <div className="uppercase">Hotline đặt hàng</div>
                             <div className="text-3xl font-bold text-[#6fa400]">028 6253 9118</div>
-                        </div>
+                        </div> */}
                         <div className="mb-2">
                             <Link href={'/blog/post.html'}>
                                 <img src="/quangcao.jpeg" alt="" width={300} className="rounded w-full" />
@@ -240,7 +240,7 @@ export function Product() {
                         </div>
                         <div>
                             <Link href={'/blog/post.html'}>
-                                <img src="/abc.jpeg" alt="" width={300} className="rounded w-full" />
+                                <img src="/mau-banner-quang-cao-3.jpeg" alt="" width={300} className="rounded w-full" />
                             </Link>
                         </div>
                     </div>
@@ -343,7 +343,7 @@ export function Product() {
                                             <p className="text-xs text-[#333]">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc…</p>
                                             <div className="font-bold text-base mt-2 price">21,000,000<sup>đ</sup></div>
                                             <div className="mt-2 grid gap-2 grid-cols-2 text-xs">
-                                                <div className="col-span-1 text-[#d28800]">
+                                                <div className="col-span-1 text-[#6fa400]">
                                                     <span>4.3</span>
                                                     <span className="ml-2"><i className='fa fa-star'></i></span>
                                                     <span className="ml-2 text-[#999]">(316)</span>
@@ -394,7 +394,7 @@ export function Product() {
                                             <p className="text-xs text-[#333]">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc…</p>
                                             <div className="font-bold text-base mt-2 price">21,000,000<sup>đ</sup></div>
                                             <div className="mt-2 grid gap-2 grid-cols-2 text-xs">
-                                                <div className="col-span-1 text-[#d28800]">
+                                                <div className="col-span-1 text-[#6fa400]">
                                                     <span>4.3</span>
                                                     <span className="ml-2"><i className='fa fa-star'></i></span>
                                                     <span className="ml-2 text-[#999]">(316)</span>

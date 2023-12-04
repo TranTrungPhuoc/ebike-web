@@ -46,14 +46,14 @@ export function Category() {
     <div className="bestSeller md:mt-16">
       <div className="container mx-auto">
         <div className="title relative">
-          <span className="md:absolute block bg-[#333] text-[#a1e611] text-2xl px-7 py-2.5 text-center uppercase md:top-0 md:left-2/4 mb-2 md:mb-0 md:rounded-3xl italic">
+          <span className="md:absolute block bg-[#333] font-semibold shadow-md shadow-[#ccc] text-[#a1e611] text-xl px-7 py-2.5 text-center uppercase md:top-0 md:left-2/4 mb-2 md:mb-0 md:rounded-3xl">
             Mua xe là phải vui
           </span>
           <span className="md:absolute block uppercase text-center md:text-left mb-2 md:mb-0 italic font-bold right-5 text-base">
             (Bảo hành 2 năm)
           </span>
         </div>
-        <div className="grid gap-0 grid-cols-4 mx-4 md:mx-0 md:items-center border-2 border-[#a1e611] px-2 md:px-4 pb-2 md:pb-4 pt-2 md:pt-12 rounded-3xl">
+        <div className="grid gap-0 grid-cols-4 mx-4 md:mx-0 md:items-center border-2 border-[#333] px-2 md:px-4 pb-2 md:pb-4 pt-2 md:pt-12 rounded-3xl">
           {bestSellerList.map((e, i) => (
             <div key={i} className={i<4?"col-span-1 text-center border-b border-b-slate-300 border-r border-r-slate-300": "col-span-1 text-center border-b border-b-white border-r border-r-slate-300"}>
               <div className="products">

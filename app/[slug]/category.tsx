@@ -172,7 +172,7 @@ export function Category() {
                         <div className="md:flex flex-row">
                             <h1 className="basis-3/4 text-2xl pl-4 pt-0 pb-4 font-semibold text-[#333]">{detail.title}</h1>
                             <div className="basis-1/4 mx-4 md:mx-0 flex flex-row">
-                                <form action="" className="basis-4/5">
+                                <form action="" className="basis-4/5 text-sm">
                                     <select name="sort" id="sort" className="bg-[#e0e0e0] p-2 rounded">
                                         <option value="0">Theo thứ tự phổ biến</option>
                                         <option value="1">Giá: Từ A - Z</option>
@@ -197,7 +197,7 @@ export function Category() {
                                                 <p className="text-xs mb-4">{e.description}</p>
                                                 <div className="price font-bold mb-7 text-xl">{formattedNumber(e.price)}</div>
                                                 <div className="mt-2 grid gap-2 grid-cols-2 text-[10px] md:text-xs">
-                                                    <div className="col-span-1 text-[#d28800]">
+                                                    <div className="col-span-1 text-[#6fa400] text-left">
                                                         <span>4.3</span>
                                                         <span className="ml-[5px]"><i className='fa fa-star'></i></span>
                                                         <span className="ml-[5px] text-[#999]">(316)</span>

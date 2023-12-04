@@ -8789,10 +8789,6 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(145 145 145 / var(--tw-border-opacity));
 }
-.border-\[\#a1e611\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(161 230 17 / var(--tw-border-opacity));
-}
 .border-\[\#ccc\] {
   --tw-border-opacity: 1;
   border-color: rgb(204 204 204 / var(--tw-border-opacity));
@@ -8876,13 +8872,13 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(59 89 152 / var(--tw-bg-opacity));
 }
+.bg-\[\#666\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(102 102 102 / var(--tw-bg-opacity));
+}
 .bg-\[\#6fa400\] {
   --tw-bg-opacity: 1;
   background-color: rgb(111 164 0 / var(--tw-bg-opacity));
-}
-.bg-\[\#777\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(119 119 119 / var(--tw-bg-opacity));
 }
 .bg-\[\#a1e611\] {
   --tw-bg-opacity: 1;
@@ -8955,14 +8951,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-\[\#555\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(85 85 85 / var(--tw-bg-opacity));
-}
-.bg-\[\#666\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(102 102 102 / var(--tw-bg-opacity));
 }
 .bg-opacity-40 {
   --tw-bg-opacity: 0.4;
@@ -9188,10 +9176,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(206 206 206 / var(--tw-text-opacity));
 }
-.text-\[\#d28800\] {
-  --tw-text-opacity: 1;
-  color: rgb(210 136 0 / var(--tw-text-opacity));
-}
 .text-\[\#fff\] {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -9265,6 +9249,7 @@ video {
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -9349,6 +9334,12 @@ nav .input-group input {
   color: #a1e611 !important;
   width: calc(var(--swiper-navigation-size) / 44 * 32) !important;
   border-radius: 2px;
+  opacity: 0.5;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover{
+  opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
@@ -9356,13 +9347,22 @@ nav .input-group input {
 }
 
 .service .icon img {
-  width: auto !important;
+  width: 90px;
   display: initial !important;
 }
 
 .service .col-span-2:hover {
   transform: translate3d(0, -5px, 0);
   transition: all 0.5s;
+}
+
+.network-nav img{
+  width: 40px;
+  display: inline-block;
+}
+
+.network-nav span{
+  display: block;
 }
 
 .bestSeller .products {
@@ -9404,6 +9404,12 @@ main .products:hover {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translate3d(0, -5px, 0);
+}
+
+.network-nav li:hover, .service:hover .col-span-1:hover {
+  transform: translate3d(0, -5px, 0);
+  transition: all 0.5s;
   -webkit-transform: translate3d(0, -5px, 0);
 }
 
@@ -9682,7 +9688,6 @@ main .index h4::after {
 
 .network-nav ul {
   list-style: none;
-  padding: 0;
   margin: 0;
 }
 
@@ -9750,7 +9755,67 @@ li.active a{
   text-overflow: ellipsis;
 }
 
+.popup-carousel .bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: #333;
+  opacity: 0.8;
+  width: 100%;
+  cursor: pointer;
+}
+
+.popup-carousel .swiper{
+  position: fixed;
+  width: 90%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+}
+
+.popup-carousel  .swiper img{
+  width: auto;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.popup-carousel .close-button{
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+  background-color: #a1e611;
+  color: #333;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-carousel .close-button:hover{
+  opacity: 0.7;
+}
+
 @media (max-width: 767px) {
+  .network-nav ul{
+    padding: 0;
+  }
+
+  .network-nav img{
+    width: 30px;
+  }
+
+  .network-nav .call img{
+    width: 50px;
+  }
+
+  .service .icon img {
+    width: 30px;
+  }
+
   .bestSeller .products{
     padding: 5px;
   }
@@ -9886,9 +9951,9 @@ li.active a{
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  background: #6cb917;
+  background: #a1e611;
   line-height: 15px;
-  border: 2px solid white;
+  border: 2px solid #a1e611;
 }
 
 .network-nav .phone {
@@ -10153,10 +10218,6 @@ li.active a{
     margin-bottom: 1.25rem;
   }
 
-  .md\:mr-1 {
-    margin-right: 0.25rem;
-  }
-
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -10231,6 +10292,10 @@ li.active a{
 
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .md\:grid-cols-7 {

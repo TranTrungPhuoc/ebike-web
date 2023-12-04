@@ -1,19 +1,20 @@
 import { useState } from 'react';
-// import Image from 'next/image';
+import { PopupCarousel } from '../components/PopupCarousel';
+
 const TabProducts = (props: any) => {
     const [activeTab, setActiveTab] = useState(0);
-
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const openPopup = () => {
+        setIsPopupOpen(true);
+    };
+    const closePopup = () => {
+        setIsPopupOpen(false);
+    };
+    const images = ['p1.jpeg','p2.jpeg','p5.jpeg'];
     return (
         <div className="max-w-lg mx-auto">
-            <div className="bg-white rounded mb-4">
-                <img src={"/" + props.tabs[activeTab].content} alt="" width={500} />
-                {/* <Image
-                    src={"/" + props.tabs[activeTab].content}
-                    alt={props.tabs[activeTab].content}
-                    width={500}
-                    height={500}
-                    layout="responsive"
-                /> */}
+            <div className="bg-white rounded mb-4 cursor-pointer">
+                <img src={"/" + props.tabs[activeTab].content} alt="" width={500} onClick={openPopup}/>
             </div>
             <div className="grid gap-4 grid-cols-4 product-library">
                 {props.tabs.map((tab: any, index: any) => (
@@ -26,17 +27,10 @@ const TabProducts = (props: any) => {
                         onClick={() => setActiveTab(index)}
                     >
                         <img src={"/" + tab.label} alt="" width={100} className="rounded" />
-                        {/* <Image
-                            src={"/" + tab.label}
-                            alt={tab.label}
-                            width={100}
-                            height={100}
-                            layout="responsive rounded"
-                        /> */}
                     </div>
                 ))}
             </div>
-
+            {isPopupOpen && <PopupCarousel images={images} onClose={closePopup} />}
         </div>
     );
 };

@@ -27,7 +27,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Network />
-        <Ads />
+        {/* <Ads /> */}
       </body>
     </html>
   )
