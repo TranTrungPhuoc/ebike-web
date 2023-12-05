@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 export function Carousel() {
-    const array = ['2.jpeg','2.jpeg','2.jpeg']
+    const array = ['banner.jpg','banner.jpg','banner.jpg']
     return (
         <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -23,7 +23,7 @@ export function Carousel() {
             {
                 array.map((e, i)=>(
                     <SwiperSlide key={i}>
-                        <img src="/2.jpeg" alt="" />
+                        <img src="/banner.jpg" alt="" />
                     </SwiperSlide>
                 ))
             }

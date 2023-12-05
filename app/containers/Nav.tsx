@@ -196,7 +196,7 @@ export function Nav() {
     return (
         <>
             <div className={"fixed hiddenMenu h-full bg-[#333333a8] w-full top-0 left-0 bottom-0 right-0" + (!show ? ' hidden' : '')} onMouseOver={handleHiddenMenu}></div>
-            <nav className="p-2.5 bg-[#333] sticky top-0 z-10 relative">
+            <nav className="p-2.5 bg-[#333] sticky top-0 z-10 relative border-b-[5px] border-[#a3e611]">
                 <div className="container mx-auto">
                     <div className="grid gap-2 grid-cols-12 items-center">
                         <div className="col-span-2 md:hidden text-white text-center">

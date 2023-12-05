@@ -74,7 +74,7 @@ export function Attribute() {
             >
               {
                 slides.map((e,i)=>(
-                  <SwiperSlide key={i} className="text-center h-full rounded-xl border border-2 border-[#333] px-5 py-8">
+                  <SwiperSlide key={i} className="text-center h-full rounded-xl border border-slate-300 px-5 py-8">
                     <div className="image mb-5">
                       <img src={"/" + e.image} alt="" width={200} height={200} className="m-auto" />
                     </div>
