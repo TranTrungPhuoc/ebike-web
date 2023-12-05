@@ -2,7 +2,8 @@
 import { useParams } from "next/navigation";
 import { Category } from "./category";
 import { Product } from "./product";
-import Link from 'next/link'
+import Link from 'next/link';
+
 function Page() {
     const params = useParams();
     let isPage = 'category';

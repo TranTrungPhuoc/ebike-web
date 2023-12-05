@@ -229,10 +229,6 @@ export function Product() {
                         </div>
                     </div>
                     <div className="col-span-12 md:col-span-3">
-                        {/* <div className="border border-gray-300 bg-gray-100 p-2 mb-2 text-center rounded">
-                            <div className="uppercase">Hotline đặt hàng</div>
-                            <div className="text-3xl font-bold text-[#6fa400]">028 6253 9118</div>
-                        </div> */}
                         <div className="mb-2">
                             <Link href={'/blog/post.html'}>
                                 <img src="/quangcao.jpeg" alt="" width={300} className="rounded w-full" />
