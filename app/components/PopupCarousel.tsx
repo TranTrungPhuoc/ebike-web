@@ -21,9 +21,10 @@ export function PopupCarousel(props:any) {
                 pagination={{ clickable: true }}
             >
                 {
+                    props.images &&
                     props.images.map((e:any, i:any)=>(
                         <SwiperSlide key={i}>
-                            <img src={'/' + e} alt="" />
+                            <img src={e} alt="" />
                         </SwiperSlide>
                     ))
                 }

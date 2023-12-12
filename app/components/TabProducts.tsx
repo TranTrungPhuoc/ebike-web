@@ -10,14 +10,13 @@ const TabProducts = (props: any) => {
     const closePopup = () => {
         setIsPopupOpen(false);
     };
-    const images = ['p1.jpeg','p2.jpeg','p5.jpeg'];
     return (
         <div className="max-w-lg mx-auto">
             <div className="bg-white rounded mb-4 cursor-pointer">
-                <img src={"/" + props.tabs[activeTab].content} alt="" width={500} onClick={openPopup}/>
+                <img src={props.tabs && props.tabs[activeTab]} alt="" width={500} onClick={openPopup}/>
             </div>
             <div className="grid gap-4 grid-cols-4 product-library">
-                {props.tabs.map((tab: any, index: any) => (
+                {props.tabs && props.tabs.map((tab: any, index: any) => (
                     <div 
                         key={index}
                         className={`${activeTab === index
@@ -26,11 +25,11 @@ const TabProducts = (props: any) => {
                         } rounded-lg px-2 py-4 col-span-1 cursor-pointer`}
                         onClick={() => setActiveTab(index)}
                     >
-                        <img src={"/" + tab.label} alt="" width={100} className="rounded" />
+                        <img src={tab} alt="" width={100} className="rounded" />
                     </div>
                 ))}
             </div>
-            {isPopupOpen && <PopupCarousel images={images} onClose={closePopup} />}
+            {isPopupOpen && <PopupCarousel images={props.tabs && props.tabs} onClose={closePopup} />}
         </div>
     );
 };

@@ -61,11 +61,11 @@ export function Store() {
                         <Link href="/store" className="hover:text-white hover:duration-300">Hệ thống cửa hàng</Link>
                     </span>
                 </div>
-                <div className="grid gap-2 grid-cols-5 mx-4 md:mx-0 md:items-center md:border-t md:border-[#333] md:pt-12">
+                <div className="grid gap-4 grid-cols-5 mx-4 md:mx-0 md:items-center md:border-t md:border-[#333] md:pt-12">
                     <div className="col-span-5 md:col-span-2 order-2 lg:order-1">
-                        <div className="h-[230px] md:h-[500px] overflow-auto md:pr-4">
+                        <div className="h-[230px] md:h-[500px] overflow-auto">
                             {storeList.map((e, i) => (
-                                <div className="border rounded cursor-pointer mb-2 shadow-md shadow-[#ccc] hover:bg-[#f5f5f5]" onClick={() => setActiveTab(i)}>
+                                <div key={i} className="border rounded cursor-pointer mb-2 shadow-md shadow-[#ccc] hover:bg-[#f5f5f5]" onClick={() => setActiveTab(i)}>
                                     <div className="grid gap-4 grid-cols-2">
                                         <div className="col-span-1">
                                             <img src="/xe-dap-tphcm.jpeg" className="w-full rounded-tl rounded-bl" alt="" />

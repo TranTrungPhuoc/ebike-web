@@ -126,28 +126,27 @@ nav .input-group input {
   display: block;
 }
 
-.bestSeller .products {
+.bestSeller .category {
   padding: 10px 10px 20px;
-}
-
-.bestSeller .products:hover {
-  transform: translate3d(0, -5px, 0);
-  transition: all 0.5s;
 }
 
 .bestSeller .grid div:nth-child(4),
 .bestSeller .grid div:nth-child(8) {
   border-right-color: white;
 }
-
-.bestSeller .products:hover h2 {
+.bestSeller .category:hover h2 {
   color: #6fa400;
+  transition: 0.75s;
+}
+
+.bestSeller .category:hover img{
+  border: 2px solid #6fa400;
+  padding: 2px;
+  transition: 0.75s;
 }
 
 .bestSeller .title span:first-child {
-  /* font-family: "Roboto Condensed", sans-serif; */
   transform: translate(-50%, -50%);
-  /* font-weight: bold; */
 }
 
 .bestSeller .title span:last-child {
@@ -558,6 +557,10 @@ li.active a{
 
 .popup-carousel .close-button:hover{
   opacity: 0.7;
+}
+
+.popup-carousel .swiper img{
+  height: 100vh;
 }
 
 @media (max-width: 767px) {
