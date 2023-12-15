@@ -1,7 +1,10 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import Image from 'next/image';
 import Link from 'next/link'
+import { categoryDetail } from '../service/categoryDetail';
+import { useParams } from 'next/navigation';
+import { menuCategory } from '../service/menuCategory';
 export function Category() {
     const [showContent, setShowContent] = useState(false);
     const [value, setValue] = useState(2000000);
@@ -14,23 +17,22 @@ export function Category() {
             minimumFractionDigits: 0,
         }).format(numberToFormat);
     }
-    const detail = {title: 'Xe đạp thể thao đường phố', content: '<h2>Haaland thắng giải Cầu thủ hay nhất của UEFA</h2><p>Tiền đạo Erling Haaland, người ghi 52 bàn qua 53 trận giúp Man City đoạt cú ăn ba mùa 2022-2023, vượt mặt Lionel Messi để giành giải Cầu thủ hay nhất của UEFA.</p><h3>1. Haaland thắng giải Cầu thủ hay nhất của UEFA</h3><p>Theo công bố của Liên đoàn <a href="/">Bóng đá châu Âu</a>, trong lễ bốc thăm Champions League mùa 2023-2024 tối 31/8, Haaland đạt 352 điểm, đứng trên Messi (227 điểm) và <b>Kevin De Bruyne</b> (225 điểm).</p><p><img src="/centent.png" alt="" /></p><h3>2. <strong>Neymar</strong> gia nhập <i>Al-Hilal</i></h3><p>Sau khi thông báo rời PSG, Neymar chính thức ký hợp đồng với Al-Hilal (trong ảnh) và trở thành cầu thủ có lương cao thứ hai thế giới.</p><p><img src="/neyma.webp" alt="" /></p><p>Ý định của Neymar khi quyết định chia tay PSG là trở lại Barcelona. Tuy nhiên, Xavi Hernandez không chào đón anh vì không muốn thay đổi dự án được xây dựng hơn một năm qua, ngay cả khi Ousmane Dembele bất ngờ đến PSG. Thế nên, cầu thủ người Brazil quyết định đến với bóng đá Saudi Arabia để khoác áo Al-Hilal.</p><p>Theo L’Equipe, Al-Hilal chấp nhận trả cho PSG mức phí chuyển nhượng cố định gần 100 triệu USD (90 triệu euro) để có Neymar. Ngoài ra, nhà vô địch bóng đá Pháp có thể nhận thêm số tiền nhất định dựa theo số trận và bàn thắng của Neymar trong tương lai.</p><p>Chiêu mộ Neymar, Al-Hilal trở thành CLB chi tiêu nhiều thứ hai thế giới trong mùa hè năm nay, lên đến 293 triệu USD. Chelsea dẫn đầu với 353 triệu USD.</p><p>Neymar đã ký vào hợp đồng có thời hạn hai năm với Al-Hilal mà không có tùy chọn gia hạn. Cầu thủ 31 tuổi này không đơn độc ở Saudi Arabia. Anh đến Vịnh Ba Tư theo bước các cầu thủ nổi tiếng khác như Cristiano Ronaldo, Karim Benzema, N’Golo Kante, Riyad Mahrez hay Sadio Mane - những cầu thủ quyết định rời nền bóng đá đỉnh cao châu Âu để đến giải đấu thấp hơn và đổi lại là khoản lương khổng lồ.</p><p>Hợp đồng trọn gói của Neymar là 300 triệu USD trong hai năm. Chỉ có Ronaldo, người nhận 200 triệu USD mỗi năm từ Al-Nassr là có lương cao hơn. Tổng thu nhập cho đến 2025 của Neymar có thể lên đến 400 triệu USD, dựa theo các điều khoản đi kèm cùng với những hợp đồng thương mại.</p><h4>a. 2009: Mùa giải ra mắt</h4><p>Neymar ra mắt chuyên nghiệp vào ngày 7 tháng 3 năm 2009, mặc dù mới 17 tuổi. Anh ấy được tung vào sân trong 30 phút cuối cùng, trong chiến thắng 2–1 trước Oeste.</p><h4>b. 2010: Thành công tại Campeonato Paulista</h4><p>Neymar tiếp tục thăng hoa trong năm 2010, và vào ngày 15 tháng 4 năm 2010, anh ghi 5 bàn cho Santos trong trận thắng 8-1 trước Guarani ở vòng loại Cúp bóng đá Brasil.</p><figure class="image"><img alt="" src="https://en.coin-turk.com/wp-content/uploads/2023/07/altcoin-news-0003-1.jpg" width="1200"> <figcaption>Đốt cháy 100 triệu đô la! Sự sụt giảm nguồn cung lớn đối với các loại tiền thay thế phổ biến!</figcaption> </figure><p>Ở Al-Hilal, Neymar trở thành đồng đội của một số cầu thủ vừa đến từ châu Âu như Kalidou Koulibaly, Ruben Neves, Sergej Milinkovic-Savic. Al-Hilal là một trong những CLB lớn nhất Saudi Pro League, có 75% cổ phần thuộc sở hữu của Quỹ đầu tư công có chủ quyền Saudi Arabia (PIF).</p>'}
-    const productList = [
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'},
-        {title: 'Airwheel SE3S', link: '', image: '4.webp', price: 21000000, selled: 21, inventory: 30, description: 'Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.'}
-    ]
+    const params = useParams();
+    const slug = params.slug;
+    const limit = 6;
+    const [data, setData] = useState<any>();
+    const [asideCate, setAsideCate] = useState<any>();
+    useEffect(() => {
+        categoryDetail(slug).then((items) => {
+            setData(items.response.listData[0]);
+        });
+        menuCategory().then((items) => {
+            setAsideCate(items.response[0].childs);
+        });
+    }, [slug]);
+    const detail = { title: 'Xe đạp thể thao đường phố', content: '<h2>Haaland thắng giải Cầu thủ hay nhất của UEFA</h2><p>Tiền đạo Erling Haaland, người ghi 52 bàn qua 53 trận giúp Man City đoạt cú ăn ba mùa 2022-2023, vượt mặt Lionel Messi để giành giải Cầu thủ hay nhất của UEFA.</p><h3>1. Haaland thắng giải Cầu thủ hay nhất của UEFA</h3><p>Theo công bố của Liên đoàn <a href="/">Bóng đá châu Âu</a>, trong lễ bốc thăm Champions League mùa 2023-2024 tối 31/8, Haaland đạt 352 điểm, đứng trên Messi (227 điểm) và <b>Kevin De Bruyne</b> (225 điểm).</p><p><img src="/centent.png" alt="" /></p><h3>2. <strong>Neymar</strong> gia nhập <i>Al-Hilal</i></h3><p>Sau khi thông báo rời PSG, Neymar chính thức ký hợp đồng với Al-Hilal (trong ảnh) và trở thành cầu thủ có lương cao thứ hai thế giới.</p><p><img src="/neyma.webp" alt="" /></p><p>Ý định của Neymar khi quyết định chia tay PSG là trở lại Barcelona. Tuy nhiên, Xavi Hernandez không chào đón anh vì không muốn thay đổi dự án được xây dựng hơn một năm qua, ngay cả khi Ousmane Dembele bất ngờ đến PSG. Thế nên, cầu thủ người Brazil quyết định đến với bóng đá Saudi Arabia để khoác áo Al-Hilal.</p><p>Theo L’Equipe, Al-Hilal chấp nhận trả cho PSG mức phí chuyển nhượng cố định gần 100 triệu USD (90 triệu euro) để có Neymar. Ngoài ra, nhà vô địch bóng đá Pháp có thể nhận thêm số tiền nhất định dựa theo số trận và bàn thắng của Neymar trong tương lai.</p><p>Chiêu mộ Neymar, Al-Hilal trở thành CLB chi tiêu nhiều thứ hai thế giới trong mùa hè năm nay, lên đến 293 triệu USD. Chelsea dẫn đầu với 353 triệu USD.</p><p>Neymar đã ký vào hợp đồng có thời hạn hai năm với Al-Hilal mà không có tùy chọn gia hạn. Cầu thủ 31 tuổi này không đơn độc ở Saudi Arabia. Anh đến Vịnh Ba Tư theo bước các cầu thủ nổi tiếng khác như Cristiano Ronaldo, Karim Benzema, N’Golo Kante, Riyad Mahrez hay Sadio Mane - những cầu thủ quyết định rời nền bóng đá đỉnh cao châu Âu để đến giải đấu thấp hơn và đổi lại là khoản lương khổng lồ.</p><p>Hợp đồng trọn gói của Neymar là 300 triệu USD trong hai năm. Chỉ có Ronaldo, người nhận 200 triệu USD mỗi năm từ Al-Nassr là có lương cao hơn. Tổng thu nhập cho đến 2025 của Neymar có thể lên đến 400 triệu USD, dựa theo các điều khoản đi kèm cùng với những hợp đồng thương mại.</p><h4>a. 2009: Mùa giải ra mắt</h4><p>Neymar ra mắt chuyên nghiệp vào ngày 7 tháng 3 năm 2009, mặc dù mới 17 tuổi. Anh ấy được tung vào sân trong 30 phút cuối cùng, trong chiến thắng 2–1 trước Oeste.</p><h4>b. 2010: Thành công tại Campeonato Paulista</h4><p>Neymar tiếp tục thăng hoa trong năm 2010, và vào ngày 15 tháng 4 năm 2010, anh ghi 5 bàn cho Santos trong trận thắng 8-1 trước Guarani ở vòng loại Cúp bóng đá Brasil.</p><figure class="image"><img alt="" src="https://en.coin-turk.com/wp-content/uploads/2023/07/altcoin-news-0003-1.jpg" width="1200"> <figcaption>Đốt cháy 100 triệu đô la! Sự sụt giảm nguồn cung lớn đối với các loại tiền thay thế phổ biến!</figcaption> </figure><p>Ở Al-Hilal, Neymar trở thành đồng đội của một số cầu thủ vừa đến từ châu Âu như Kalidou Koulibaly, Ruben Neves, Sergej Milinkovic-Savic. Al-Hilal là một trong những CLB lớn nhất Saudi Pro League, có 75% cổ phần thuộc sở hữu của Quỹ đầu tư công có chủ quyền Saudi Arabia (PIF).</p>' }
     const htmlContent = detail.content;
-    const brands = ['dk-bike-200-2.png','Hitasa-200-2.png','jvc-eco-2.png','LOGO-XE-DIEN-06.png','nijia-logo-200.png']
+    const brands = ['dk-bike-200-2.png', 'Hitasa-200-2.png', 'jvc-eco-2.png', 'LOGO-XE-DIEN-06.png', 'nijia-logo-200.png']
     const handeShowClick = () => {
         setShowContent(!showContent)
     }
@@ -45,18 +47,36 @@ export function Category() {
                             </h3>
                             <div className="mt-4">
                                 <ul className="text-[#333] text-sm leading-8">
-                                    <li className="flex border-b border-b-slate-300 pb-2 mb-2">
-                                        <input type="checkbox" id="xdn" />
-                                        <label htmlFor="xdn" className="uppercase cursor-pointer ml-4 hover:text-[#6fa400]">
-                                            Xe đạp cho nam <sup>(7)</sup>
-                                        </label>
-                                    </li>
-                                    <li className="flex">
-                                        <input type="checkbox" id="xdu" />
-                                        <label htmlFor="xdu" className="uppercase cursor-pointer ml-4 hover:text-[#6fa400]">
-                                            Xe đạp Unisex <sup>(2)</sup>
-                                        </label>
-                                    </li>
+                                    {
+                                        asideCate &&
+                                        asideCate.map((a:any, ai:any)=>
+                                            <li key={ai} className={(asideCate.length != (ai+1) ? 'mb-2': '')}>
+                                                <span className='flex'>
+                                                    <input type="checkbox" id="xdn" />
+                                                    <label htmlFor="xdn" className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
+                                                        {a.title}
+                                                        {/* <sup>(7)</sup> */}
+                                                    </label>
+                                                </span>
+                                                {
+                                                    a.childs.length > 0 &&
+                                                    <ul className='ml-4 mt-2 text-xs'>
+                                                        {
+                                                            a.childs.map((c:any, ci:any)=>
+                                                                <li key={ci} className={"flex mb-2" + (a.childs.length != (ci+1) ? ' pb-2': '')}>
+                                                                    <input type="checkbox" id="xdn" />
+                                                                    <label htmlFor="xdn" className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
+                                                                        {c.title} 
+                                                                        {/* <sup>(7)</sup> */}
+                                                                    </label>
+                                                                </li>
+                                                            )
+                                                        }
+                                                    </ul>
+                                                }
+                                            </li>
+                                        )
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -67,7 +87,7 @@ export function Category() {
                             <div className="mt-6">
                                 <ul>
                                     {
-                                        brands.map((e,i)=>(
+                                        brands.map((e, i) => (
                                             <li key={i} className="flex border-b border-b-slate-300 pb-4 mb-4">
                                                 <input type="checkbox" id="th1" />
                                                 <label htmlFor="th1" className="uppercase cursor-pointer ml-4 hover:text-[#6fa400]">
@@ -170,7 +190,9 @@ export function Category() {
                     </div>
                     <div className="md:col-span-9">
                         <div className="md:flex flex-row">
-                            <h1 className="basis-3/4 text-2xl pl-4 pt-0 pb-4 font-semibold text-[#333]">{detail.title}</h1>
+                            <h1 className="basis-3/4 text-2xl pl-4 pt-0 pb-4 font-semibold text-[#333]">
+                                {data && data.title}
+                            </h1>
                             <div className="basis-1/4 mx-4 md:mx-0 flex flex-row">
                                 <form action="" className="basis-4/5 text-sm">
                                     <select name="sort" id="sort" className="bg-[#e0e0e0] p-2 rounded">
@@ -179,19 +201,20 @@ export function Category() {
                                     </select>
                                 </form>
                                 <div className={(!status ? "bg-[#a1e611] text-[#333]" : "bg-[#333] text-[#fff]") + " md:hidden p-2 basis-1/5 text-center rounded"} onClick={() => handleTabClick()}>
-                                    <i className={!status ? "fa-solid fa-bars": "fa fa-close"}></i>
+                                    <i className={!status ? "fa-solid fa-bars" : "fa fa-close"}></i>
                                 </div>
                             </div>
                         </div>
-                        <hr className="mt-4 md:mt-0"/>
+                        <hr className="mt-4 md:mt-0" />
                         <div className="grid gap-0 grid-cols-4 md:grid-cols-3 md:items-center">
                             {
-                                productList.map((e, i)=>(
-                                    <div key={i} className={i==2 || i==5 || i==8 || i==11 ? "col-span-2 md:col-span-1 text-center border-b border-b-slate-300 border-r border-r-white": "col-span-2 md:col-span-1 text-center border-b border-b-slate-300 border-r border-r-slate-300"}>
+                                data &&
+                                data.Products.map((e:any, i:any) => (
+                                    <div key={i} className={i == 2 || i == 5 || i == 8 || i == 11 ? "col-span-2 md:col-span-1 text-center border-b border-b-slate-300 border-r border-r-white" : "col-span-2 md:col-span-1 text-center border-b border-b-slate-300 border-r border-r-slate-300"}>
                                         <div className="products p-4">
-                                            <Link href="/product.html" className="text-[#333]">
+                                            <Link href={"/" + e.slug + ".html"} className="text-[#333]">
                                                 <div className="image">
-                                                    <img src={'/' + e.image} alt="" width={500} />
+                                                    <img src={e.avatar} alt="" width={500} />
                                                 </div>
                                                 <h3 className="text-sm mb-2 font-semibold text-[#626262]">{e.title}</h3>
                                                 <p className="text-xs mb-4">{e.description}</p>
@@ -241,9 +264,14 @@ export function Category() {
                                 </li>
                             </ul>
                         </div> */}
-                        <div className="text-center mt-4">
-                            <button type="button" className="border py-2 px-8 rounded hover:bg-[#6fa400] hover:text-white">Xem Thêm</button>
-                        </div>
+                        {
+                            data &&
+                            data.Products.length > limit &&
+                            <div className="text-center mt-4">
+                                <button type="button" className="border py-2 px-8 rounded hover:bg-[#6fa400] hover:text-white">Xem Thêm</button>
+                            </div>
+                        }
+                        
                         <div className="mt-12 md:relative text-center md:text-left">
                             <h2 className="mb-6 border-b border-[#333]">
                                 <span className="bg-[#333] text-[#a1e611] italic font-semibold text-xl uppercase p-4 rounded font-semibold">
@@ -254,10 +282,10 @@ export function Category() {
                                 Luôn làm hài lòng khách hàng
                             </span>
                         </div>
-                        <div className={"content mt-10 text-[#666] px-4 leading-6 text-justify" + (!showContent?' h-[500px] overflow-hidden': '')} dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
-                        <div className={"text-center relative" + (!showContent?' readmore': '')}>
+                        <div className={"content mt-10 text-[#666] px-4 leading-6 text-justify" + (!showContent ? ' h-[500px] overflow-hidden' : '')} dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
+                        <div className={"text-center relative" + (!showContent ? ' readmore' : '')}>
                             <button type='button' className='border py-2 px-8 rounded hover:bg-[#6fa400] hover:text-white' onClick={() => handeShowClick()}>
-                                { (!showContent?'Xem Thêm': 'Rút Gọn') }
+                                {(!showContent ? 'Xem Thêm' : 'Rút Gọn')}
                             </button>
                         </div>
                         <div className="border-y py-4 my-5 flex gap-2">

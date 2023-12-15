@@ -63,20 +63,21 @@ export function Store() {
                 </div>
                 <div className="grid gap-4 grid-cols-5 mx-4 md:mx-0 md:items-center md:border-t md:border-[#333] md:pt-12">
                     <div className="col-span-5 md:col-span-2 order-2 lg:order-1">
-                        <div className="h-[230px] md:h-[500px] overflow-auto">
+                        <div className="h-[230px] md:h-[500px] overflow-auto bg-[#e0e0e0] rounded-lg">
                             {storeList.map((e, i) => (
-                                <div key={i} className="border rounded cursor-pointer mb-2 shadow-md shadow-[#ccc] hover:bg-[#f5f5f5]" onClick={() => setActiveTab(i)}>
-                                    <div className="grid gap-4 grid-cols-2">
+                                <div key={i} className={"p-2 bg-[#333] cursor-pointer hover:bg-[#232323]" + (storeList[activeTab].dictrict==e.dictrict?' active':'')} onClick={() => setActiveTab(i)}>
+                                    <div className="grid gap-2 grid-cols-2">
                                         <div className="col-span-1">
                                             <img src="/xe-dap-tphcm.jpeg" className="w-full rounded-tl rounded-bl" alt="" />
                                         </div>
-                                        <div className="col-span-1">
-                                            <h5 className="text-sm font-semibold py-2">{e.dictrict}</h5>
+                                        <div className="col-span-1 text-[#ccc]">
+                                            <h5 className="font-semibold py-2 text-[#a3e611] uppercase"><i className='fa fa-location'></i> {e.dictrict}</h5>
+                                            <hr className='mb-2 border-[#555]'/>
                                             <div className="contact">
                                                 <ul className="text-[10px] md:text-xs md:leading-5">
-                                                    <li><b>Tel: <span className="text-[#6fa400]">028.3535.2458</span></b></li>
-                                                    <li>458 Nguyễn Thị Thập, Phường Tân Quy, Quận 7, TP.HCM</li>
-                                                    <li>Thứ 2 - Chủ Nhật: 9hAM - 9hPM</li>
+                                                    <li><b><span className="text-[#a3e611]"> <i className='fa fa-phone'></i> 028.3535.2458</span></b></li>
+                                                    <li><i className='fa fa-location-dot'></i> 458 Nguyễn Thị Thập, Phường Tân Quy, Quận 7, TP.HCM</li>
+                                                    <li><i className='fa fa-clock'></i> Thứ 2 - Chủ Nhật: 9hAM - 9hPM</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -86,7 +87,7 @@ export function Store() {
                         </div>
                     </div>
                     <div className="col-span-5 md:col-span-3 order-1 lg:order-2">
-                        <iframe src={storeList[activeTab].map} className="h-[230px] md:h-[500px] mb-2 md:mb-0 w-full shadow-md shadow-[#ccc] rounded" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src={storeList[activeTab].map} className="h-[230px] md:h-[500px] mb-2 md:mb-0 w-full shadow-md shadow-[#ccc] rounded-lg" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

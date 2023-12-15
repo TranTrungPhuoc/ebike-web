@@ -7,7 +7,7 @@ export function Header() {
                 <div className="grid gap-0 grid-cols-6 md:grid-cols-10 md:items-center">
                     <div className="col-span-2 bg-[rebeccapurple] md:bg-inherit font-semibold text-center md:text-left md:col-span-2 py-2 md:py-0 uppercase text-[8px] md:text-sm">
                         <Link href={'/store'} className="text-white md:text-[#333]">
-                            <i className="fa fa-map-marker text-[white] md:text-[#6fa400]"></i> Tìm địa chỉ cửa hàng
+                            <i className="fa fa-location-dot text-[white] md:text-[#6fa400]"></i> Tìm địa chỉ cửa hàng
                         </Link>
                     </div>
                     <div className="col-span-2 bg-[yellow] md:bg-inherit font-semibold text-center md:text-left md:col-span-2 py-2 md:py-0 uppercase text-[8px] md:text-sm">

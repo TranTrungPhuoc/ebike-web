@@ -41,7 +41,7 @@ export function Product() {
     productDetail(slug).then((items) => {
       setData(items.response[0]);
     });
-  }, []);
+  }, [slug]);
 
   const detail = {
     title: "Xe đạp thể thao đường phố",

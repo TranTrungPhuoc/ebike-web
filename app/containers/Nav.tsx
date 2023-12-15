@@ -22,10 +22,10 @@ export function Nav() {
     const [toggle, setToggle] = useState(false);
     const [bagach, setBagach] = useState(false);
 
-    const handleHiddenMenu = () => {setShow(false), setBagach(false)}
+    const handleHiddenMenu = () => { setShow(false), setBagach(false) }
     const handleShowMenu = () => setShow(true)
-    const handleShowBagach = () => {setBagach(true), setShow(true)}
-    const handleToggleMenu = () => {setToggle(!toggle), setShow(true)}
+    const handleShowBagach = () => { setBagach(true), setShow(true) }
+    const handleToggleMenu = () => { setToggle(!toggle), setShow(true) }
 
     return (
         <>
@@ -56,20 +56,20 @@ export function Nav() {
                                 <ul className="p-4 md:p-0 block w-[200px] md:w-auto md:flex h-[100vh] md:h-auto bg-white md:bg-[#333] justify-evenly text-sm">
                                     {
                                         menu &&
-                                        menu.map((e:any, ie:any) => (
+                                        menu.map((e: any, ie: any) => (
                                             <li key={ie} className="mb-4 md:mb-0 border-b md:border-none pb-4 md:pb-0">
                                                 {
-                                                    e.childs.length != 0 && (
+                                                    e.type == 'sanpham' && (
                                                         <>
                                                             <Link href={'/' + e.slug} className="text-black md:text-white hover:text-[#a1e611] hover:duration-300 uppercase cursor-pointer text-xs md:text-sm" onMouseOver={handleShowMenu}>{e.title}</Link>
                                                             <button type="button" className={"md:hidden fixed right-0 opacity-50 top-0 bg-[#fbfbfb] px-2 text-black" + (!show ? ' hidden' : '')} onClick={handleHiddenMenu}>
                                                                 <i className="fa fa-close"></i>
                                                             </button>
                                                             <button className="toggle float-right md:hidden" onClick={handleToggleMenu}>
-                                                                <i className={"fa fa-angle-" + (!toggle?'down':'up')}></i></button>
-                                                            <ul className={ ((!toggle) ? 'hidden ':'') + "sub-menu bg-[#fbfbfb] mt-2 md:mt-0 md:absolute w-full md:w-11/12 md:bg-white left-0 md:grid gap-2 grid-cols-2 md:grid-cols-7 p-4 md:p-6 border border-[#333] rounded top-full" + (!show ? ' md:hidden' : '')}>
+                                                                <i className={"fa fa-angle-" + (!toggle ? 'down' : 'up')}></i></button>
+                                                            <ul className={((!toggle) ? 'hidden ' : '') + "sub-menu bg-[#fbfbfb] mt-2 md:mt-0 md:absolute w-full md:w-11/12 md:bg-white left-0 md:grid gap-2 grid-cols-2 md:grid-cols-7 p-4 md:p-6 border border-[#333] rounded top-full" + (!show ? ' md:hidden' : '')}>
                                                                 {
-                                                                    e.childs.map((j:any, ij:any) => (
+                                                                    e.childs.map((j: any, ij: any) => (
                                                                         <li key={ij} className={e.childs.length - 1 != ij ? "md:pr-2" : ""}>
                                                                             <Link href={'/' + j.slug} className="font-bold uppercase hover:text-[#6fa400] text-xs md:text-sm" onClick={handleHiddenMenu}>
                                                                                 {j.title}
@@ -78,7 +78,7 @@ export function Nav() {
                                                                                 j.childs.length != 0 && (
                                                                                     <ul className="mt-2 border-t pt-2">
                                                                                         {
-                                                                                            j.childs.map((k:any, ik:any) => (
+                                                                                            j.childs.map((k: any, ik: any) => (
                                                                                                 <li key={ik} className="border-b pb-2 mb-2">
                                                                                                     <Link href={'/' + k.slug} className="text-[#666] hover:text-[#6fa400] text-xs md:text-sm" onClick={handleHiddenMenu}>{k.title}</Link>
                                                                                                 </li>
@@ -95,7 +95,7 @@ export function Nav() {
                                                     )
                                                 }
                                                 {
-                                                    e.childs.length == 0 && (
+                                                    e.type != 'sanpham' && (
                                                         <Link className="text-black md:text-white hover:text-[#a1e611] hover:duration-300 uppercase py-6 text-xs md:text-sm" href={'/' + e.slug} onMouseOver={handleHiddenMenu}>{e.title}</Link>
                                                     )
                                                 }
