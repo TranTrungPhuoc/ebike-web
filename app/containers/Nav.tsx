@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from "react";
 import Link from 'next/link'
 import { menuCategory } from "../service/menuCategory";
+import { libraryDetail } from "../service/libraryDetail";
 export function Nav() {
     const [fix, setFix] = useState(false);
     const [menu, setMenu] = useState([]);
+    const [logo, setLogo] = useState<any>();
     const setFixed = () => {
         if (window.scrollY > 150 && window.innerWidth < 1024) {
             setFix(true);
@@ -17,7 +19,11 @@ export function Nav() {
         menuCategory().then((items) => {
             setMenu(items.response);
         });
+        libraryDetail('logoTop').then((items) => {
+            setLogo(items.response.data[0]);
+          });
     }, []);
+    
     const [show, setShow] = useState(false);
     const [toggle, setToggle] = useState(false);
     const [bagach, setBagach] = useState(false);
@@ -40,7 +46,7 @@ export function Nav() {
                         </div>
                         <div className="col-span-7 text-center text-xl md:col-span-2 text-center md:text-left uppercase text-[#a1e611] md:text-3xl logo">
                             <Link href="/">
-                                <img src="/logo.png" alt="" />
+                                <img src={logo && logo.avatar} alt="" />
                             </Link>
                         </div>
                         <div className="col-span-12 order-2 lg:order-1 md:col-span-5 align-center md:pl-8">

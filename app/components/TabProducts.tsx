@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import { PopupCarousel } from '../components/PopupCarousel';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+
 const TabProducts = (props: any) => {
     const [activeTab, setActiveTab] = useState(0);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -10,24 +19,46 @@ const TabProducts = (props: any) => {
     const closePopup = () => {
         setIsPopupOpen(false);
     };
+    const [thumbsSwiper, setThumbsSwiper] = useState<any>();
+    
     return (
-        <div className="max-w-lg mx-auto">
-            <div className="bg-white rounded mb-4 cursor-pointer">
-                <img src={props.tabs && props.tabs[activeTab]} alt="" width={500} onClick={openPopup}/>
+        <div className="max-w-lg mx-auto mainProduct">
+            <div className="bg-white rounded mb-2 cursor-pointer">
+                <Swiper
+                    spaceBetween={10}
+                    navigation={true}
+                    thumbs={{ swiper: thumbsSwiper }}
+                    modules={[FreeMode, Navigation, Thumbs]}
+                >
+                    {
+                        props.tabs &&
+                        props.tabs.map((e:any, i:any)=>(
+                            <SwiperSlide key={i}>
+                                <img src={e} alt="" onClick={openPopup} />
+                            </SwiperSlide>
+                        ))
+                    }
+                </Swiper>
             </div>
-            <div className="grid gap-4 grid-cols-4 product-library">
-                {props.tabs && props.tabs.map((tab: any, index: any) => (
-                    <div 
-                        key={index}
-                        className={`${activeTab === index
-                            ? 'border-2 border-[#6fa400] opacity-100'
-                            : 'border-2 border-white opacity-50'
-                        } rounded-lg px-2 py-4 col-span-1 cursor-pointer`}
-                        onClick={() => setActiveTab(index)}
-                    >
-                        <img src={tab} alt="" width={100} className="rounded" />
-                    </div>
-                ))}
+            <div className="product-library">
+                <Swiper
+                    onSwiper={setThumbsSwiper}
+                    spaceBetween={10}
+                    slidesPerView={4}
+                    freeMode={true}
+                    watchSlidesProgress={true}
+                    modules={[FreeMode, Navigation, Thumbs]}
+                    className="mySwiper"
+                >
+                    {
+                        props.tabs &&
+                        props.tabs.map((e:any, i:any)=>(
+                            <SwiperSlide key={i}>
+                                <img src={e} alt="" />
+                            </SwiperSlide>
+                        ))
+                    }
+                </Swiper>
             </div>
             {isPopupOpen && <PopupCarousel images={props.tabs && props.tabs} onClose={closePopup} />}
         </div>

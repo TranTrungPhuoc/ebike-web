@@ -16,18 +16,20 @@ export async function Category() {
           </span>
         </div>
         <div className="grid gap-0 grid-cols-4 mx-4 md:mx-0 md:items-center border-2 border-[#333] px-2 md:px-4 pb-2 md:pb-4 pt-2 md:pt-12 rounded-3xl">
-          {response_categoryHome.map((e:any, i:any) => (
-            <div key={i} className={i<4?"col-span-1 text-center": "col-span-1 text-center"}>
-              <div className="category">
-                <Link href={"/" + e.slug}>
-                  <div className="image mb-2.5 text-center">
-                    <img src={ ORIGINAL_URL + "/uploads/category/" + e.avatar} alt="" className="border border-r-slate-300 p-4 rounded-full"/>
-                  </div>
-                  <h2 className="text-[10px] font-semibold md:text-lg">{e.title}</h2>
-                </Link>
+          {
+            response_categoryHome &&
+            response_categoryHome.map((e: any, i: any) => (
+              <div key={i} className={i < 4 ? "col-span-1 text-center" : "col-span-1 text-center"}>
+                <div className="category">
+                  <Link href={"/" + e.slug}>
+                    <div className="image mb-2.5 text-center">
+                      <img src={ORIGINAL_URL + "/uploads/category/" + e.avatar} alt="" className="border border-r-slate-300 p-4 rounded-3xl" />
+                    </div>
+                    <h2 className="text-[10px] font-semibold md:text-lg">{e.title}</h2>
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>

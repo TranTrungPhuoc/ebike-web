@@ -18,7 +18,7 @@ export function PopupCarousel(props:any) {
                 slidesPerView={1}
                 autoplay={{ delay: 3000 }}
                 navigation
-                pagination={{ clickable: true }}
+                pagination={{ type: 'fraction' }}
             >
                 {
                     props.images &&

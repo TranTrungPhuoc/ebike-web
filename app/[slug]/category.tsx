@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { categoryDetail } from '../service/categoryDetail';
 import { useParams } from 'next/navigation';
 import { menuCategory } from '../service/menuCategory';
+import { colorGetList } from '../service/colorGetList';
+import { pinGetList } from '../service/pinGetList';
 export function Category() {
     const [showContent, setShowContent] = useState(false);
     const [value, setValue] = useState(2000000);
@@ -22,17 +24,22 @@ export function Category() {
     const limit = 6;
     const [data, setData] = useState<any>();
     const [asideCate, setAsideCate] = useState<any>();
+    const [asideColor, setAsideColor] = useState<any>();
+    const [asidePin, setAsidePin] = useState<any>();
     useEffect(() => {
         categoryDetail(slug).then((items) => {
-            setData(items.response.listData[0]);
+            setData(items.response.listData);
         });
         menuCategory().then((items) => {
             setAsideCate(items.response[0].childs);
         });
+        colorGetList().then((items) => {
+            setAsideColor(items.response);
+        });
+        pinGetList().then((items) => {
+            setAsidePin(items.response);
+        });
     }, [slug]);
-    const detail = { title: 'Xe đạp thể thao đường phố', content: '<h2>Haaland thắng giải Cầu thủ hay nhất của UEFA</h2><p>Tiền đạo Erling Haaland, người ghi 52 bàn qua 53 trận giúp Man City đoạt cú ăn ba mùa 2022-2023, vượt mặt Lionel Messi để giành giải Cầu thủ hay nhất của UEFA.</p><h3>1. Haaland thắng giải Cầu thủ hay nhất của UEFA</h3><p>Theo công bố của Liên đoàn <a href="/">Bóng đá châu Âu</a>, trong lễ bốc thăm Champions League mùa 2023-2024 tối 31/8, Haaland đạt 352 điểm, đứng trên Messi (227 điểm) và <b>Kevin De Bruyne</b> (225 điểm).</p><p><img src="/centent.png" alt="" /></p><h3>2. <strong>Neymar</strong> gia nhập <i>Al-Hilal</i></h3><p>Sau khi thông báo rời PSG, Neymar chính thức ký hợp đồng với Al-Hilal (trong ảnh) và trở thành cầu thủ có lương cao thứ hai thế giới.</p><p><img src="/neyma.webp" alt="" /></p><p>Ý định của Neymar khi quyết định chia tay PSG là trở lại Barcelona. Tuy nhiên, Xavi Hernandez không chào đón anh vì không muốn thay đổi dự án được xây dựng hơn một năm qua, ngay cả khi Ousmane Dembele bất ngờ đến PSG. Thế nên, cầu thủ người Brazil quyết định đến với bóng đá Saudi Arabia để khoác áo Al-Hilal.</p><p>Theo L’Equipe, Al-Hilal chấp nhận trả cho PSG mức phí chuyển nhượng cố định gần 100 triệu USD (90 triệu euro) để có Neymar. Ngoài ra, nhà vô địch bóng đá Pháp có thể nhận thêm số tiền nhất định dựa theo số trận và bàn thắng của Neymar trong tương lai.</p><p>Chiêu mộ Neymar, Al-Hilal trở thành CLB chi tiêu nhiều thứ hai thế giới trong mùa hè năm nay, lên đến 293 triệu USD. Chelsea dẫn đầu với 353 triệu USD.</p><p>Neymar đã ký vào hợp đồng có thời hạn hai năm với Al-Hilal mà không có tùy chọn gia hạn. Cầu thủ 31 tuổi này không đơn độc ở Saudi Arabia. Anh đến Vịnh Ba Tư theo bước các cầu thủ nổi tiếng khác như Cristiano Ronaldo, Karim Benzema, N’Golo Kante, Riyad Mahrez hay Sadio Mane - những cầu thủ quyết định rời nền bóng đá đỉnh cao châu Âu để đến giải đấu thấp hơn và đổi lại là khoản lương khổng lồ.</p><p>Hợp đồng trọn gói của Neymar là 300 triệu USD trong hai năm. Chỉ có Ronaldo, người nhận 200 triệu USD mỗi năm từ Al-Nassr là có lương cao hơn. Tổng thu nhập cho đến 2025 của Neymar có thể lên đến 400 triệu USD, dựa theo các điều khoản đi kèm cùng với những hợp đồng thương mại.</p><h4>a. 2009: Mùa giải ra mắt</h4><p>Neymar ra mắt chuyên nghiệp vào ngày 7 tháng 3 năm 2009, mặc dù mới 17 tuổi. Anh ấy được tung vào sân trong 30 phút cuối cùng, trong chiến thắng 2–1 trước Oeste.</p><h4>b. 2010: Thành công tại Campeonato Paulista</h4><p>Neymar tiếp tục thăng hoa trong năm 2010, và vào ngày 15 tháng 4 năm 2010, anh ghi 5 bàn cho Santos trong trận thắng 8-1 trước Guarani ở vòng loại Cúp bóng đá Brasil.</p><figure class="image"><img alt="" src="https://en.coin-turk.com/wp-content/uploads/2023/07/altcoin-news-0003-1.jpg" width="1200"> <figcaption>Đốt cháy 100 triệu đô la! Sự sụt giảm nguồn cung lớn đối với các loại tiền thay thế phổ biến!</figcaption> </figure><p>Ở Al-Hilal, Neymar trở thành đồng đội của một số cầu thủ vừa đến từ châu Âu như Kalidou Koulibaly, Ruben Neves, Sergej Milinkovic-Savic. Al-Hilal là một trong những CLB lớn nhất Saudi Pro League, có 75% cổ phần thuộc sở hữu của Quỹ đầu tư công có chủ quyền Saudi Arabia (PIF).</p>' }
-    const htmlContent = detail.content;
-    const brands = ['dk-bike-200-2.png', 'Hitasa-200-2.png', 'jvc-eco-2.png', 'LOGO-XE-DIEN-06.png', 'nijia-logo-200.png']
     const handeShowClick = () => {
         setShowContent(!showContent)
     }
@@ -41,19 +48,19 @@ export function Category() {
             <div className="container mx-auto">
                 <div className="grid gap-2 md:grid-cols-12">
                     <div className={(!status ? "hidden" : "mobile") + " md:block md:col-span-3"}>
-                        <div className="border border-r-slate-300 rounded-md p-4">
+                        <div className="border border-r-slate-300 rounded-md p-4 mb-4">
                             <h3 className="uppercase text-[#333] font-semibold border-b border-r-slate-300 pb-2">
                                 Danh Mục Sản Phẩm
                             </h3>
-                            <div className="mt-4">
-                                <ul className="text-[#333] text-sm leading-8">
+                            <div className="mt-4 bg-[#f6f6f6] rounded p-2 h-[300px] overflow-auto">
+                                <ul className="text-[#333] text-xs leading-8">
                                     {
                                         asideCate &&
                                         asideCate.map((a:any, ai:any)=>
                                             <li key={ai} className={(asideCate.length != (ai+1) ? 'mb-2': '')}>
                                                 <span className='flex'>
-                                                    <input type="checkbox" id="xdn" />
-                                                    <label htmlFor="xdn" className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
+                                                    <input type="checkbox" name="input_category" id={"input_category_"+ai} />
+                                                    <label htmlFor={"input_category_"+ai} className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
                                                         {a.title}
                                                         {/* <sup>(7)</sup> */}
                                                     </label>
@@ -64,8 +71,8 @@ export function Category() {
                                                         {
                                                             a.childs.map((c:any, ci:any)=>
                                                                 <li key={ci} className={"flex mb-2" + (a.childs.length != (ci+1) ? ' pb-2': '')}>
-                                                                    <input type="checkbox" id="xdn" />
-                                                                    <label htmlFor="xdn" className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
+                                                                    <input type="checkbox" name="input_category" id={"input_category_"+ci+ai} />
+                                                                    <label htmlFor={"input_category_"+ci+ai} className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
                                                                         {c.title} 
                                                                         {/* <sup>(7)</sup> */}
                                                                     </label>
@@ -80,7 +87,53 @@ export function Category() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="border border-r-slate-300 rounded-md p-4 mt-4">
+                        <div className="border border-r-slate-300 rounded-md p-4 mb-4">
+                            <h3 className="uppercase text-[#333] font-semibold border-b border-r-slate-300 pb-2">
+                                Màu sắc
+                            </h3>
+                            <div className="mt-4">
+                                <ul className="text-[#333] grid gap-2 grid-cols-2 text-[10px] leading-8">
+                                    {
+                                        asideColor &&
+                                        asideColor.map((a:any, ai:any)=>
+                                            <li key={ai} className='bg-[#f6f6f6] rounded py-1 px-2 hover:bg-[#DFDFDF]'>
+                                                <span className='flex'>
+                                                    <input type="checkbox" name="color" id={"color"+ai} />
+                                                    <label htmlFor={"color"+ai} className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
+                                                        {a.title}
+                                                        {/* <sup>(7)</sup> */}
+                                                    </label>
+                                                </span>
+                                            </li>
+                                        )
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="border border-r-slate-300 rounded-md p-4">
+                            <h3 className="uppercase text-[#333] font-semibold border-b border-r-slate-300 pb-2">
+                                Pin
+                            </h3>
+                            <div className="mt-4">
+                                <ul className="text-[#333] grid gap-2 grid-cols-2 text-[10px] leading-8">
+                                    {
+                                        asidePin &&
+                                        asidePin.map((a:any, ai:any)=>
+                                            <li key={ai} className='bg-[#f6f6f6] rounded py-1 px-2 hover:bg-[#DFDFDF]'>
+                                                <span className='flex'>
+                                                    <input type="checkbox" name="color" id={"color"+ai} />
+                                                    <label htmlFor={"color"+ai} className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
+                                                        {a.title}
+                                                        {/* <sup>(7)</sup> */}
+                                                    </label>
+                                                </span>
+                                            </li>
+                                        )
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        {/* <div className="border border-r-slate-300 rounded-md p-4 mt-4">
                             <h3 className="uppercase text-[#333] font-semibold border-b border-r-slate-300 pb-2">
                                 Thương Hiệu
                             </h3>
@@ -92,12 +145,6 @@ export function Category() {
                                                 <input type="checkbox" id="th1" />
                                                 <label htmlFor="th1" className="uppercase cursor-pointer ml-4 hover:text-[#6fa400]">
                                                     <img src={'/' + e} alt="" width={100} />
-                                                    {/* <Image
-                                                        src="/dk-bike-200-2.png"
-                                                        alt="dk-bike-200-2.png"
-                                                        width={100}
-                                                        height={100}
-                                                    /> */}
                                                 </label>
                                             </li>
                                         ))
@@ -168,21 +215,21 @@ export function Category() {
                                     <div className="text-sm text-[#333]">Price: <span className="font-bold text-[#bdbdbd]">{formattedNumber(value)} <u>đ</u></span></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="border border-r-slate-300 rounded-md p-2 mt-4 sticky top-16">
-                            <div className="bg-[#333] text-[#a1e611] rounded-lg text-lg text-center p-2 font-bold uppercase italic">
-                                The world ebike.com
-                            </div>
+                            {/* <div className="bg-[#333] rounded-lg text-lg text-center p-2">
+                                <img src="/logo.png" style={{width: '70%', margin: 'auto'}} alt="" />
+                            </div> */}
                             <div className="border py-2 border-r-slate-300 bg-[#e0e0e0] rounded-lg text-lg text-center font-bold uppercase mt-2">
                                 <a href="tel:0946721565">
-                                    <div className="text-2xl text-[red] rounded-lg">0946721565</div>
+                                    <div className="text-xl text-[red] rounded-lg">0946721565</div>
                                     <div className="">Hotline mua hàng</div>
                                 </a>
                             </div>
-                            <div className="bg-[#333] rounded-lg text-lg text-center p-2 font-bold uppercase mt-2">
+                            <div className="bg-[#333] rounded-lg text-center p-2 font-bold uppercase mt-2">
                                 <a href="">
                                     <span className="text-white text-sm">
-                                        Chat trực tiếp <span className="text-2xl text-[#a1e611]">Zalo</span>
+                                        Chat trực tiếp <span className="text-xl text-[#a1e611]">Zalo</span>
                                     </span>
                                 </a>
                             </div>
@@ -271,32 +318,37 @@ export function Category() {
                                 <button type="button" className="border py-2 px-8 rounded hover:bg-[#6fa400] hover:text-white">Xem Thêm</button>
                             </div>
                         }
-                        
-                        <div className="mt-12 md:relative text-center md:text-left">
-                            <h2 className="mb-6 border-b border-[#333]">
-                                <span className="bg-[#333] text-[#a1e611] italic font-semibold text-xl uppercase p-4 rounded font-semibold">
-                                    Mua xe là phải vui
-                                </span>
-                            </h2>
-                            <span className="md:absolute right-0 top-0 font-semibold italic">
-                                Luôn làm hài lòng khách hàng
-                            </span>
-                        </div>
-                        <div className={"content mt-10 text-[#666] px-4 leading-6 text-justify" + (!showContent ? ' h-[500px] overflow-hidden' : '')} dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
-                        <div className={"text-center relative" + (!showContent ? ' readmore' : '')}>
-                            <button type='button' className='border py-2 px-8 rounded hover:bg-[#6fa400] hover:text-white' onClick={() => handeShowClick()}>
-                                {(!showContent ? 'Xem Thêm' : 'Rút Gọn')}
-                            </button>
-                        </div>
-                        <div className="border-y py-4 my-5 flex gap-2">
-                            <div className="basis-2/12 md:basis-1/12">
-                                <img src="/user.webp" alt="" width={100} className="rounded-full" />
-                            </div>
-                            <div className="basis-10/12 md:basis-11/12 text-[#666]">
-                                <div className="font-semibold">admin@gmail.com</div>
-                                <p className="text-xs italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
+                        {
+                            data &&
+                            data.content !='' &&
+                            <>
+                                <div className="mt-12 md:relative text-center md:text-left">
+                                    <h2 className="mb-6 border-b border-[#333]">
+                                        <span className="bg-[#333] text-[#a1e611] italic font-semibold text-xl uppercase p-4 rounded font-semibold">
+                                            Mua xe là phải vui
+                                        </span>
+                                    </h2>
+                                    <span className="md:absolute right-0 top-0 font-semibold italic">
+                                        Luôn làm hài lòng khách hàng
+                                    </span>
+                                </div>
+                                <div className={"content mt-10 text-[#666] px-4 leading-6 text-justify" + (!showContent ? ' h-[500px] overflow-hidden' : '')} dangerouslySetInnerHTML={{ __html: data.content }}></div>
+                                <div className={"text-center relative" + (!showContent ? ' readmore' : '')}>
+                                    <button type='button' className='border py-2 px-8 rounded hover:bg-[#6fa400] hover:text-white' onClick={() => handeShowClick()}>
+                                        {(!showContent ? 'Xem Thêm' : 'Rút Gọn')}
+                                    </button>
+                                </div>
+                                {/* <div className="border-y py-4 my-5 flex gap-2">
+                                    <div className="basis-2/12 md:basis-1/12">
+                                        <img src="/user.webp" alt="" width={100} className="rounded-full" />
+                                    </div>
+                                    <div className="basis-10/12 md:basis-11/12 text-[#666]">
+                                        <div className="font-semibold">admin@gmail.com</div>
+                                        <p className="text-xs italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div> */}
+                            </>
+                        }
                     </div>
                 </div>
             </div>

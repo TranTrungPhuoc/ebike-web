@@ -1,6 +1,7 @@
 // import Image from 'next/image';
 import Link from "next/link";
-export function Footer() {
+export function Footer(props:any) {
+    const data = props.data;
     const payments = ['visa.png','mastercard.png','discover.png','american.png']
     return (
         <footer className="mt-7">
@@ -119,26 +120,22 @@ export function Footer() {
                 <div className="container mx-auto">
                     <div className="grid gap-6 grid-cols-4">
                         <div className="col-span-5 md:col-span-1">
-                            <ul className="text-xs md:text-sm">
-                                <li>Hotline: <span className="text-[#a1e611] text-xl">1800 8973</span></li>
-                                <li>CSKH: 1800 9063 (9:00 - 17:00)</li>
-                                <li>Email: info@ebike.com</li>
+                            <ul className="text-xs md:text-sm addColor">
+                                <li dangerouslySetInnerHTML={{ __html: data.hotlineCompany }}></li>
+                                <li>{data.cskhCompany}</li>
+                                <li>{data.emailCompany}</li>
                             </ul>
                             <div className="mt-2">
                                 <img src="/dathongbao.png" alt="" width={150} height={50} />
-                                {/* <Image
-                                    src="/dathongbao.png"
-                                    alt="dathongbao.png"
-                                    width={150}
-                                    height={50}
-                                /> */}
                             </div>
                         </div>
                         <div className="col-span-5 md:col-span-2">
-                            <h1 className="uppercase text-[#a1e611] text-xl md:text-2xl mb-3 font-semibold">Công ty cổ phần Ebike</h1>
+                            <h1 className="uppercase text-[#a1e611] text-xl md:text-2xl mb-3 font-semibold">
+                                {data.nameCompany}
+                            </h1>
                             <ul className="text-xs md:text-sm">
-                                <li>ĐKKD/MST: 0313891315 do sở KHDT TP.HCM cấp 04/07/2016</li>
-                                <li>Trụ sở: 100 Hải Thượng Lãn Ông, P.10, Quận 5, TP.HCM</li>
+                                <li>{data.mstCompany}</li>
+                                <li>{data.addressCompany}</li>
                             </ul>
                         </div>
                         <div className="col-span-5 md:col-span-1">
@@ -148,13 +145,6 @@ export function Footer() {
                                         <div key={i} className="col-span-1 bg-white p-2 rounded">
                                             <a href="">
                                                 <img src={'/' + e} alt="" width={80} height={50} className="hover:opacity-70" />
-                                                {/* <Image
-                                                    src="/visa.png"
-                                                    alt="visa.png"
-                                                    width={80}
-                                                    height={50}
-                                                    className="hover:opacity-70"
-                                                /> */}
                                             </a>
                                         </div>
                                     ))

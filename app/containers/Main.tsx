@@ -21,8 +21,8 @@ export async function Main() {
                                         <div className="image">
                                             <img src={e.avatar} alt="" />
                                         </div>
-                                        <h3 className="text-sm mb-2 font-semibold text-[#626262] h-[60px]">{e.title}</h3>
-                                        <p className="text-xs mb-4">Cấu trúc FLAT-MAX™ 20/80 tối ưu sức chứa. Hệ thống dừng EASY BRAKE™ cố định bánh xe, không gây trượt ngã va li trên bề mặt dốc.</p>
+                                        <h3 className="text-sm mb-2 font-semibold text-[#626262] h-[50px]">{e.title}</h3>
+                                        <p className="text-xs mb-4">{e.description}</p>
                                         <div className="price font-bold mb-7 text-lg">{e.price!=0?formattedNumber(e.price):'Liên Hệ'}</div>
                                         <div className="mt-2 grid gap-2 grid-cols-2 text-[10px] md:text-xs">
                                             <div className="col-span-1 text-[#6fa400] text-left">
