@@ -130,9 +130,9 @@ export function Footer(props:any) {
                             </div>
                         </div>
                         <div className="col-span-5 md:col-span-2">
-                            <h1 className="uppercase text-[#a1e611] text-xl md:text-2xl mb-3 font-semibold">
+                            <h2 className="uppercase text-[#a1e611] text-xl mb-3 font-semibold">
                                 {data.nameCompany}
-                            </h1>
+                            </h2>
                             <ul className="text-xs md:text-sm">
                                 <li>{data.mstCompany}</li>
                                 <li>{data.addressCompany}</li>

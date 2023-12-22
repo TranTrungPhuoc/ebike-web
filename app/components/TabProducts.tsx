@@ -11,7 +11,7 @@ import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 const TabProducts = (props: any) => {
-    const [activeTab, setActiveTab] = useState(0);
+    // const [activeTab, setActiveTab] = useState(0);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const openPopup = () => {
         setIsPopupOpen(true);
