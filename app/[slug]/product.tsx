@@ -69,7 +69,7 @@ export function Product() {
             <TabProducts tabs={data && libraries} />
           </div>
           <div className="col-span-12 md:col-span-4">
-            <h1 className="text-3xl font-semibold text-[#6fa400] mb-4">
+            <h1 className="text-2xl font-semibold text-[#6fa400] mb-4">
               {data && data["title"]}
             </h1>
             <div className="price text-2xl font-semibold">
@@ -92,29 +92,39 @@ export function Product() {
               {
                 data &&
                 data.color.length > 0 &&
-                <div className="flex mb-4 gap-2 items-center">
-                  <span className="text-[#919191]">Màu sắc:</span>
-                  {
-                    data.color.map((c: any, ci: any) =>
-                      <span key={ci} className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer text-xs">
-                        {c.title}
-                      </span>
-                    )
-                  }
+                <div className="mb-4 gap-2 items-center border p-1">
+                  <div className="text-[#919191] mb-2 text-xs font-bold">
+                    Màu sắc:
+                  </div>
+                  <div className="grid gap-1 grid-cols-7">
+                    {
+                      data.color.map((c: any, ci: any) =>
+                        <div key={ci} className={"bg-[#f6f6f6] hover:bg-[#fff] text-[#919191] p-2 rounded hover:text-[#000] cursor-pointer text-[12px] " + (c.title.split(' ').length > 2? "col-span-3": "col-span-2")}>
+                          <input type="checkbox" name="color" id={"color_"+ci} />
+                          <label htmlFor={"color_"+ci} className="ml-1">{c.title}</label>
+                        </div>
+                      )
+                    }
+                  </div>
                 </div>
               }
               {
                 data &&
                 data.pin.length > 0 &&
-                <div className="flex gap-2 items-center">
-                  <span className="text-[#919191]">Pin:</span>
+                <div className="items-center border p-1">
+                  <div className="text-[#919191] mb-2 text-xs font-bold">
+                    Pin:
+                  </div>
+                  <div className="grid gap-1 grid-cols-3">
                   {
                     data.pin.map((p: any, pi: any) =>
-                      <span key={pi} className="border border-[#919191] text-[#919191] p-2 rounded hover:border-[#6fa400] hover:text-[#6fa400] cursor-pointer text-xs">
-                        {p.title}
-                      </span>
+                      <div key={pi} className="col-span-1 bg-[#f6f6f6] hover:bg-[#fff] text-[#919191] p-2 rounded hover:text-[#000] cursor-pointer text-[12px]">
+                        <input type="checkbox" name="color" id={"pin_"+pi} />
+                        <label htmlFor={"pin_"+pi} className="ml-1">{p.title}</label>
+                      </div>
                     )
                   }
+                  </div>
                 </div>
               }
             </div>

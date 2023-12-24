@@ -67,7 +67,7 @@ export function Category() {
                                                         <li key={ai} className={(asideCate.length != (ai + 1) ? 'mb-2' : '')}>
                                                             <span className='flex'>
                                                                 <input type="checkbox" name="input_category" id={"input_category_" + ai} />
-                                                                <label htmlFor={"input_category_" + ai} className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
+                                                                <label htmlFor={"input_category_" + ai} className="uppercase cursor-pointer ml-1 hover:text-[#6fa400]">
                                                                     {a.title}
                                                                     {/* <sup>(7)</sup> */}
                                                                 </label>
@@ -79,7 +79,7 @@ export function Category() {
                                                                         a.childs.map((c: any, ci: any) =>
                                                                             <li key={ci} className={"flex mb-2" + (a.childs.length != (ci + 1) ? ' pb-2' : '')}>
                                                                                 <input type="checkbox" name="input_category" id={"input_category_" + ci + ai} />
-                                                                                <label htmlFor={"input_category_" + ci + ai} className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
+                                                                                <label htmlFor={"input_category_" + ci + ai} className="uppercase cursor-pointer ml-1 hover:text-[#6fa400]">
                                                                                     {c.title}
                                                                                     {/* <sup>(7)</sup> */}
                                                                                 </label>
@@ -99,14 +99,14 @@ export function Category() {
                                             Màu sắc
                                         </h3>
                                         <div className="mt-4">
-                                            <ul className="text-[#333] grid gap-2 grid-cols-2 text-[10px] leading-8">
+                                            <ul className="text-[#333] grid gap-1 grid-cols-2 text-[10px] leading-8">
                                                 {
                                                     asideColor &&
                                                     asideColor.map((a: any, ai: any) =>
                                                         <li key={ai} className='bg-[#f6f6f6] rounded py-1 px-2 hover:bg-[#DFDFDF]'>
                                                             <span className='flex'>
                                                                 <input type="checkbox" name="color" id={"color" + ai} />
-                                                                <label htmlFor={"color" + ai} className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
+                                                                <label htmlFor={"color" + ai} className="uppercase cursor-pointer ml-1 hover:text-[#6fa400]">
                                                                     {a.title}
                                                                     {/* <sup>(7)</sup> */}
                                                                 </label>
@@ -122,14 +122,14 @@ export function Category() {
                                             Pin
                                         </h3>
                                         <div className="mt-4">
-                                            <ul className="text-[#333] grid gap-2 grid-cols-2 text-[10px] leading-8">
+                                            <ul className="text-[#333] grid gap-1 grid-cols-2 text-[10px] leading-8">
                                                 {
                                                     asidePin &&
                                                     asidePin.map((a: any, ai: any) =>
                                                         <li key={ai} className='bg-[#f6f6f6] rounded py-1 px-2 hover:bg-[#DFDFDF]'>
                                                             <span className='flex'>
                                                                 <input type="checkbox" name="color" id={"color" + ai} />
-                                                                <label htmlFor={"color" + ai} className="uppercase cursor-pointer ml-2 hover:text-[#6fa400]">
+                                                                <label htmlFor={"color" + ai} className="uppercase cursor-pointer ml-1 hover:text-[#6fa400]">
                                                                     {a.title}
                                                                     {/* <sup>(7)</sup> */}
                                                                 </label>
@@ -223,10 +223,10 @@ export function Category() {
                                 </div>
                             </div>
                         </div> */}
-                                    <div className="border border-r-slate-300 rounded-md p-2 mt-4 sticky top-16">
-                                        {/* <div className="bg-[#333] rounded-lg text-lg text-center p-2">
+                                    {/* <div className="border border-r-slate-300 rounded-md p-2 mt-4 sticky top-16">
+                                        <div className="bg-[#333] rounded-lg text-lg text-center p-2">
                                 <img src="/logo.png" style={{width: '70%', margin: 'auto'}} alt="" />
-                            </div> */}
+                            </div>
                                         <div className="border py-2 border-r-slate-300 bg-[#e0e0e0] rounded-lg text-lg text-center font-bold uppercase mt-2">
                                             <a href="tel:0946721565">
                                                 <div className="text-xl text-[red] rounded-lg">0946721565</div>
@@ -240,7 +240,7 @@ export function Category() {
                                                 </span>
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="md:col-span-9">
                                     <div className="md:flex flex-row">
