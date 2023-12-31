@@ -22,7 +22,7 @@ import { ORIGINAL_URL } from "../config";
 
 export function Tutorial() {
     const [data, setData] = useState<any>();
-    const type = 'video';
+    const type = 'video-cate';
     useEffect(() => {
         postNew(type).then((items) => {
             setData(items.response[0]);
@@ -35,7 +35,7 @@ export function Tutorial() {
                     <span className="bg-[#a1e611] color-[#333] uppercase py-2 px-4 rounded font-semibold">
                         {
                             data &&
-                            <Link href={"video/" + data.slug} className="hover:text-[#6fa400] hover:duration-300">
+                            <Link href={type + data.slug} className="hover:text-[#6fa400] hover:duration-300">
                                 {data.title}
                             </Link>
                         }
@@ -67,7 +67,7 @@ export function Tutorial() {
                             >
                                 <Link href={"/video/" + e.slug + ".html"}>
                                     <div className="image relative">
-                                        <img src={ ORIGINAL_URL +  "uploads/post/" + e.avatar} alt="" className="rounded-t" />
+                                        <img src={ORIGINAL_URL + "uploads/post/" + e.avatar} alt="" className="rounded-t" />
                                         <span className="bg-white px-2 py-1 rounded-lg absolute text-[#c50000] text-center opacity-90 top-1/2 left-1/2">
                                             <i className="fa-brands fa-youtube fa-2x"></i>
                                         </span>
@@ -75,7 +75,7 @@ export function Tutorial() {
                                     <div className="text-[#333] p-4 rounded-b">
                                         <h3 className="mb-2 font-semibold text-sm h-[65px]">{e.title}</h3>
                                         <div className="mb-2 text-xs text-[#919191]">
-                                            <i className="fa fa-calendar"></i> { e.created.split('T')[0] + ' ' + e.created.split('T')[1].split(':')[0] + ':' + e.created.split('T')[1].split(':')[1]}</div>
+                                            <i className="fa fa-calendar"></i> {e.created.split('T')[0] + ' ' + e.created.split('T')[1].split(':')[0] + ':' + e.created.split('T')[1].split(':')[1]}</div>
                                         <p className="text-xs text-[#333]">{e.description}</p>
                                     </div>
                                 </Link>

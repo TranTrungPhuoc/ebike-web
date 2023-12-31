@@ -159,8 +159,9 @@ nav .input-group input {
 }
 
 .store .title span {
-  transform: translate(-50%, -50%);
+  transform: translate(-30%, -50%);
   top: 0;
+  left: 40%;
 }
 
 .store .active{
@@ -522,6 +523,10 @@ li.active a{
   text-overflow: ellipsis;
 }
 
+.postNew p{
+  -webkit-line-clamp: 4;
+}
+
 .popup-carousel .bg{
   position: fixed;
   top: 0;
@@ -627,6 +632,24 @@ main .content ul li{
 .index-h4{
   margin-left: 1rem;
 }
+
+/* more */
+#more{
+  display: none;
+}
+.readmore label::after{
+  content: 'Xem Thêm';
+}
+#more:checked ~ div{
+  height: auto;
+}
+#more:checked ~ div ~ .readmore::before{
+  background-image: none;
+}
+#more:checked ~ div ~ .readmore label::after{
+  content: 'Rút Gọn';
+}
+/* end */
 
 @media (max-width: 767px) {
   main .content ul{

@@ -6,10 +6,13 @@ import {Attribute} from './containers/Attribute';
 import {Tutorial} from './containers/Tutorial';
 import {Knowledge} from './containers/Knowledge';
 import {Store} from './containers/Store';
-export const metadata = {
-  title: "Trang chủ - Xe Điện Vui",
-  description: "Trang chủ - Xe Điện Vui",
-};
+
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Trang Chủ | Xe Điện Vui',
+}
+
 export default function Home() {
   return (
     <main>

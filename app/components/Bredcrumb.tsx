@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
-
 const Breadcrumbs = (props: any) => {
     return (
         <div className="breadcrumbs">

@@ -65,7 +65,7 @@ export function Nav() {
                                         menu.map((e: any, ie: any) => (
                                             <li key={ie} className="mb-4 md:mb-0 border-b md:border-none pb-4 md:pb-0">
                                                 {
-                                                    e.type == 'sanpham' && (
+                                                    e.type == 'product-cate' && (
                                                         <>
                                                             <Link href={'/' + e.slug} className="text-black md:text-white hover:text-[#a1e611] hover:duration-300 uppercase cursor-pointer text-xs md:text-sm" onMouseOver={handleShowMenu}>{e.title}</Link>
                                                             <button type="button" className={"md:hidden fixed right-0 opacity-50 top-0 bg-[#fbfbfb] px-2 text-black" + (!show ? ' hidden' : '')} onClick={handleHiddenMenu}>
@@ -101,7 +101,7 @@ export function Nav() {
                                                     )
                                                 }
                                                 {
-                                                    e.type != 'sanpham' && (
+                                                    e.type != 'product-cate' && (
                                                         <Link className="text-black md:text-white hover:text-[#a1e611] hover:duration-300 uppercase py-6 text-xs md:text-sm" href={'/' + e.slug} onMouseOver={handleHiddenMenu}>{e.title}</Link>
                                                     )
                                                 }
