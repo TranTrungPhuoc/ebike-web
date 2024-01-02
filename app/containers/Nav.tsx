@@ -3,17 +3,12 @@ import React, { useEffect, useState } from "react";
 import Link from 'next/link'
 import { menuCategory } from "../service/menuCategory";
 import { libraryDetail } from "../service/libraryDetail";
+import { getLocalStorageItem } from '../feed/localStorage';
 export function Nav() {
     const [fix, setFix] = useState(false);
     const [menu, setMenu] = useState([]);
     const [logo, setLogo] = useState<any>();
-    const setFixed = () => {
-        if (window.scrollY > 150 && window.innerWidth < 1024) {
-            setFix(true);
-        } else {
-            setFix(false);
-        }
-    }
+    const setFixed = () => {(window.scrollY > 150 && window.innerWidth < 1024)?setFix(true):setFix(false);}
     useEffect(() => {
         window.addEventListener("scroll", setFixed);
         menuCategory().then((items) => {
@@ -23,16 +18,13 @@ export function Nav() {
             setLogo(items.response.data[0]);
           });
     }, []);
-    
     const [show, setShow] = useState(false);
     const [toggle, setToggle] = useState(false);
     const [bagach, setBagach] = useState(false);
-
     const handleHiddenMenu = () => { setShow(false), setBagach(false) }
     const handleShowMenu = () => setShow(true)
     const handleShowBagach = () => { setBagach(true), setShow(true) }
     const handleToggleMenu = () => { setToggle(!toggle), setShow(true) }
-
     return (
         <>
             <div className={"fixed hiddenMenu h-full bg-[#333333a8] w-full top-0 left-0 bottom-0 right-0" + (!show ? ' hidden' : '')} onMouseOver={handleHiddenMenu}></div>
@@ -113,7 +105,8 @@ export function Nav() {
                             <div className="col-span-5 md:col-span-1 cart text-center md:text-left">
                                 <ul className="flex justify-evenly text-sm">
                                     <li><Link href="/login" className="text-[#a1e611] hover:text-white hover:duration-300 uppercase"><i className="fa-solid fa-user"></i></Link></li>
-                                    <li><Link href="/cart" className="text-[#a1e611] hover:text-white hover:duration-300 uppercase"><i className="fa-solid fa-cart-shopping"></i> <sup>(2)</sup></Link></li>
+                                    <li><Link href="/cart" className="text-[#a1e611] hover:text-white hover:duration-300 uppercase">
+                                        <i className="fa-solid fa-cart-shopping"></i> {/*<sup></sup>*/}</Link></li>
                                 </ul>
                             </div>
                         </div>

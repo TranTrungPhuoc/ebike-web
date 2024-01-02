@@ -1,32 +1,25 @@
 import TabProducts from "../components/TabProducts";
 import TabContents from "./TabContents";
-
 import { productDetail } from "../service/productDetail";
 import { productRelative } from "../service/productRelative";
 import { Relative } from "./relative";
 import { ViewMore } from "./viewMore";
-
 import Breadcrumbs from '../components/Bredcrumb';
 import { ProductMain } from "./productMain";
 import { Advertisement } from "./advertisement";
 import { Specifications } from "./specifications";
-
 export async function Product(props: any) {
   const slug = props.slug;
-
   let detail: any;
   let relative: any;
-
   try {
     const _productDetail = await productDetail(slug);
     detail = _productDetail.response[0];
-
     const _productRelative = await productRelative(slug);
     relative = _productRelative.response[0].Products;
   } catch (error) {
     console.log(error);
   }
-
   return (
     <main>
       <Breadcrumbs bredcrumbs={detail.bredcrumbs} />
@@ -43,8 +36,8 @@ export async function Product(props: any) {
             <Specifications data={detail} />
           </div>
         }
-        <Relative data={relative} />
-        <ViewMore data={relative} />
+        {relative.length>0 && <Relative data={relative} />}
+        {relative.length>0 && <ViewMore data={relative} />}
       </div>
     </main>
   );

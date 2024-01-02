@@ -24,7 +24,7 @@ export default function Page() {
                             <div className="text-center">
                                 <img src="/complete.png" className="w-1/3 m-auto" alt="" />
                                 <h3 className="text-2xl text-[#6fa400]">Cảm ơn bạn. Đơn hàng của bạn đã được nhận.</h3>
-                                <div className="mt-4">
+                                {/* <div className="mt-4">
                                     <table className="min-w-full bg-white border border-gray-300 mt-4 text-sm">
                                         <thead>
                                             <tr>
@@ -57,7 +57,7 @@ export default function Page() {
                                             Trở về trang chủ
                                         </Link>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="col-span-5 md:col-span-1"></div>

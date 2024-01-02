@@ -23,7 +23,7 @@ export function MainCate(props: any) {
                                     <div className="image">
                                         <img src={e.avatar} alt="" width={500} />
                                     </div>
-                                    <h3 className="text-sm mb-2 font-semibold text-[#626262]">{e.title}</h3>
+                                    <h3 className="text-sm mt-2 mb-2 font-semibold text-[#626262]">{e.title}</h3>
                                     <p className="text-xs mb-4">{e.description}</p>
                                     <div className="price font-bold mb-7 text-xl">{FormattedNumber(e.price)}</div>
                                     <div className="mt-2 grid gap-2 grid-cols-2 text-[10px] md:text-xs">
