@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from 'next/link'
 import { menuCategory } from "../service/menuCategory";
 import { libraryDetail } from "../service/libraryDetail";
-import { getLocalStorageItem } from '../feed/localStorage';
+import { Search } from "./Search";
 export function Nav() {
     const [fix, setFix] = useState(false);
     const [menu, setMenu] = useState([]);
@@ -41,14 +41,7 @@ export function Nav() {
                                 <img src={logo && logo.avatar} alt="" />
                             </Link>
                         </div>
-                        <div className="col-span-12 order-2 lg:order-1 md:col-span-5 align-center md:pl-8">
-                            <div className="input-group flex bg-white">
-                                <input type="text" className="form-control block focus:outline-none text-[#333] italic text-sm" placeholder="Bạn muốn tìm gì?" />
-                                <button className="btn px-4 py-2" type="submit">
-                                    <i className="fa-solid fa-magnifying-glass hover:text-[#6fa400]"></i>
-                                </button>
-                            </div>
-                        </div>
+                        <Search />
                         <div className="col-span-3 md:col-span-5 order-1 lg:order-2 grid gap-2 grid-cols-5">
                             <div className={"col-span-9 fixed top-0 left-0 md:static md:block md:col-span-4 menu" + (!bagach ? ' hidden' : ' show')}>
                                 <ul className="p-4 md:p-0 block w-[200px] md:w-auto md:flex h-[100vh] md:h-auto bg-white md:bg-[#333] justify-evenly text-sm">

@@ -1,7 +1,6 @@
 {
-  "/payment/page": "app/payment/page.js",
-  "/cart/page": "app/cart/page.js",
-  "/login/page": "app/login/page.js",
-  "/complete/page": "app/complete/page.js",
+  "/page": "app/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/search/page": "app/search/page.js",
   "/[slug]/page": "app/[slug]/page.js"
 }

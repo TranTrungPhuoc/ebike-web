@@ -20,7 +20,8 @@ export async function generateMetadata(
     const detail = _categoryDetailPost.response.listData
 
     return {
-        title: detail.title,
+        title: detail.metaTitle??detail.title,
+        description: detail.metaDescription
     }
 }
 

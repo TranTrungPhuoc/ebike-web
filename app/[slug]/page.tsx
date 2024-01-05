@@ -31,7 +31,8 @@ export async function generateMetadata(
     }
 
     return {
-        title: detail.title,
+        title: detail.metaTitle!=''?detail.metaTitle:detail.title,
+        description: detail.metaDescription
     }
 }
 

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import Link from "next/link";
-import { getLocalStorageItem } from '../feed/localStorage';
+import { getLocalStorageItem, removeLocalStorageItem } from '../feed/localStorage';
 import FormattedNumber from '../feed/formattedNumber';
 import { useRouter } from 'next/navigation';
 import { Delivery } from '../service/delivery';
@@ -13,8 +13,8 @@ import { Customer } from '../service/customer';
 import { Order } from '../service/order';
 export default function Page() {
     const router = useRouter()
-    const [border, setBorder] = useState('')
     const cartItems = getLocalStorageItem('carts');
+    if(!cartItems || cartItems.length==0){ router.push('/'); return false; }
     let total = 0;
     if (cartItems) {
         for (let index = 0; index < cartItems.length; index++) {
@@ -79,7 +79,8 @@ export default function Page() {
                 total,
                 detail: cartItems
             }
-            const order = await Order(obj_Order);
+            await Order(obj_Order);
+            removeLocalStorageItem('carts')
             router.push('/complete');
         }
     };
@@ -114,25 +115,25 @@ export default function Page() {
                                 <hr className="mt-4" />
                                 <div className="mt-4">
                                     <label htmlFor="fullname" className="w-full">Họ & Tên <span className="text-[red]">(*)</span></label>
-                                    <input type="text" name="fullname" defaultValue={formData.fullname} onChange={handleInputChange} id="fullname" className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white " + border} placeholder="Xe Điện Vui" />
+                                    <input type="text" name="fullname" defaultValue={formData.fullname} onChange={handleInputChange} id="fullname" className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white"} placeholder="Xe Điện Vui" />
                                 </div>
                                 <div className="mt-4">
                                     <label htmlFor="email" className="w-full">Địa chỉ Email <span className="text-[red]">(*)</span></label>
-                                    <input type="text" name="email" defaultValue={formData.email} onChange={handleInputChange} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white " + border} placeholder="xedienvui@gmail.com" />
+                                    <input type="text" name="email" defaultValue={formData.email} onChange={handleInputChange} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white"} placeholder="xedienvui@gmail.com" />
                                 </div>
                                 <div className="mt-4">
                                     <label htmlFor="phone" className="w-full">Số điện thoại <span className="text-[red]">(*)</span></label>
-                                    <input type="text" name="phone" defaultValue={formData.phone} onChange={handleInputChange} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white " + border} placeholder="0946721565" />
+                                    <input type="text" name="phone" defaultValue={formData.phone} onChange={handleInputChange} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white"} placeholder="0946721565" />
                                 </div>
                                 <div className="mt-4">
                                     <label htmlFor="nation" className="w-full">Quốc gia <span className="text-[red]">(*)</span></label>
-                                    <select name="nation" defaultValue={'vn'} onChange={handleInputChange} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white " + border}>
+                                    <select name="nation" defaultValue={'vn'} onChange={handleInputChange} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white"}>
                                         <option value="vn">Việt Nam</option>
                                     </select>
                                 </div>
                                 <div className="mt-4">
                                     <label htmlFor="province" className="w-full">Tỉnh / Thành phố <span className="text-[red]">(*)</span></label>
-                                    <select name="province" onChange={(event: any) => { handleInputChange(event), handleAreaChange(event) }} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white " + border}>
+                                    <select name="province" onChange={(event: any) => { handleInputChange(event), handleAreaChange(event) }} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white"}>
                                         <option value="">-Chọn-</option>
                                         {
                                             province &&
@@ -144,7 +145,7 @@ export default function Page() {
                                 </div>
                                 <div className="mt-4">
                                     <label htmlFor="district" className="w-full">Quận / Huyện <span className="text-[red]">(*)</span></label>
-                                    <select name="district" onChange={(event: any) => { handleInputChange(event), handleAreaChange(event) }} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white " + border}>
+                                    <select name="district" onChange={(event: any) => { handleInputChange(event), handleAreaChange(event) }} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white"}>
                                         <option value="">-Chọn-</option>
                                         {
                                             district &&
@@ -156,7 +157,7 @@ export default function Page() {
                                 </div>
                                 <div className="mt-4">
                                     <label htmlFor="wards" className="w-full">Phường / Xã <span className="text-[red]">(*)</span></label>
-                                    <select name="wards" onChange={handleInputChange} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white " + border}>
+                                    <select name="wards" onChange={handleInputChange} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white"}>
                                         <option value="">-Chọn-</option>
                                         {
                                             wards &&
@@ -168,7 +169,7 @@ export default function Page() {
                                 </div>
                                 <div className="mt-4">
                                     <label htmlFor="address" className="w-full">Địa chỉ <span className="text-[red]">(*)</span></label>
-                                    <input type="text" name="address" defaultValue={formData.address} onChange={handleInputChange} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white " + border} placeholder="413/46 Lê Văn Quới" />
+                                    <input type="text" name="address" defaultValue={formData.address} onChange={handleInputChange} className={"border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white"} placeholder="413/46 Lê Văn Quới" />
                                 </div>
                                 <div className="mt-4">
                                     <label htmlFor="address" className="w-full">Ghi chú đơn hàng</label>
@@ -218,7 +219,7 @@ export default function Page() {
                                             {
                                                 delivery &&
                                                 delivery.map((e: any, i: any) =>
-                                                    <li className={i == 0 ? "mb-4" : ""}><input type="radio" name="ptgh" id={"ptgh" + i} defaultChecked={i == 0 ? true : false} /> <label htmlFor={"ptgh" + i}>{e.title}</label></li>
+                                                    <li className={(i+1) != delivery.length ? "mb-4" : ""}><input type="radio" name="ptgh" id={"ptgh" + i} defaultChecked={i == 0 ? true : false} /> <label htmlFor={"ptgh" + i}>{e.title}</label></li>
                                                 )
                                             }
                                         </ul>
@@ -236,7 +237,7 @@ export default function Page() {
                                             {
                                                 payment &&
                                                 payment.map((e: any, i: any) =>
-                                                    <li className={i == 0 ? "mb-4" : ""}><input type="radio" name="pttt" id={"pttt" + i} defaultChecked={i == 0 ? true : false} /> <label htmlFor={"pttt" + i}>{e.title}</label></li>
+                                                    <li className={(i+1) != payment.length ? "mb-4" : ""}><input type="radio" name="pttt" id={"pttt" + i} defaultChecked={i == 0 ? true : false} /> <label htmlFor={"pttt" + i}>{e.title}</label></li>
                                                 )
                                             }
                                         </ul>

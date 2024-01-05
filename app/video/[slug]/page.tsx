@@ -19,7 +19,8 @@ export async function generateMetadata(
     const _postDetail = await postDetail(slug_rm_html);
     const detail = _postDetail.response[0];
     return {
-        title: detail.title,
+        title: detail.metaTitle!=''?detail.metaTitle:detail.title,
+        description: detail.metaDescription
     }
 }
 
