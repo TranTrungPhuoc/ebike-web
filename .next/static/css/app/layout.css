@@ -8550,6 +8550,9 @@ video {
 .ml-\[5px\] {
   margin-left: 5px;
 }
+.mr-1 {
+  margin-right: 0.25rem;
+}
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -9251,6 +9254,10 @@ video {
 .text-\[white\] {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-\[yellow\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 0 / var(--tw-text-opacity));
 }
 .text-black {
   --tw-text-opacity: 1;

@@ -1,6 +1,9 @@
+"use client";
 import Link from "next/link";
-
+import { useCart } from '../components/CartContext';
 export default function Page() {
+    const { dispatch } = useCart();
+    dispatch({type:'RESET_CART'});
     return (
         <main>
             <div className="breadcrumbs">

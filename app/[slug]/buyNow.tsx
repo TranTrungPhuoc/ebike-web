@@ -1,36 +1,28 @@
 "use client";
-import { setLocalStorageItem, getLocalStorageItem } from '../feed/localStorage';
 import { useRouter } from 'next/navigation';
+import { useCart } from '../components/CartContext';
 export function BuyNow(props: any) {
+    const { dispatch } = useCart();
     const router = useRouter()
     const data = props.data;
-    const handleClick = () => {
-        const oldData = getLocalStorageItem('carts');
-        const objInsert = {
-            id: 1,
-            title: data.title,
-            slug: data.slug,
-            avatar: data.avatar,
-            price: data.price,
-            qty: 1
-        };
-        let newData = [];
-        if (oldData) {
-            const findElementById = (slug: string) => { return oldData.find((item:any) => item.slug === slug); };
-            const foundElement = findElementById(data.slug);
-            if (!foundElement){
-                const count = oldData.length;
-                objInsert['id'] = count + 1;
-                oldData.push(objInsert)
-            }
-            newData = oldData;
-        } else { newData = [objInsert]; }
-        setLocalStorageItem("carts", newData);
+    const addToCart = () => {
+        dispatch({ type: 'ADD_TO_CART', payload: 
+            {
+                id: data._id,
+                title: data.title,
+                slug: data.slug,
+                price: data.price,
+                avatar: data.avatar,
+                quantity: 1,
+                color: [],
+                pin: []
+            } 
+        });
         router.push('/cart');
-    }
+    };
     return (
         <div className="buyNow mt-4 text-center">
-            <button type="button" onClick={handleClick} className="w-full bg-[#6fa400] hover:bg-[#5a8600] p-2 font-semibold text-xl text-white rounded text-xs md:text-lg">
+            <button type="button" onClick={addToCart} className="w-full bg-[#6fa400] hover:bg-[#5a8600] p-2 font-semibold text-xl text-white rounded text-xs md:text-lg">
                 MUA NGAY
             </button>
         </div>

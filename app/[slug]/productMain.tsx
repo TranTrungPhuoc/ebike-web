@@ -1,8 +1,6 @@
 import FormattedNumber from "../feed/formattedNumber";
-import { PinProduct } from "./PinProduct";
 import { AddToCart } from "./addToCart";
 import { BuyNow } from "./buyNow";
-import { ColorProduct } from "./colorProduct";
 export function ProductMain(props: any) {
     const detail = props.data;
     return (
@@ -25,10 +23,6 @@ export function ProductMain(props: any) {
                     </>
                 }
                 {detail && detail.price == '' && 'Liên Hệ'}
-            </div>
-            <div className="mt-4 text-sm">
-                {detail && detail.color.length > 0 && <ColorProduct data={detail} />}
-                {detail && detail.pin.length > 0 && <PinProduct data={detail} />}
             </div>
             <AddToCart data={detail} />
             <div className="promotion rounded-lg relative mt-8 border-2 border-[#333] pt-8 p-4">

@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
 import Link from "next/link";
-import { getLocalStorageItem, removeLocalStorageItem } from '../feed/localStorage';
 import FormattedNumber from '../feed/formattedNumber';
 import { useRouter } from 'next/navigation';
 import { Delivery } from '../service/delivery';
@@ -11,22 +10,22 @@ import { District } from '../service/district';
 import { Wards } from '../service/wards';
 import { Customer } from '../service/customer';
 import { Order } from '../service/order';
+import { useCart } from '../components/CartContext';
 export default function Page() {
+    const { cart } = useCart();
+    const calculateItemCount = () => { return cart.length; };
+    const calculateTotal = () => { return cart.reduce((total: any, item: any) => total + item.price * item.quantity, 0); };
     const router = useRouter()
-    const cartItems = getLocalStorageItem('carts');
-    if(!cartItems || cartItems.length==0){ router.push('/'); return false; }
-    let total = 0;
-    if (cartItems) {
-        for (let index = 0; index < cartItems.length; index++) {
-            const element = cartItems[index];
-            if (element.price) total += element.price * element.qty;
-        }
-    }
+    if (calculateItemCount() == 0) { router.push('/'); return false; }
     const [delivery, setDelivery] = useState<any>();
     const [payment, setPayment] = useState<any>();
     const [province, setProvince] = useState<any>();
     const [district, setDistrict] = useState<any>();
     const [wards, setWards] = useState<any>();
+    const [valDelivery, setValDelivery] = useState('');
+    const [valPayment, setValPayment] = useState('');
+    const handleDelivery = (event: any) => { setValDelivery(event.target.value); }
+    const handlePayment = (event: any) => { setValPayment(event.target.value); }
     const handleAreaChange = async (event: any) => {
         const name = event.target.name
         const value = event.target.value
@@ -44,7 +43,10 @@ export default function Page() {
         Payment().then((data: any) => { setPayment(data.response) })
         Province().then((data: any) => { setProvince(data.response) })
     }, [])
-    const [formData, setFormData] = useState({ fullname: '', email: '', phone: '', nation: 'vn', province: '', district: '', wards: '', address: '', note: '' });
+    const [formData, setFormData] = useState({
+        fullname: '', email: '', phone: '', nation: 'vn',
+        province: '', district: '', wards: '', address: '', note: '',
+    });
     const isFormValid = () => {
         return formData.fullname.trim() !== '' && formData.email.trim() !== '' &&
             formData.phone.trim() !== '' &&
@@ -52,8 +54,18 @@ export default function Page() {
             formData.province.trim() !== '' &&
             formData.district.trim() !== '' &&
             formData.wards.trim() !== '' &&
-            formData.address.trim() !== '';
+            formData.address.trim() !== '' &&
+            valDelivery.trim() !== '' &&
+            valPayment.trim() !== '';
     };
+    const isValidEmail = (email:string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+    const isValidPhone = (phone:string) => {
+        const phoneRegex = /^[0-9]{10}$/;
+        return phoneRegex.test(phone);
+      };
     const handleInputChange = (e: any) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -71,16 +83,25 @@ export default function Page() {
             wards != '' &&
             address != ''
         ) {
+            if (!isValidEmail(email)) {
+                alert('Email không đúng định dạng');
+                return false;
+            }
+            if (!isValidPhone(phone)) {
+                alert('Số Điện Thoại không đúng định dạng');
+                return false;
+            }
             const obj = { fullname, email, phone, nation, province, district, wards, address };
             const customer = await Customer(obj);
             const obj_Order = {
                 customer: customer.response._id,
                 note,
-                total,
-                detail: cartItems
+                total: calculateTotal(),
+                detail: cart,
+                payment: valPayment,
+                delivery: valDelivery
             }
-            await Order(obj_Order);
-            removeLocalStorageItem('carts')
+            const order = await Order(obj_Order);
             router.push('/complete');
         }
     };
@@ -173,7 +194,7 @@ export default function Page() {
                                 </div>
                                 <div className="mt-4">
                                     <label htmlFor="address" className="w-full">Ghi chú đơn hàng</label>
-                                    <textarea className="border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white" name="" id="" rows={3}></textarea>
+                                    <textarea className="border p-4 w-full mt-2 focus:outline-none rounded bg-[#f8f8f8] focus:bg-white" onChange={handleInputChange} name="note" id="note" rows={3}></textarea>
                                 </div>
                             </div>
                             <div className="col-span-1">
@@ -183,17 +204,17 @@ export default function Page() {
                                         <thead>
                                             <tr>
                                                 <th className="py-2 px-4 border-b text-left text-[#bdbdbd]">SẢN PHẨM</th>
-                                                <th className="py-2 px-4 border-b text-[#bdbdbd]">TỔNG</th>
+                                                <th className="py-2 px-4 border-b text-[#bdbdbd] text-right">TỔNG</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             {
-                                                cartItems && cartItems.map((e: any, i: any) =>
+                                                cart && cart.map((e: any, i: any) =>
                                                     <tr key={i}>
                                                         <td className="py-2 px-4 border-b text-xs md:text-sm">
                                                             <Link href={'/' + e.slug + '.html'} className="hover:text-[#6fa400]">{e.title}</Link>
                                                         </td>
-                                                        <td className="py-2 px-4 border-b">
+                                                        <td className="py-2 px-4 border-b text-right">
                                                             <span className="text-[#6fa400] text-base">
                                                                 {FormattedNumber(e.price)}</span> <br /><span className="text-xs">(VNĐ)
                                                             </span>
@@ -205,9 +226,9 @@ export default function Page() {
                                                 <td className="py-2 px-4 border-b text-xs md:text-sm">
                                                     Tổng thu (VNĐ)
                                                 </td>
-                                                <td className="py-2 px-4 border-b">
+                                                <td className="py-2 px-4 border-b text-right">
                                                     <span className="text-[#333] text-lg">
-                                                        <b>{FormattedNumber(total)}</b>
+                                                        <b>{FormattedNumber(calculateTotal())}</b>
                                                     </span>
                                                 </td>
                                             </tr>
@@ -219,14 +240,14 @@ export default function Page() {
                                             {
                                                 delivery &&
                                                 delivery.map((e: any, i: any) =>
-                                                    <li className={(i+1) != delivery.length ? "mb-4" : ""}><input type="radio" name="ptgh" id={"ptgh" + i} defaultChecked={i == 0 ? true : false} /> <label htmlFor={"ptgh" + i}>{e.title}</label></li>
+                                                    <li className={(i + 1) != delivery.length ? "mb-4" : ""}><input type="radio" name="ptgh" id={"ptgh" + i} defaultValue={e._id} onChange={handleDelivery} /> <label htmlFor={"ptgh" + i}>{e.title}</label></li>
                                                 )
                                             }
                                         </ul>
                                         <div className="text-sm mt-4">
                                             Tổng thu:
                                             <span className="text-[#333] text-lg ml-2">
-                                                <b>{FormattedNumber(total)}</b> <small>(VNĐ)</small>
+                                                <b>{FormattedNumber(calculateTotal())}</b> <small>(VNĐ)</small>
                                             </span>
                                         </div>
                                     </div>
@@ -237,7 +258,7 @@ export default function Page() {
                                             {
                                                 payment &&
                                                 payment.map((e: any, i: any) =>
-                                                    <li className={(i+1) != payment.length ? "mb-4" : ""}><input type="radio" name="pttt" id={"pttt" + i} defaultChecked={i == 0 ? true : false} /> <label htmlFor={"pttt" + i}>{e.title}</label></li>
+                                                    <li className={(i + 1) != payment.length ? "mb-4" : ""}><input type="radio" name="pttt" id={"pttt" + i} defaultValue={e._id} onChange={handlePayment} /> <label htmlFor={"pttt" + i}>{e.title}</label></li>
                                                 )
                                             }
                                         </ul>

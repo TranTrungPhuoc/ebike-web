@@ -1,10 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Link from 'next/link'
+import Link from 'next/link';
 import { menuCategory } from "../service/menuCategory";
 import { libraryDetail } from "../service/libraryDetail";
 import { Search } from "./Search";
+import { useCart } from '../components/CartContext';
 export function Nav() {
+    const { cart } = useCart();
+    const calculateItemCount = () => { return cart.length; };
     const [fix, setFix] = useState(false);
     const [menu, setMenu] = useState([]);
     const [logo, setLogo] = useState<any>();
@@ -99,7 +102,7 @@ export function Nav() {
                                 <ul className="flex justify-evenly text-sm">
                                     <li><Link href="/login" className="text-[#a1e611] hover:text-white hover:duration-300 uppercase"><i className="fa-solid fa-user"></i></Link></li>
                                     <li><Link href="/cart" className="text-[#a1e611] hover:text-white hover:duration-300 uppercase">
-                                        <i className="fa-solid fa-cart-shopping"></i> {/*<sup></sup>*/}</Link></li>
+                                        <i className="fa-solid fa-cart-shopping"></i> <sup className="text-[yellow]">({calculateItemCount()})</sup></Link></li>
                                 </ul>
                             </div>
                         </div>

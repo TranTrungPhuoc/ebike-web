@@ -1,35 +1,14 @@
 "use client";
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import React from 'react';
 import Link from "next/link";
-import { getLocalStorageItem, setLocalStorageItem } from '../feed/localStorage';
 import FormattedNumber from "../feed/formattedNumber";
+import { useCart } from '../components/CartContext';
 export default function Page() {
-    const [cartItems, setCartItems] = useState(getLocalStorageItem('carts'));
-    const router = useRouter();
-    if(!cartItems || cartItems.length==0){ router.push('/'); return false }
-    const removeProductFromCart = (productId: any) => {
-        const updatedCart = cartItems.filter((item: any) => item.id !== productId);
-        setCartItems(updatedCart);
-        setLocalStorageItem('carts', updatedCart);
-    };
-    const updateQuantity = (event: any, productId: any) => {
-        const newQuantity = event.target.value;
-        if (parseInt(newQuantity) > 0 && parseInt(newQuantity) < 1000) {
-            const updatedCart = cartItems.map((item: any) =>
-                item.id === productId ? { ...item, qty: parseInt(newQuantity) } : item
-            );
-            setCartItems(updatedCart);
-            setLocalStorageItem('carts', updatedCart);
-        }
-    };
-    let total = 0;
-    if (cartItems) {
-        for (let index = 0; index < cartItems.length; index++) {
-            const element = cartItems[index];
-            if (element.price) total += element.price * element.qty;
-        }
-    }
+    const { cart, dispatch } = useCart();
+    const updateToCart = (event: any, id: any) => { dispatch({ type: 'UPDATE_CART_ITEM', payload: { id, quantity: (event.target.value>0)?parseInt(event.target.value):1 } }); }
+    const deleteToCart = (id: any) => { dispatch({ type: 'REMOVE_FROM_CART', payload: { id } }); }
+    const calculateTotal = () => { return cart.reduce((total: any, item: any) => total + item.price * item.quantity, 0); };
+    const calculateItemCount = () => { return cart.length; };
     return (
         <main>
             <div className="breadcrumbs">
@@ -61,11 +40,11 @@ export default function Page() {
                                     </thead>
                                     <tbody>
                                         {
-                                            cartItems &&
-                                            cartItems.map((e: any, i: any) =>
+                                            cart &&
+                                            cart.map((e: any, i: any) =>
                                                 <tr key={i}>
                                                     <td className="py-2 px-4 border-b">
-                                                        <button type="button" className="text-[red]" onClick={() => removeProductFromCart(e.id)}>
+                                                        <button type="button" className="text-[red]" onClick={() => deleteToCart(e.id)}>
                                                             <i className="fa fa-close"></i>
                                                         </button>
                                                     </td>
@@ -76,8 +55,28 @@ export default function Page() {
                                                         <Link href={'/' + e.slug + '.html'} className="hover:text-[#6fa400]">{e.title}</Link>
                                                         <div className="mt-2 text-xs">
                                                             <ul>
-                                                                <li>Màu sắc: <span className="text-[#6fa400]">Sea Sparkle</span></li>
-                                                                <li>Kích thước: <span className="text-[#6fa400]">S</span></li>
+                                                                {
+                                                                    e.color && e.color.length > 0 &&
+                                                                    <li>
+                                                                        <span className='mr-1'>Màu sắc:</span>
+                                                                        {
+                                                                            e.color.map((c: any, ck: any) =>
+                                                                                <span key={ck} className="text-[#6fa400]">{c + ','}</span>
+                                                                            )
+                                                                        }
+                                                                    </li>
+                                                                }
+                                                                {
+                                                                    e.pin && e.pin.length > 0 &&
+                                                                    <li>
+                                                                        <span className='mr-1'>Pin:</span>
+                                                                        {
+                                                                            e.pin.map((p: any, pk: any) =>
+                                                                                <span key={pk} className="text-[#6fa400]">{p + ','}</span>
+                                                                            )
+                                                                        }
+                                                                    </li>
+                                                                }
                                                                 <li className="md:hidden">Giá: <span className="text-[#6fa400]">{FormattedNumber(e.price)}</span></li>
                                                             </ul>
                                                         </div>
@@ -85,10 +84,10 @@ export default function Page() {
                                                     <td className="py-2 px-4 border-b hidden md:table-cell"><span className="text-[#6fa400] text-base">
                                                         {FormattedNumber(e.price)}</span> <br /><span className="text-xs">(VNĐ)</span></td>
                                                     <td className="py-2 px-4 border-b">
-                                                        <input type="number" defaultValue={e.qty} onChange={(event) => updateQuantity(event, e.id)} className="border w-full px-4 py-2 rounded-3xl focus:outline-none text-[#333]" />
+                                                        <input type="text" defaultValue={e.quantity} onChange={(event) => updateToCart(event, e.id)} className="border w-full px-4 py-2 rounded-3xl focus:outline-none text-[#333]" /> {/* onChange={(event) => updateQuantity(event, e.id)}*/}
                                                     </td>
                                                     <td className="py-2 px-4 border-b hidden md:table-cell"><span className="text-[#6fa400] text-base">
-                                                        {FormattedNumber(e.price * e.qty)} </span> <br /><span className="text-xs">(VNĐ)</span></td>
+                                                        {FormattedNumber(e.price * e.quantity)} </span> <br /><span className="text-xs">(VNĐ)</span></td>
                                                 </tr>
                                             )
                                         }
@@ -112,12 +111,12 @@ export default function Page() {
                             <ul className="text-sm">
                                 <li className="grid gap-4 grid-cols-2 border-b pb-2 mb-4">
                                     <span>Số lượng:</span>
-                                    <span className="text-right text-base"><b>{cartItems&&cartItems.length}</b></span>
+                                    <span className="text-right text-base"><b>{calculateItemCount()}</b></span>
                                 </li>
                                 <li className="grid gap-4 grid-cols-2 border-b pb-2">
                                     <span>Tổng thu (VNĐ):</span>
                                     <span className="text-right text-lg">
-                                        <b>{FormattedNumber(total)}</b>
+                                        <b>{FormattedNumber(calculateTotal())}</b>
                                     </span>
                                 </li>
                             </ul>
