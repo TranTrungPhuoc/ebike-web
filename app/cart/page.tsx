@@ -3,12 +3,16 @@ import React from 'react';
 import Link from "next/link";
 import FormattedNumber from "../feed/formattedNumber";
 import { useCart } from '../components/CartContext';
+import { ORIGINAL_URL } from '../config';
+import { useRouter } from 'next/navigation';
 export default function Page() {
     const { cart, dispatch } = useCart();
     const updateToCart = (event: any, id: any) => { dispatch({ type: 'UPDATE_CART_ITEM', payload: { id, quantity: (event.target.value>0)?parseInt(event.target.value):1 } }); }
     const deleteToCart = (id: any) => { dispatch({ type: 'REMOVE_FROM_CART', payload: { id } }); }
     const calculateTotal = () => { return cart.reduce((total: any, item: any) => total + item.price * item.quantity, 0); };
     const calculateItemCount = () => { return cart.length; };
+    const router = useRouter()
+    if (calculateItemCount() == 0) { router.push('/'); return false; }
     return (
         <main>
             <div className="breadcrumbs">
@@ -49,7 +53,7 @@ export default function Page() {
                                                         </button>
                                                     </td>
                                                     <td className="py-2 px-4 border-b">
-                                                        <img src={e.avatar} alt="" width={200} />
+                                                        <img src={ORIGINAL_URL + 'uploads/product/' + e.avatar} alt="" width={200} />
                                                     </td>
                                                     <td className="py-2 px-4 border-b text-xs md:text-sm">
                                                         <Link href={'/' + e.slug + '.html'} className="hover:text-[#6fa400]">{e.title}</Link>
@@ -84,7 +88,7 @@ export default function Page() {
                                                     <td className="py-2 px-4 border-b hidden md:table-cell"><span className="text-[#6fa400] text-base">
                                                         {FormattedNumber(e.price)}</span> <br /><span className="text-xs">(VNĐ)</span></td>
                                                     <td className="py-2 px-4 border-b">
-                                                        <input type="text" defaultValue={e.quantity} onChange={(event) => updateToCart(event, e.id)} className="border w-full px-4 py-2 rounded-3xl focus:outline-none text-[#333]" /> {/* onChange={(event) => updateQuantity(event, e.id)}*/}
+                                                        <input type="text" defaultValue={e.quantity} onChange={(event) => updateToCart(event, e.id)} className="border w-full px-4 py-2 rounded-3xl focus:outline-none text-[#333] text-center" />
                                                     </td>
                                                     <td className="py-2 px-4 border-b hidden md:table-cell"><span className="text-[#6fa400] text-base">
                                                         {FormattedNumber(e.price * e.quantity)} </span> <br /><span className="text-xs">(VNĐ)</span></td>

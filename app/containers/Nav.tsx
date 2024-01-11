@@ -100,9 +100,9 @@ export function Nav() {
                             </div>
                             <div className="col-span-5 md:col-span-1 cart text-center md:text-left">
                                 <ul className="flex justify-evenly text-sm">
-                                    <li><Link href="/login" className="text-[#a1e611] hover:text-white hover:duration-300 uppercase"><i className="fa-solid fa-user"></i></Link></li>
+                                    {/* <li><Link href="/login" className="text-[#a1e611] hover:text-white hover:duration-300 uppercase"><i className="fa-solid fa-user"></i></Link></li> */}
                                     <li><Link href="/cart" className="text-[#a1e611] hover:text-white hover:duration-300 uppercase">
-                                        <i className="fa-solid fa-cart-shopping"></i> <sup className="text-[yellow]">({calculateItemCount()})</sup></Link></li>
+                                        <i className="fa-solid fa-cart-shopping"></i> {calculateItemCount()>0&&<sup className="text-[yellow]">({calculateItemCount()})</sup>}</Link></li>
                                 </ul>
                             </div>
                         </div>

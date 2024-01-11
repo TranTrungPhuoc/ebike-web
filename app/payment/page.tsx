@@ -158,8 +158,8 @@ export default function Page() {
                                         <option value="">-Chọn-</option>
                                         {
                                             province &&
-                                            province.map((e: any) =>
-                                                <option value={e.citycode}>{e.cityname}</option>
+                                            province.map((e: any, pi:any) =>
+                                                <option key={pi} value={e.citycode}>{e.cityname}</option>
                                             )
                                         }
                                     </select>
@@ -170,8 +170,8 @@ export default function Page() {
                                         <option value="">-Chọn-</option>
                                         {
                                             district &&
-                                            district.map((e: any) =>
-                                                <option value={e.districtcode}>{e.districtname}</option>
+                                            district.map((e: any, di:any) =>
+                                                <option key={di} value={e.districtcode}>{e.districtname}</option>
                                             )
                                         }
                                     </select>
@@ -182,8 +182,8 @@ export default function Page() {
                                         <option value="">-Chọn-</option>
                                         {
                                             wards &&
-                                            wards.map((e: any) =>
-                                                <option value={e.wardcode}>{e.wardname}</option>
+                                            wards.map((e: any, wi:any) =>
+                                                <option key={wi} value={e.wardcode}>{e.wardname}</option>
                                             )
                                         }
                                     </select>
@@ -240,7 +240,7 @@ export default function Page() {
                                             {
                                                 delivery &&
                                                 delivery.map((e: any, i: any) =>
-                                                    <li className={(i + 1) != delivery.length ? "mb-4" : ""}><input type="radio" name="ptgh" id={"ptgh" + i} defaultValue={e._id} onChange={handleDelivery} /> <label htmlFor={"ptgh" + i}>{e.title}</label></li>
+                                                    <li key={i} className={(i + 1) != delivery.length ? "mb-4" : ""}><input type="radio" name="ptgh" id={"ptgh" + i} defaultValue={e._id} onChange={handleDelivery} /> <label htmlFor={"ptgh" + i}>{e.title}</label></li>
                                                 )
                                             }
                                         </ul>
@@ -258,7 +258,7 @@ export default function Page() {
                                             {
                                                 payment &&
                                                 payment.map((e: any, i: any) =>
-                                                    <li className={(i + 1) != payment.length ? "mb-4" : ""}><input type="radio" name="pttt" id={"pttt" + i} defaultValue={e._id} onChange={handlePayment} /> <label htmlFor={"pttt" + i}>{e.title}</label></li>
+                                                    <li key={i} className={(i + 1) != payment.length ? "mb-4" : ""}><input type="radio" name="pttt" id={"pttt" + i} defaultValue={e._id} onChange={handlePayment} /> <label htmlFor={"pttt" + i}>{e.title}</label></li>
                                                 )
                                             }
                                         </ul>
